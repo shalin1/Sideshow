@@ -1,2 +1,4 @@
 # Sideshow
-a full stack Eventbrite Clone by Shalin Scupham
+An event ticketing and discovery web application
+
+React / Redux front end on Rails / PostgreSQL back end
