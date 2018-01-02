@@ -4,10 +4,11 @@ import { RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS } from '../actions/session
 const defaultState = Object.freeze({currentUser: null});
 
 const sessionReducer = (state = defaultState, action) => {
+  debugger
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.currentUser;
+      return merge({}, state, {currentUser: action.currentUser});
     default:
       return state;
   }
