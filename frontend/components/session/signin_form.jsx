@@ -19,6 +19,14 @@ class SignInForm extends React.Component {
     this.props.userExists({email});
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.ui.validEmail.exist) {
+      this.props.history.push('/signin/login');
+    } else {
+      this.props.history.push('/signin/signup');
+    }
+  }
+
   handleDemoLogin(e){
     e.preventDefault();
     const demoUser = {email:"demo@gmail.com", password:"password"};
