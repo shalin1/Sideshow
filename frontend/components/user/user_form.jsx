@@ -1,23 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class SessionForm extends React.Component {
+class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      emails_opt_in: true
+      email: props.email,
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
   }
 
   handleSubmit(e) {
@@ -76,3 +67,17 @@ class SessionForm extends React.Component {
 
 
 export default withRouter(SessionForm);
+
+
+<label>First Name</label>
+  <input
+    type='text'
+    onChange={this.update('first_name')}
+    value={this.state.first_name}
+  />
+<label>Last Name</label>
+  <input
+    type='text'
+    onChange={this.update('last_name')}
+    value={this.state.last_name}
+  />
