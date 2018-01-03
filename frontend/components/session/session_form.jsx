@@ -26,6 +26,13 @@ class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetErrors();
+    this.setState({email: '', password: '',
+       first_name: '', last_name: '', emails_opt_in: true});
+  }
+
+
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
@@ -78,7 +85,6 @@ class SessionForm extends React.Component {
 
   signupFormBonusFields() {
     if (this.props.formType === 'Sign Up') {
-      debugger
       return (
         <div className="additional-info">
           <label>First Name
