@@ -4,7 +4,8 @@ import ReactModal from 'react-modal';
 
 const personalGreeting = (currentUser, logout) => (
   <div>
-    <span className="placeholder">avatar placeholder</span>
+    <span className="placeholder"><i class="fa fa-user" aria-hidden="true"></i>
+    </span>
     <span>{currentUser.first_name}</span>
     <button className="header-button" onClick={logout}>Sign Out</button>
   </div>
