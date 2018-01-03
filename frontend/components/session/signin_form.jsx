@@ -29,7 +29,7 @@ class SignInForm extends React.Component {
 
   handleDemoLogin(e){
     e.preventDefault();
-    const demoUser = {email:"demo@gmail.com", password:"password"};
+    const demoUser = {user: {email:"demo@gmail.com", password:"password"}};
     this.props.login(demoUser);
     this.props.history.push('/');
   }
