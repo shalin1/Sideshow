@@ -62,7 +62,8 @@ class EmailForm extends React.Component {
       <div className="email-form-container">
         <ul className="login-errors">{this.renderErrors()}</ul>
         <section className="login-modal-CTA">
-          <div>Logo Here</div>
+          <div><i class="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true"></i>
+          </div>
           <h4 className="user-prompt-medium">Let's get started.</h4>
           <h6 className="user-prompt-small">Enter your email to sign up or log in.</h6>
         </section>

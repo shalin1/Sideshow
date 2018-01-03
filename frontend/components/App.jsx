@@ -9,12 +9,15 @@ import AuthRoute from '../util/route_util.js';
 const App = () => (
   <div>
     <header className="nav-header">
-      <div className="logo">Sideshow™</div>
+      <div className="logo">
+        <i class="fa fa-bullhorn fa-lg" aria-hidden="true">Sideshow</i>
+      </div>
       <GreetingContainer />
-      <Route exact path="/signin" component={EmailFormContainer} />
-      <Route path="/signin/signup" component={NewUserFormContainer} />
-      <Route path="/signin/login" component={SessionFormContainer} />
     </header>
+    
+    <Route exact path="/signin" component={EmailFormContainer} />
+    <Route path="/signin/signup" component={NewUserFormContainer} />
+    <Route path="/signin/login" component={SessionFormContainer} />
   </div>
 );
 
