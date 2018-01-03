@@ -56,23 +56,23 @@ class SignInForm extends React.Component {
     };
   }
 
-  // renderErrors() {
-  //   debugger
-  //   return(
-  //     <ul>
-  //       {this.props.errors.map((error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    debugger
+    return(
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
     return(
       <div className="email-form-container">
-        <ul className="login-errors">renderErrors</ul>
+        <ul className="login-errors">{this.renderErrors}</ul>
         <section className="login-modal-CTA">
           <div><i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true"></i>
           </div>

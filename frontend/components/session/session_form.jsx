@@ -41,11 +41,13 @@ class SessionForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
+        {
+          this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))
+        }
       </ul>
     );
   }
@@ -76,6 +78,7 @@ class SessionForm extends React.Component {
 
   signupFormBonusFields() {
     if (this.props.formType === 'Sign Up') {
+      debugger
       return (
         <div className="additional-info">
           <label>First Name
@@ -94,13 +97,13 @@ class SessionForm extends React.Component {
           </label>
         </div>
       );
-    } 
+    }
   }
 
   render() {
     return(
       <div className="session-form-container">
-        <ul>{this.renderErrors()}</ul>
+        {this.renderErrors()}
         {this.renderHeader()}
         <label className="eds-primary">Email address</label>
         <div>
