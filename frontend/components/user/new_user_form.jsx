@@ -5,10 +5,11 @@ class NewUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: props.email,
+      email: "test@foo.bar",
       password: "",
       first_name: "",
-      last_name: ""
+      last_name: "",
+      emails_opt_in: true
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,7 +17,7 @@ class NewUserForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.signup({user});
   }
 
   update(attribute) {
@@ -26,6 +27,7 @@ class NewUserForm extends React.Component {
   }
 
   renderErrors() {
+    debugger
     return(
       <ul>
         {this.props.errors.map((error, i) => (
