@@ -5,7 +5,7 @@ class NewUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "test@foo.bar",
+      email: Object.values(props.location.state.email),
       password: "",
       first_name: "",
       last_name: "",
