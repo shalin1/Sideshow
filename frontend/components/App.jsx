@@ -11,9 +11,9 @@ const App = () => (
     <header className="nav-header">
       <div className="logo">Sideshow™</div>
       <GreetingContainer />
-      <AuthRoute exact path="/signin" component={EmailFormContainer} />
-      <AuthRoute path="/signin/signup" component={NewUserFormContainer} />
-      <AuthRoute path="/signin/login" component={SessionFormContainer} />
+      <Route exact path="/signin" component={EmailFormContainer} />
+      <Route path="/signin/signup" component={NewUserFormContainer} />
+      <Route path="/signin/login" component={SessionFormContainer} />
     </header>
   </div>
 );

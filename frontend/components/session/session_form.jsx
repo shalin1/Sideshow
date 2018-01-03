@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: this.props.email,
+      email: "shalin.scupham@gmail.com",
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +20,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    this.props.login({user});
   }
 
   update(attribute) {
@@ -53,8 +53,8 @@ class SessionForm extends React.Component {
         </section>
         <label className="eds-primary">Email address</label>
         <div>
-          <p className="email">{this.props.email}</p>
           <span>
+            <p className="email">{this.state.email}</p>
             <Link to="/signin">PenIcon</Link>
           </span>
         </div>

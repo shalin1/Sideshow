@@ -4,18 +4,20 @@ import ReactModal from 'react-modal';
 
 const personalGreeting = (currentUser, logout) => (
   <div>
+    <span className="placeholder">avatar placeholder</span>
+    <span>{currentUser.first_name}</span>
     <button className="header-button" onClick={logout}>Sign Out</button>
   </div>
 );
 
-const sessionLinks = () => (
+const sessionLink = () => (
   <div>
     <Link to="/signin">Sign In</Link>
   </div>
 );
 
 const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  currentUser ? personalGreeting(currentUser, logout) : sessionLink()
 );
 
 export default Greeting;

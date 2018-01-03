@@ -43,7 +43,7 @@ class EmailForm extends React.Component {
   render() {
     return(
       <div className="email-form-container">
-        <ul>{this.renderErrors()}</ul>
+        <ul className="login-errors">{this.renderErrors()}</ul>
         <section className="login-modal-CTA">
           <div>Logo Here</div>
           <h4 className="user-prompt-medium">Let's get started.</h4>
@@ -51,15 +51,20 @@ class EmailForm extends React.Component {
         </section>
         <form onSubmit={this.handleSubmit}>
           <label>Email address</label>
-            <input
-              type='text'
-              placeholderText="Enter email"
-              onChange={this.update('email')}
-              value={this.state.username}
-            />
+          <input
+            type='text'
+            placeholderText="Enter email"
+            onChange={this.update('email')}
+            value={this.state.username}
+          />
           <br/>
-            <input type="submit" value="Get Started" className="EmailSubmitForm" />
+          <input
+            type="submit"
+            value="Get Started"
+            className="EmailSubmitForm"
+          />
         </form>
+        <br/>
         <button onClick="" className="demo-log-in-button">Demo Log In</button>
       </div>
     );
