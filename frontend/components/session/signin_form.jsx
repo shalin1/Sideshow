@@ -70,7 +70,7 @@ class SignInForm extends React.Component {
 
   render() {
     return(
-      <div className="email-form-container">
+      <div className="signin-form-container">
         <ul className="login-errors">{this.renderErrors}</ul>
         <section className="login-modal-CTA">
           <div><i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true"></i>
@@ -84,7 +84,7 @@ class SignInForm extends React.Component {
             type='text'
             placeholdertext="Enter email"
             onChange={this.update('email')}
-            value={this.state.username}
+            value={this.state.email}
           />
           <br/>
           <button onClick={this.handleSubmit} className="action-button">Get Started</button>
