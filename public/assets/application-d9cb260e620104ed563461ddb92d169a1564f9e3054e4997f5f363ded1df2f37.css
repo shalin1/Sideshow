@@ -1,0 +1,464 @@
+/* _-_-_- base/RESET -_-_-_ */
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* _-_-_- base/BASE -_-_-_ */
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+/* _-_-_- base/TYPOGRAPHY -_-_-_ */
+/* _-_-_- layout/FOOTER -_-_-_ */
+/* _-_-_- layout/FORMS -_-_-_ */
+/* _-_-_- layout/GRID -_-_-_ */
+/* _-_-_- layout/HEADER -_-_-_ */
+/* _-_-_- layout/NAVIGATION -_-_-_ */
+/* _-_-_- layout/SIDEBAR -_-_-_ */
+/* _-_-_- modules/BUTTONS -_-_-_ */
+/* _-_-_- modules/DROPDOWN -_-_-_ */
+/* _-_-_- modules/THUMBNAILS -_-_-_ */
+/* _-_-_- pages/ABOUT -_-_-_ */
+/* _-_-_- pages/CONTACT -_-_-_ */
+/* _-_-_- pages/HOME -_-_-_ */
+
+/*# sourceMappingURL=main.css.map */
+/* _-_-_- base/BASE -_-_-_ */
+/* line 5, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_base.scss */
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+/* PHASE 0: Reset */
+/* line 3, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, i,
+section, img, div, h2, p, form,
+fieldset, label, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 21, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 25, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 31, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 46, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 53, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* _-_-_- base/BASE -_-_-_ */
+/* line 4, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_base.scss */
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+/* _-_-_- base/TYPOGRAPHY -_-_-_ */
+/* line 2, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_typography.scss */
+.global-header {
+  font-family: "Benton Sans", "PT Sans" "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+/* PHASE 0: Reset */
+/* line 4, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, i,
+section, img, div, h2, p, form,
+fieldset, label, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 22, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 26, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 32, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 47, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 54, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* _-_-_- base/TYPOGRAPHY -_-_-_ */
+/* line 3, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_typography.scss */
+.global-header {
+  font-family: "Benton Sans", "PT Sans" "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+/* _-_-_- layout/FOOTER -_-_-_ */
+/* _-_-_- layout/FORMS -_-_-_ */
+/* _-_-_- layout/GRID -_-_-_ */
+/* _-_-_- layout/HEADER -_-_-_ */
+/* line 4, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header {
+  background: white;
+  color: #45494E;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 12, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header a {
+  display: block;
+  padding: 10px 20px;
+}
+
+/* line 17, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 900px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/* line 26, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-logo {
+  border-right: 1px solid #ccc;
+  height: 60px;
+  width: 110px;
+  margin: 0 20px;
+  color: #F6682F;
+}
+
+/* line 34, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list {
+  display: flex;
+}
+
+/* line 38, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li {
+  border-left: 1px solid #ccc;
+}
+
+/* line 42, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li:hover {
+  background: #000;
+}
+/* _-_-_- layout/FOOTER -_-_-_ */
+/* _-_-_- layout/FORMS -_-_-_ */
+/* _-_-_- layout/GRID -_-_-_ */
+/* _-_-_- layout/HEADER -_-_-_ */
+/* line 3, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header {
+  background: white;
+  color: #45494E;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 11, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header a {
+  display: block;
+  padding: 10px 20px;
+}
+
+/* line 16, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 900px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/* line 25, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-logo {
+  border-right: 1px solid #ccc;
+  height: 60px;
+  width: 110px;
+  margin: 0 20px;
+  color: #F6682F;
+}
+
+/* line 33, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list {
+  display: flex;
+}
+
+/* line 37, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li {
+  border-left: 1px solid #ccc;
+}
+
+/* line 41, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li:hover {
+  background: #000;
+}
+
+/* _-_-_- layout/NAVIGATION -_-_-_ */
+/* _-_-_- layout/SIDEBAR -_-_-_ */
+/* _-_-_- layout/NAVIGATION -_-_-_ */
+/* _-_-_- layout/SIDEBAR -_-_-_ */
+/* PHASE 0: Reset */
+/* line 3, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+html, body, header, nav, h1, a,
+ul, li, strong, main, i,
+section, img, div, h2, p, form,
+fieldset, label, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+}
+
+/* line 21, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+ul {
+  list-style: none;
+}
+
+/* line 25, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* line 31, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* line 46, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* Clearfix */
+/* line 53, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_reset.scss */
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* _-_-_- base/BASE -_-_-_ */
+/* line 4, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_base.scss */
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+/* _-_-_- base/TYPOGRAPHY -_-_-_ */
+/* line 2, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/base/_typography.scss */
+.global-header {
+  font-family: "Benton Sans", "PT Sans" "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+}
+
+/* _-_-_- layout/FOOTER -_-_-_ */
+/* _-_-_- layout/FORMS -_-_-_ */
+/* _-_-_- layout/GRID -_-_-_ */
+/* _-_-_- layout/HEADER -_-_-_ */
+/* line 3, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header {
+  background: white;
+  color: #45494E;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* line 11, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header a {
+  display: block;
+  padding: 10px 20px;
+}
+
+/* line 16, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: 900px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/* line 25, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-logo {
+  border-right: 1px solid #ccc;
+  height: 60px;
+  width: 110px;
+  margin: 0 20px;
+  color: #F6682F;
+}
+
+/* line 33, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list {
+  display: flex;
+}
+
+/* line 37, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li {
+  border-left: 1px solid #ccc;
+}
+
+/* line 41, /Users/God2/Desktop/sideshow/app/assets/stylesheets/sass/layout/_header.scss */
+.header-list > li:hover {
+  background: #000;
+}
+
+/* _-_-_- layout/NAVIGATION -_-_-_ */
+/* _-_-_- layout/SIDEBAR -_-_-_ */
+/* _-_-_- modules/BUTTONS -_-_-_ */
+/* _-_-_- modules/DROPDOWN -_-_-_ */
+/* _-_-_- modules/THUMBNAILS -_-_-_ */
+/* _-_-_- pages/ABOUT -_-_-_ */
+/* _-_-_- pages/CONTACT -_-_-_ */
+/* _-_-_- pages/HOME -_-_-_ */
+/* _-_-_- modules/BUTTONS -_-_-_ */
+/* _-_-_- modules/DROPDOWN -_-_-_ */
+/* _-_-_- modules/BUTTONS -_-_-_ */
+/* _-_-_- modules/DROPDOWN -_-_-_ */
+/* _-_-_- modules/THUMBNAILS -_-_-_ */
+/* _-_-_- modules/THUMBNAILS -_-_-_ */
+/* _-_-_- pages/ABOUT -_-_-_ */
+/* _-_-_- pages/CONTACT -_-_-_ */
+/* _-_-_- pages/HOME -_-_-_ */
+/* _-_-_- pages/ABOUT -_-_-_ */
+/* _-_-_- pages/CONTACT -_-_-_ */
+/* _-_-_- pages/HOME -_-_-_ */
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+

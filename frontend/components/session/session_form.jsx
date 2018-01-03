@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       email: Object.values(props.location.state.email),
       password: ""
