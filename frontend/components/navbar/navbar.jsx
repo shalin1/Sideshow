@@ -8,13 +8,11 @@ export default ({currentUser, logout}) => {
       <div className="nav-left">
         <Link to='/'><h3 className="logo">SideShow</h3></Link>
       </div>
-      <div className="rightnav">
-        <Link to='/'><h3 className='nav-title'>Browse Events</h3></Link>
+      <div className="nav-right">
         <GreetingContainer
           currentUser={currentUser}
           logout={logout}
         />
-        <Link to='/'><h3 className='nav create-event'>Create Event</h3></Link>
       </div>
     </header>
   );
