@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 
-class EmailForm extends React.Component {
+class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,10 +77,10 @@ class EmailForm extends React.Component {
             value={this.state.username}
           />
           <br/>
-          <button onClick={this.handleSubmit} className="action-button">Log In</button>
+          <button onClick={this.handleSubmit} className="action-button">Get Started</button>
         </form>
         <br/>
-        <button onClick={this.loginRedirect} className="demo-log-in-button">Demo Log In</button>
+        <button onClick={this.demoLogin} className="demo-log-in-button">Demo Log In</button>
       </div>
     );
   }
@@ -89,4 +89,4 @@ class EmailForm extends React.Component {
 
 
 
-export default withRouter(EmailForm);
+export default withRouter(SignInForm);
