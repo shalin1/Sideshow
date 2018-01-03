@@ -14,7 +14,7 @@ const receiveErrors = errors => ({
   errors
 });
 
-const receiveValidEmail = (validEmail) => ({
+const receiveValidEmail = validEmail => ({
   type: RECEIVE_VALID_EMAIL,
   validEmail
 });
@@ -23,7 +23,7 @@ export const signup = user => dispatch => (
   APIUtil.signup(user).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveErrors(err))
   ))
 );
 
@@ -31,7 +31,7 @@ export const login = user => dispatch => (
   APIUtil.login(user).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveErrors(err))
   ))
 );
 
@@ -41,7 +41,12 @@ export const logout = () => dispatch => (
   ))
 );
 
-export const emailCheck = email => dispatch => (
-  APIUtil.emailCheck(email)
+export const userExists = email => dispatch => (
+  APIUtil.userExists(email)
   .then(validEmail => dispatch(receiveValidEmail(validEmail)))
+);
+
+export const demoLogin = (demoUser) => dispatch => (
+  APIUtil.login(demoUser)
+  .then(user => dispatch(receiveCurrentUser(user)))
 );

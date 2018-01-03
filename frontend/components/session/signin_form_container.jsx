@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { userExists } from '../../util/session_api_util';
+import { userExists, login } from '../../actions/session_actions';
 import SignInForm from './signin_form';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    userExists: email => dispatch(userExists(email))
+    userExists: email => dispatch(userExists(email)),
+    login: user => dispatch(login(user))
   };
 };
 

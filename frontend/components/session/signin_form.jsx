@@ -8,21 +8,23 @@ class SignInForm extends React.Component {
       email: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
     this.loginRedirect = this.loginRedirect.bind(this);
     this.signupRedirect = this.signupRedirect.bind(this);
-  }
-
-  componentDidMount() {
-    // trigger modal
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const email = this.state.email;
     this.props.userExists({email});
-    // ( this.props.emailCheck({email}) ) ? this.loginRedirect : this.signupRedirect;
   }
 
+  handleDemoLogin(e){
+    e.preventDefault();
+    const demoUser = {email:"demo@gmail.com", password:"password"};
+    this.props.login(demoUser);
+    this.props.history.push('/');
+  }
 
   loginRedirect(e) {
     e.preventDefault();
@@ -46,22 +48,23 @@ class SignInForm extends React.Component {
     };
   }
 
-  renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   debugger
+  //   return(
+  //     <ul>
+  //       {this.props.errors.map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return(
       <div className="email-form-container">
-        <ul className="login-errors">{this.renderErrors()}</ul>
+        <ul className="login-errors">renderErrors</ul>
         <section className="login-modal-CTA">
           <div><i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true"></i>
           </div>
@@ -80,7 +83,7 @@ class SignInForm extends React.Component {
           <button onClick={this.handleSubmit} className="action-button">Get Started</button>
         </form>
         <br/>
-        <button onClick={this.demoLogin} className="demo-log-in-button">Demo Log In</button>
+        <button onClick={this.handleDemoLogin} className="demo-log-in-button">Demo Log In</button>
       </div>
     );
   }
