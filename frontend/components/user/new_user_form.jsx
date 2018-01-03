@@ -6,7 +6,9 @@ class NewUserForm extends React.Component {
     super(props);
     this.state = {
       email: props.email,
-      password: ""
+      password: "",
+      first_name: "",
+      last_name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -46,7 +48,7 @@ class NewUserForm extends React.Component {
           </section>
           <section>
             <label>Email address</label>
-            <p className="email">{this.props.email}</p>
+            <p className="email">{this.state.email}</p>
             <span>
               <Link to="/signin">PenIcon</Link>
             </span>
