@@ -22,10 +22,10 @@ export const logout = user => (
   })
 );
 
-export const findUser = email => (
+export const userExists = email => (
   $.ajax({
     method: 'GET',
-    url: 'api/user',
+    url: `/api/email/`,
     data: email
   })
 );

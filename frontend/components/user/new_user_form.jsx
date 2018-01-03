@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class NewUserForm extends React.Component {
+  debugger
   constructor(props) {
     super(props);
     this.state = {
@@ -43,7 +44,8 @@ class NewUserForm extends React.Component {
       <div className="login-form-container">
         <ul>{this.renderErrors()}</ul>
           <section className="login-modal-CTA">
-            <div>User Avatar Here</div>
+            <div><i class="fa fa-user fa-3x" aria-hidden="true" color="grey"></i>
+            </div>
             <h4 className="user-prompt-medium">Welcome</h4>
             <h6 className="user-prompt-small">Create an account.</h6>
           </section>
@@ -51,7 +53,9 @@ class NewUserForm extends React.Component {
             <label>Email address</label>
             <p className="email">{this.state.email}</p>
             <span>
-              <Link to="/signin">PenIcon</Link>
+              <Link to="/signin">
+                <i className="fa fa-pencil" aria-hidden="true" />
+              </Link>
             </span>
           </section>
           <form onSubmit={this.handleSubmit}>

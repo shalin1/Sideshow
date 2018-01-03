@@ -10,7 +10,14 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  # TODO: figure out how to query database for whether user exists
+  def email
+    user = User.find_by(email: params[:email])
+    if user
+      render json: {email: params[:email], exist: true}
+    else
+      render json: {email: params[:email], exist: false}
+    end
+  end
 
   def show
     @user = User.find_by_email(params[:user][:email])

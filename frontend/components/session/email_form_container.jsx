@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-// import {logInOrSignUp} from '';
+import { userExists } from '../../util/session_api_util';
 import EmailForm from './email_form';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -8,12 +8,12 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  // return {
-  //   // logInOrSignUp: user => dispatch(logInOrSignUp(user)),
-  // };
+  return {
+    userExists: email => dispatch(userExists(email))
+  };
 };
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(EmailForm);

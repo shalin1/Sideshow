@@ -18,17 +18,14 @@ class EmailForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const email = this.email;
-    // send to '/login' if a user is associated w email
-    // otherwise send to '/signup'
-    // pass through email as props
-    // for now, there are just 2 buttons to loginRedirect & signupRedirect methods
-    // this method is not currently being called
+    const email = this.state.email;
+    this.props.userExists({email});
+    // ( this.props.emailCheck({email}) ) ? this.loginRedirect : this.signupRedirect;
   }
+
 
   loginRedirect(e) {
     e.preventDefault();
-    console.log("u clicked login");
     this.props.history.push({
       pathname: `/signin/login`,
       state: { email: this.state }
@@ -37,9 +34,10 @@ class EmailForm extends React.Component {
 
   signupRedirect(e) {
     e.preventDefault();
-    console.log("u clicked signup")
-    this.props.history.push(`/signin/signup`);
-    // return <Redirect to="/signin/signup" email={this.state.email}/>;
+    this.props.history.push({
+      pathname: `/signin/signup`,
+      state: { email: this.state }
+    });
   }
 
   update(attribute) {
@@ -79,8 +77,7 @@ class EmailForm extends React.Component {
             value={this.state.username}
           />
           <br/>
-          <button onClick={this.loginRedirect} className="action-button">Log In</button>
-          <button onClick={this.signupRedirect} className="action-button">Sign Up</button>
+          <button onClick={this.handleSubmit} className="action-button">Log In</button>
         </form>
         <br/>
         <button onClick={this.loginRedirect} className="demo-log-in-button">Demo Log In</button>
