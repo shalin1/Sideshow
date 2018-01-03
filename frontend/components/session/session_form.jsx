@@ -5,11 +5,8 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      emails_opt_in: true
+      email: this.props.email,
+      password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -47,25 +44,29 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="login-form-container">
-        <h1>{(this.props.formType === "signin") ? 'Sign In!' : 'Sign Up!'}</h1>
         <ul>{this.renderErrors()}</ul>
+
+        <section className="login-modal-CTA">
+          <div>User Avatar Here</div>
+          <h4 className="user-prompt-medium">Welcome back</h4>
+          <h6 className="user-prompt-small">Please enter your password to log in.</h6>
+        </section>
+        <label className="eds-primary">Email address</label>
+        <div>
+          <p className="email">{this.props.email}</p>
+          <span>
+            <Link to="/signin">PenIcon</Link>
+          </span>
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <label>Email</label>
-            <input
-              type='text'
-              onChange={this.update('email')}
-              value={this.state.username}
-            />
-          <br/>
           <label>Password</label>
-            <input
-              type='password'
-              onChange={this.update('password')}
-              value={this.state.password}
-            />
+          <input
+            type='password'
+            onChange={this.update('password')}
+            value={this.state.password}
+          />
           <br/>
-          <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Log In" />
         </form>
       </div>
     );

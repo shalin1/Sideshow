@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class UserForm extends React.Component {
+class NewUserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -38,22 +38,41 @@ class UserForm extends React.Component {
   render() {
     return(
       <div className="login-form-container">
-        <h1>{(this.props.formType === "signin") ? 'Sign In!' : 'Sign Up!'}</h1>
         <ul>{this.renderErrors()}</ul>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email</label>
-            <input
-              type='text'
-              onChange={this.update('email')}
-              value={this.state.username}
-            />
+          <section className="login-modal-CTA">
+            <div>User Avatar Here</div>
+            <h4 className="user-prompt-medium">Welcome</h4>
+            <h6 className="user-prompt-small">Create an account.</h6>
+          </section>
+          <section>
+            <label>Email address</label>
+            <p className="email">{this.props.email}</p>
+            <span>
+              <Link to="/signin">PenIcon</Link>
+            </span>
+          </section>
+          <form onSubmit={this.handleSubmit}>
           <br/>
-          <label>Password</label>
+            <label>First Name</label>
+              <input
+                type='text'
+                onChange={this.update('first_name')}
+                value={this.state.first_name}
+              />
+            <label>Last Name</label>
+              <input
+                type='text'
+                onChange={this.update('last_name')}
+                value={this.state.last_name}
+              />
+            <br/>
+            <label>Password</label>
             <input
               type='password'
               onChange={this.update('password')}
               value={this.state.password}
-            />
+              />
+
           <br/>
           <br/>
             <input type="submit" value="Submit" />
@@ -66,18 +85,4 @@ class UserForm extends React.Component {
 
 
 
-export default withRouter(SessionForm);
-
-
-<label>First Name</label>
-  <input
-    type='text'
-    onChange={this.update('first_name')}
-    value={this.state.first_name}
-  />
-<label>Last Name</label>
-  <input
-    type='text'
-    onChange={this.update('last_name')}
-    value={this.state.last_name}
-  />
+export default NewUserForm;

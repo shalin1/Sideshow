@@ -44,10 +44,10 @@ class EmailForm extends React.Component {
     return(
       <div className="email-form-container">
         <ul>{this.renderErrors()}</ul>
-        <section>
+        <section className="login-modal-CTA">
           <div>Logo Here</div>
-          <div className="userprompt-medium">Let's get started.</div>
-          <div className="userprompt-small">Enter your email to sign up or log in.</div>
+          <h4 className="user-prompt-medium">Let's get started.</h4>
+          <h6 className="user-prompt-small">Enter your email to sign up or log in.</h6>
         </section>
         <form onSubmit={this.handleSubmit}>
           <label>Email address</label>
@@ -58,8 +58,9 @@ class EmailForm extends React.Component {
               value={this.state.username}
             />
           <br/>
-            <input type="submit" value="Get Started" class="EmailSubmitForm" />
+            <input type="submit" value="Get Started" className="EmailSubmitForm" />
         </form>
+        <button onClick="" className="demo-log-in-button">Demo Log In</button>
       </div>
     );
   }

@@ -10,7 +10,7 @@ const personalGreeting = (currentUser, logout) => (
 
 const sessionLinks = () => (
   <div>
-    <Link to="/login">Sign In</Link>
+    <Link to="/signin">Sign In</Link>
   </div>
 );
 
