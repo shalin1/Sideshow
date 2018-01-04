@@ -73,19 +73,23 @@ class SignInForm extends React.Component {
       <div className="signin-form-container">
         <ul className="login-errors">{this.renderErrors}</ul>
         <section className="login-modal-CTA">
-          <div><i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true"></i>
+          <div className="login-icon">
+            <i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true" />
           </div>
-          <h4 className="user-prompt-medium">Let's get started.</h4>
-          <h6 className="user-prompt-small">Enter your email to sign up or log in.</h6>
+
+          <h3 className="user-prompt-medium">Let's get started</h3>
+          <h4 className="user-prompt-small">Enter your email to sign up or log in.</h4>
         </section>
         <form onSubmit={this.handleSubmit}>
-          <label>Email address</label>
-          <input
-            type='text'
-            placeholdertext="Enter email"
-            onChange={this.update('email')}
-            value={this.state.email}
-          />
+          <label className="auth-label">Email address</label>
+          <div className="modal-input-box"><input
+              className="modal-input"
+              type='text'
+              placeholder="Enter email"
+              onChange={this.update('email')}
+              value={this.state.email}
+            />
+          </div>
           <br/>
           <button onClick={this.handleSubmit} className="action-button">Get Started</button>
         </form>
