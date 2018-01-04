@@ -2,48 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.nav-container {
-  display: flex;
-  flex: 0 0 auto;
-  justify-content: space-between;
-  height: 61px;
-  border-bottom: 1px solid #F5F5F5;
-  background-color: white;
-}
-
-.nav-left {
-  display: flex;
-  font-size: 16px;
-  color: gray;
-  font-family:sans-serif;
-  margin: 0;
-}
-
-.nav-right {
-  display: flex;
-  font-size: 16px;
-  color: gray;
-  font-family:sans-serif;
-  margin: 0;
-  :hover {
-    background-color: #EFF2F5;
-  }
-}
-
-.logo {
-  font-size: 20px;
-  padding: 15px 0px 15px 20px;
-  border-right: 1px solid #F5F5F5;
-  height: 33px;
-  width: 100%;
-  color: #f6682f;
-  font-family: "Comic Sans MS", sans-serif;
-  font-family: briteicons,"Benton Sans","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  vertical-align: baseline;
-}
-
 .user-prompt-medium {
   color: #45494e;
   font-weight: 200;
@@ -79,7 +37,7 @@
   flex-direction: column
 }
 
-.action-button {
+.session-action-button {
   font-family: "Benton Sans","Helvetica Neue",Helvetica,"Roboto",Arial,sans-serif;
   display: flex;
   justify-content: center;
@@ -93,14 +51,14 @@
   background-image: radial-gradient(farthest-corner at 80% 100%,#f86044 0,#fd348b 100%);
 }
 
-.auth-label {
+.auth-form-label {
   color: #363a43;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
 }
 
-.modal-input-box {
+.auth-form-input-box {
   background-color: rgb(195, 198, 207);
   border: 2px;
   box-sizing: border-box;
@@ -129,7 +87,7 @@
   -webkit-font-smoothing:antialiased;
 }
 
-.modal-input {
+.auth-form-input {
   background-color: rgb(255, 255, 255);
   border-bottom-color:rgb(69, 73, 78);
   border-bottom-left-radius:2px;

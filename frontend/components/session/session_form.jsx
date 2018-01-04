@@ -32,7 +32,6 @@ class SessionForm extends React.Component {
        first_name: '', last_name: '', emails_opt_in: true});
   }
 
-
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;

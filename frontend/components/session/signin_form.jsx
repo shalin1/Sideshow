@@ -8,10 +8,7 @@ class SignInForm extends React.Component {
       email: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);
-    this.loginRedirect = this.loginRedirect.bind(this);
-    this.signupRedirect = this.signupRedirect.bind(this);
-  }
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);   }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -34,21 +31,6 @@ class SignInForm extends React.Component {
     this.props.history.push('/');
   }
 
-  loginRedirect(e) {
-    e.preventDefault();
-    this.props.history.push({
-      pathname: `/signin/login`,
-      state: { email: this.state }
-    });
-  }
-
-  signupRedirect(e) {
-    e.preventDefault();
-    this.props.history.push({
-      pathname: `/signin/signup`,
-      state: { email: this.state }
-    });
-  }
 
   update(attribute) {
     return (e) => {
