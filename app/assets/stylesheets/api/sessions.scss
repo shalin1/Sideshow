@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.signin-form-container {
+.session-form-container {
   width: 60%;
   display: flex;
   align-items: center;
@@ -10,8 +10,11 @@
   margin: 0px auto;
 }
 
-.login-modal-CTA {
-
+.login-errors {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+  font-family: Roboto Helvetica sans-serif;
 }
 
 .login-icon-container {
@@ -109,12 +112,12 @@
   padding-top:1px;
   position:relative;
   text-size-adjust:100%;
-  width:421px;
+  width:360;
   -webkit-box-direction:normal;
   -webkit-font-smoothing:antialiased;
 }
 
-.auth-form-input {
+.session-form-input {
   background-color: rgb(255, 255, 255);
   border-bottom-color:rgb(69, 73, 78);
   border-bottom-left-radius:2px;
@@ -174,7 +177,7 @@
   text-size-adjust:100%;
   text-transform:none;
   white-space:nowrap;
-  width:419px;
+  width:310px;
   word-spacing:1px;
   writing-mode:horizontal-tb;
   -webkit-appearance:none;

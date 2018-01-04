@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     let email;
-    if (props.validEmail.email) {
+    if (Boolean(props.validEmail.email)) {
       email = props.validEmail.email;
     } else {
       email = "";
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="login-errors">
         {
           this.props.errors.map((error, i) => (
             <li key={`error-${i}`}>
@@ -86,20 +86,25 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
       return (
         <div className="additional-info">
-          <label>First Name
+
+          <label>First Name</label>
+
+          <div className="session-form-input-box">
             <input
               type='text'
               onChange={this.update('first_name')}
               value={this.state.first_name}
-              className="form-login-info"/>
-          </label>
-          <label>Last Name
+              className="session-form-input"/>
+          </div>
+
+          <label>Last Name</label>
+          <div className="session-form-input-box">
             <input
               type='text'
               onChange={this.update('last_name')}
               value={this.state.last_name}
-              className="form-login-info"/>
-          </label>
+              className="session-form-input"/>
+          </div>
         </div>
       );
     }
@@ -108,29 +113,31 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
-        {this.renderErrors()}
         {this.renderHeader()}
-        <label className="eds-primary">Email address</label>
-        <div>
-          <span>
-            <p className="email">
-              {this.state.email}
-              <Link to="/signin">
-                <i className="fa fa-pencil" aria-hidden="true" />
-              </Link>
-            </p>
-          </span>
-        </div>
+        <label className="session-form-label">Email address</label>
+        <span className="email">
+          {this.state.email}
+          <Link to="/signin">
+            <i className="fa fa-pencil" aria-hidden="true" />
+          </Link>
+        </span>
         <form onSubmit={this.handleSubmit}>
-          {this.signupFormBonusFields()}
-          <label>Password</label>
-          <input
-            type='password'
-            onChange={this.update('password')}
-            value={this.state.password}
-          />
-          <br/>
-            <input type="submit" value="Log In" />
+          <div className="session-form-input-box">
+            {this.signupFormBonusFields()}
+            <label className="session-form-label">Password</label>
+            <div className="session-form-input-box">
+              <input
+                className="session-form-input"
+                type='password'
+                onChange={this.update('password')}
+                value={this.state.password}
+              />
+            {this.renderErrors()}
+            </div>
+            <br/>
+            <br/>
+            <button onClick={this.handleSubmit} className="session-action-button">Log In</button>
+          </div>
         </form>
       </div>
     );

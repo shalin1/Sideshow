@@ -52,7 +52,7 @@ class SignInForm extends React.Component {
 
   render() {
     return(
-      <div className="signin-form-container">
+      <div className="session-form-container">
         <section className="login-modal-CTA">
           <div className="login-icon-container">
             <i className="fa fa-bullhorn fa-3x login-icon" aria-hidden="true" />
@@ -63,16 +63,22 @@ class SignInForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label className="session-form-label">Email address</label>
           <div className="session-form-input-box">
+
             <ul className="login-errors">{this.renderErrors()}</ul>
             <input
-              className="auth-form-input"
+              className="session-form-input"
               type='text'
               placeholder="Enter email"
               onChange={this.update('email')}
               value={this.state.email}
             />
           <br/>
-          <button onClick={this.handleSubmit} className="session-action-button">Get Started</button>
+          <button
+            onClick={this.handleSubmit}
+            className="session-action-button"
+          >
+            Get Started
+          </button>
           <br/>
           <br/>
           <br/>
