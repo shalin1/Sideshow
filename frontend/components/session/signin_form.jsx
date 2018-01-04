@@ -55,17 +55,9 @@ class SignInForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         <section className="login-modal-CTA">
           <div className="login-icon-container">
-            <i className="fa fa-bullhorn fa-2x login-icon" aria-hidden="true" />
+            <i className="fa fa-bullhorn fa-2x fa-spin login-icon" aria-hidden="true" />
           </div>
           <br/>
           <h3 className="user-prompt-medium">Let's get started</h3>

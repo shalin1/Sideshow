@@ -3,6 +3,8 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_VALID_EMAIL = 'RECEIVE_VALID_EMAIL';
+export const SHOW_MODAL = "SHOW_MODAL";
+export const HIDE_MODAL = "HIDE_MODAL";
 
 const receiveCurrentUser = user => ({
   type: RECEIVE_CURRENT_USER,
@@ -17,6 +19,14 @@ const receiveErrors = errors => ({
 const receiveValidEmail = validEmail => ({
   type: RECEIVE_VALID_EMAIL,
   validEmail
+});
+
+export const showModal = () => ({
+  type: SHOW_MODAL
+});
+
+export const hideModal = () => ({
+  type: HIDE_MODAL
 });
 
 export const signup = user => dispatch => (
