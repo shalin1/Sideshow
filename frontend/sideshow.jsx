@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import Root from './components/root'
+import Root from './components/root';
 import {signup, login, logout} from './actions/session_actions';
-import {userExists} from './util/session_api_util'
+import {userExists} from './util/session_api_util';
+import Modal from 'react-modal';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.userExists = userExists
 // TESTING END
 
+  Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={ store } />, root);
 
 });

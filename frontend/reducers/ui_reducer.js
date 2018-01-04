@@ -1,7 +1,7 @@
 import { RECEIVE_VALID_EMAIL } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
-const uiReducer = (state = {}, action) => {
+const uiReducer = (state = {validEmail:{email:"", exist:false}}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_VALID_EMAIL:

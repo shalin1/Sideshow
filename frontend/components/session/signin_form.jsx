@@ -17,10 +17,12 @@ class SignInForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.ui.validEmail.exist) {
-      this.props.history.push('/signin/login');
-    } else {
-      this.props.history.push('/signin/signup');
+    if (this.props.ui.validEmail !== nextProps.ui.validEmail) {
+      if (nextProps.ui.validEmail.exist) {
+        this.props.history.push('/signin/login');
+      } else {
+        this.props.history.push('/signin/signup');
+      }
     }
   }
 
