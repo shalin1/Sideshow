@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, signup, logout } from '../../actions/session_actions';
-import SessionForm from './session_form';
+import SessionFormModal from './session_form_modal';
 import { resetErrors } from '../../actions/error_actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -19,6 +19,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   } else if (ownProps.match.path === '/signin/signup') {
     action = user => dispatch(signup(user));
     formType = 'Sign Up';
+  } else {
+    formType = 'Sign In';
+    action = null;
   }
   return {
     action,
@@ -30,4 +33,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SessionForm);
+)(SessionFormModal);

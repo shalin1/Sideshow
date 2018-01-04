@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
+import { logout, toggleModal } from '../../actions/session_actions';
 import UserNav from './user_nav';
 
 const mapStateToProps = ({ session }) => ({
@@ -7,7 +7,8 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  toggleModal: () => dispatch(toggleModal())
 })
 
 export default connect(
