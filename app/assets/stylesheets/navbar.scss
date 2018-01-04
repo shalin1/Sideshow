@@ -12,28 +12,45 @@
   -webkit-appearance: none;
   border-bottom: 1px solid #F5F5F5;
   background-color: white;
+  font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  text-transform: uppercase;
 }
 
-.logo {
-  font-size: 20px;
-  padding: 15px 0px 15px 20px;
-  border-right: 1px solid #F5F5F5;
-  height: 33px;
-  width: 100%;
-  color: #f6682f;
-  font-family: Helvetica;
-  font-weight: 700;
+.nav-left {
+  border-right: 1px solid #EFF2F5;
+  .logo {
+    text-transform: capitalize;
+    font-family: 'Bungee Shade', Helvetica;
+    font-size: 20px;
+    height: 33px;
+    width: 100%;
+    color: #f6682f;
+    font-weight: 700;
+  }
 }
-//
+
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .nav-link {
-  font-size: 15px;
-  font-weight: 400;
+  background: white;
+  padding: 20px 20px 0px 20px;
   display: block;
-  margin: 15px 0px 15px 20px;
-  width: 110px;
-  height: 60px;
-  
+  text-transform: uppercase;
+  border-left: 1px solid #EFF2F5;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #0278b8;
+  line-height: 19px;
 }
+
+.nav-right .nav-link:hover {
+  background-color: #EFF2F5;
+}
+
 //
 //   display: inline-block;
 //   font-size: 15px;
