@@ -122,7 +122,6 @@ class SessionForm extends React.Component {
           </Link>
         </span>
         <form onSubmit={this.handleSubmit}>
-          <div className="session-form-input-box">
             {this.signupFormBonusFields()}
             <label className="session-form-label">Password</label>
             <div className="session-form-input-box">
@@ -137,7 +136,6 @@ class SessionForm extends React.Component {
             <br/>
             <br/>
             <button onClick={this.handleSubmit} className="session-action-button">Log In</button>
-          </div>
         </form>
       </div>
     );
