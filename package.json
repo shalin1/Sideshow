@@ -2,6 +2,7 @@
   "name": "sideshow",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.5.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
@@ -30,8 +31,8 @@
     "postinstall": "webpack"
   },
   "engines": {
-    "node":"9.2.1",
-    "npm":"3.10.10"
+    "node": "9.2.1",
+    "npm": "3.10.10"
   },
   "repository": {
     "type": "git",

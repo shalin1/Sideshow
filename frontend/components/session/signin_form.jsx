@@ -41,7 +41,7 @@ class SignInForm extends React.Component {
   renderErrors() {
     return(
       <ul>
-        {this.props.errors.map((error, i) => (
+        {this.props.errors.session.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
           </li>
@@ -53,30 +53,33 @@ class SignInForm extends React.Component {
   render() {
     return(
       <div className="signin-form-container">
-        <ul className="login-errors">{this.renderErrors}</ul>
         <section className="login-modal-CTA">
-          <div className="login-icon">
-            <i className="fa fa-bullhorn fa-spin fa-3x" aria-hidden="true" />
+          <div className="login-icon-container">
+            <i className="fa fa-bullhorn fa-3x login-icon" aria-hidden="true" />
           </div>
-
           <h3 className="user-prompt-medium">Let's get started</h3>
           <h4 className="user-prompt-small">Enter your email to sign up or log in.</h4>
         </section>
         <form onSubmit={this.handleSubmit}>
-          <label className="auth-label">Email address</label>
-          <div className="modal-input-box"><input
-              className="modal-input"
+          <label className="session-form-label">Email address</label>
+          <div className="session-form-input-box">
+            <ul className="login-errors">{this.renderErrors()}</ul>
+            <input
+              className="auth-form-input"
               type='text'
               placeholder="Enter email"
               onChange={this.update('email')}
               value={this.state.email}
             />
-          </div>
           <br/>
-          <button onClick={this.handleSubmit} className="action-button">Get Started</button>
+          <button onClick={this.handleSubmit} className="session-action-button">Get Started</button>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <button onClick={this.handleDemoLogin} className="session-action-button demo-login">Demo Log In</button>
+        </div>
         </form>
-        <br/>
-        <button onClick={this.handleDemoLogin} className="demo-log-in-button">Demo Log In</button>
       </div>
     );
   }
