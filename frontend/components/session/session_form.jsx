@@ -86,26 +86,26 @@ class SessionForm extends React.Component {
   signupFormBonusFields() {
     if (this.props.formType === 'Sign Up') {
       return (
-        <div className="additional-info">
+        <div className="bonus-fields">
+            <label className="session-form-label">First Name</label>
 
-          <label className="session-form-label">First Name</label>
-
-          <div className="session-form-input-box">
-            <input
-              type='text'
-              onChange={this.update('first_name')}
-              value={this.state.first_name}
-              className="session-form-input"/>
-          </div>
-
-          <label className="session-form-label">Last Name</label>
-          <div className="session-form-input-box">
-            <input
-              type='text'
-              onChange={this.update('last_name')}
-              value={this.state.last_name}
-              className="session-form-input"/>
-          </div>
+            <div className="session-form-input-box bonus-field">
+              <input
+                type='text'
+                onChange={this.update('first_name')}
+                value={this.state.first_name}
+                className="session-form-input "/>
+            </div>
+            <br/>
+            <label className="session-form-label">Last Name</label>
+            <div className="session-form-input-box bonus-field">
+              <input
+                type='text'
+                onChange={this.update('last_name')}
+                value={this.state.last_name}
+                className="session-form-input "/>
+            </div>
+            <br/>
         </div>
       );
     }
@@ -114,6 +114,9 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
+        <br />
+        <br />
+        <br />
         <br />
         <br />
         <br />
@@ -140,10 +143,11 @@ class SessionForm extends React.Component {
               onChange={this.update('password')}
               value={this.state.password}
             />
-          {this.renderErrors()}
             <br/>
             <br/>
             <button onClick={this.handleSubmit} className="session-action-button">Log In</button>
+            <br/>
+            {this.renderErrors()}
           </div>
         </form>
       </div>

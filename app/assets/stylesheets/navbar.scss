@@ -44,13 +44,6 @@
   padding: 20px 20px 0px 20px;
 }
 
-.nav-link {
-  font-size: 12px;
-  color: #45494E;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-  // line-height: 19px;
-}
 
 .session-link {
   font-size: 13px;
@@ -59,6 +52,15 @@
   line-height: 19px;
   text-transform: uppercase;
 }
+
+.nav-link {
+  font-size: 12px;
+  color: #45494E;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
 
 .nav-right .nav-link:hover {
   background-color: #EFF2F5;
