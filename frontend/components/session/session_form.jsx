@@ -62,21 +62,22 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Login') {
       return (
         <section className="login-modal-CTA">
-          <div>
-            <i className="fa fa-user fa-3x" aria-hidden="true" color="grey"></i>
+          <div className="login-icon-container">
+            <i className="fa fa-user fa-3x login-icon" aria-hidden="true"></i>
           </div>
-          <h4 className="user-prompt-medium">Welcome back</h4>
-          <h6 className="user-prompt-small">Please enter your password to log in.</h6>
+          <br/>
+          <h3 className="user-prompt-medium">Welcome back</h3>
+          <h4 className="user-prompt-small">Please enter your password to log in.</h4>
         </section>
       );
     } else {
       return (
         <section className="login-modal-CTA">
-          <div>
-            <i className="fa fa-user fa-3x" aria-hidden="true" color="grey"></i>
+          <div className="login-icon-container">
+            <i className="fa fa-user fa-3x login-icon" aria-hidden="true" color="grey"></i>
           </div>
-          <h4 className="user-prompt-medium">Welcome</h4>
-          <h6 className="user-prompt-small">Create an account.</h6>
+          <h3 className="user-prompt-medium">Welcome</h3>
+          <h5 className="user-prompt-small">Create an account.</h5>
         </section>
       );
     }
@@ -87,7 +88,7 @@ class SessionForm extends React.Component {
       return (
         <div className="additional-info">
 
-          <label>First Name</label>
+          <label className="session-form-label">First Name</label>
 
           <div className="session-form-input-box">
             <input
@@ -97,7 +98,7 @@ class SessionForm extends React.Component {
               className="session-form-input"/>
           </div>
 
-          <label>Last Name</label>
+          <label className="session-form-label">Last Name</label>
           <div className="session-form-input-box">
             <input
               type='text'
@@ -113,29 +114,37 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         {this.renderHeader()}
-        <label className="session-form-label">Email address</label>
-        <span className="email">
-          {this.state.email}
-          <Link to="/signin">
-            <i className="fa fa-pencil" aria-hidden="true" />
-          </Link>
-        </span>
         <form onSubmit={this.handleSubmit}>
-            {this.signupFormBonusFields()}
-            <label className="session-form-label">Password</label>
-            <div className="session-form-input-box">
-              <input
-                className="session-form-input"
-                type='password'
-                onChange={this.update('password')}
-                value={this.state.password}
-              />
-            {this.renderErrors()}
-            </div>
+          <label className="session-form-label">
+            Email address
+            <br/>
+              {this.state.email}
+              <Link to="/signin">
+                <i className="fa fa-pencil edit-icon" aria-hidden="true" />
+              </Link>
+            </label>
+          <br/>
+          <br/>
+          {this.signupFormBonusFields()}
+          <label className="session-form-label">Password</label>
+          <div className="session-form-input-box">
+            <input
+              className="session-form-input"
+              type='password'
+              onChange={this.update('password')}
+              value={this.state.password}
+            />
+          {this.renderErrors()}
             <br/>
             <br/>
             <button onClick={this.handleSubmit} className="session-action-button">Log In</button>
+          </div>
         </form>
       </div>
     );

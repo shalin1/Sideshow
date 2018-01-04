@@ -53,13 +53,23 @@ class SignInForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <section className="login-modal-CTA">
           <div className="login-icon-container">
-            <i className="fa fa-bullhorn fa-3x login-icon" aria-hidden="true" />
+            <i className="fa fa-bullhorn fa-2x login-icon" aria-hidden="true" />
           </div>
+          <br/>
           <h3 className="user-prompt-medium">Let's get started</h3>
           <h4 className="user-prompt-small">Enter your email to sign up or log in.</h4>
         </section>
+        <br/>
         <form onSubmit={this.handleSubmit}>
           <label className="session-form-label">Email address</label>
           <div className="session-form-input-box">

@@ -29,22 +29,35 @@
   }
 }
 
+.avatar-icon {
+  padding-right: 5px;
+}
 .nav-right {
   display: flex;
-  justify-content: flex-end;
+}
+
+.nav-link-container {
+  background: white;
+  display: block;
+  border-left: 1px solid #EFF2F5;
+  letter-spacing: 0.5px;
+  padding: 20px 20px 0px 20px;
 }
 
 .nav-link {
-  background: white;
-  padding: 20px 20px 0px 20px;
-  display: block;
-  text-transform: uppercase;
-  border-left: 1px solid #EFF2F5;
+  font-size: 12px;
+  color: #45494E;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  // line-height: 19px;
+}
+
+.session-link {
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.5px;
   color: #0278b8;
   line-height: 19px;
+  text-transform: uppercase;
 }
 
 .nav-right .nav-link:hover {
