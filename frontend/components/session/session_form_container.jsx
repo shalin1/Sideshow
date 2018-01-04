@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, signup, logout } from '../../actions/session_actions';
+import { login, signup, logout, showModal, hideModal } from '../../actions/session_actions';
 import SessionFormModal from './session_form_modal';
 import { resetErrors } from '../../actions/error_actions';
 
@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.errors.session,
   validEmail: state.ui.validEmail,
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  sessionModalActive: state.ui.sessionModalActive
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -26,7 +27,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     action,
     formType,
-    resetErrors: () => dispatch(resetErrors())
+    resetErrors: () => dispatch(resetErrors()),
+    showModal: () => dispatch(showModal()),
+    hideModal: () => dispatch(hideModal())
   };
 };
 

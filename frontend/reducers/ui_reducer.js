@@ -1,4 +1,4 @@
-import { RECEIVE_VALID_EMAIL } from '../actions/session_actions';
+import { RECEIVE_VALID_EMAIL, SHOW_MODAL } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
 const uiReducer = (state = {
@@ -10,6 +10,8 @@ const uiReducer = (state = {
     case RECEIVE_VALID_EMAIL:
       const validEmail = action.validEmail;
       return merge({}, {validEmail});
+    case SHOW_MODAL:
+      return merge({}, state, {sessionModalActive: true});
     default:
       return state;
   }

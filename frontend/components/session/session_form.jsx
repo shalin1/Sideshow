@@ -114,14 +114,6 @@ class SessionForm extends React.Component {
   render() {
     return(
       <div className="session-form-container">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
         {this.renderHeader()}
         <form onSubmit={this.handleSubmit}>
           <label className="session-form-label">

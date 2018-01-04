@@ -8,6 +8,7 @@ import SigninFormContainer from './signin_form_container';
 class sessionModal extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = { isOpen: true };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -31,7 +32,7 @@ class sessionModal extends React.Component {
         action={this.props.action}
         errors={this.props.errors}
         formType={this.props.formType}
-        clearErrors={this.props.clearErrors}
+        resetErrors={this.props.resetErrors}
         ui={this.props.ui}
         currentUser={this.props.currentUser}
       />;
@@ -50,7 +51,7 @@ class sessionModal extends React.Component {
       form = <SigninFormContainer
         ui={this.props.ui}
         errors={this.props.errors}
-        clearErrors={this.props.clearErrors}
+        resetErrors={this.props.resetErrors}
         demoLogin={this.props.demoLogin}
         currentUser={this.props.currentUser}
       />;
@@ -59,16 +60,8 @@ class sessionModal extends React.Component {
     return (
       <div>
         <Modal
-          className={{
-            base: 'session',
-            afterOpen: 'session_after_open',
-            beforeClose: 'session_before-close'
-          }}
-          overlayClassName={{
-            base: 'sessionOverlay',
-            afterOpen: 'sessionOverlay_after-open',
-            beforeClose: 'sessionOverlay_before-close'
-          }}
+          className="Modal"
+          overlayClassName="Overlay"
           isOpen={this.state.isOpen}
           onRequestClose={this.closeModal}
           afterOpen={this.afterOpen}

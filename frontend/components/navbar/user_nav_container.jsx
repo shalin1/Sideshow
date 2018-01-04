@@ -8,7 +8,6 @@ const mapStateToProps = ({ session }) => ({
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  toggleModal: () => dispatch(toggleModal())
 })
 
 export default connect(
