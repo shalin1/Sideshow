@@ -1,3 +1,20 @@
 // Place all the styles related to the api/events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.leading {
+  display: flex;
+  align-items: center;
+  height: 240px;
+  margin-bottom: 30px;
+  padding: 80px;
+  background: url('https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fbg.jpg?1509627430438') center #333 no-repeat;
+  background-size: cover;
+}
+
+.ui-text-subhead {
+  font-size: 20px;
+  line-height: 25px;
+  font-family: Roboto
+
+}

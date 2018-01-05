@@ -15,7 +15,7 @@ class EventIndexItem extends React.Component {
   render() {
     const { index_image_url, ticket_price, title, event_start, venue_name } = this.props.event;
     return (
-      <div
+      <article
         className="event-index-item"
         onClick={this.handleClick}
       >
@@ -39,7 +39,7 @@ class EventIndexItem extends React.Component {
             {venue_name}
           </span>
         </section>
-      </div>
+      </article>
     );
   }
 }
