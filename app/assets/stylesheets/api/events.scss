@@ -2,11 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.home {
+  font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
+}
+
 .leading {
   display: flex;
   align-items: center;
-  height: 240px;
-  margin-bottom: 30px;
+  height: 310px;
+  margin-bottom: 90px;
   padding: 80px;
   background: url('https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fbg.jpg?1509627430438') center #333 no-repeat;
   background-size: cover;
@@ -15,6 +19,42 @@
 .ui-text-subhead {
   font-size: 20px;
   line-height: 25px;
-  font-family: Roboto
+}
 
+.welcome-box {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.87) 0%, white 25%);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+  position: relative;
+  top: 300px;
+  margin-top: -240px;
+  padding: 40px 240px 80px 240px;
+  border-radius: 4px;
+}
+
+.homepage-header {
+  color: #F86820;
+  font-size: 45px;
+  font-weight: 200;
+  line-height: 60px;
+  text-rendering: optimizeLegibility;
+  margin-top: 20px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.event-index {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+article {
+  position: relative;
+}
+
+.event-index-image {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
 }

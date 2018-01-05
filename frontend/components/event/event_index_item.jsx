@@ -16,11 +16,11 @@ class EventIndexItem extends React.Component {
     const { index_image_url, ticket_price, title, event_start, venue_name } = this.props.event;
     return (
       <article
-        className="event-index-item"
+        className="event-index"
         onClick={this.handleClick}
       >
         <section className="event-index-item-image">
-          <div>
+          <div className="event-index-image">
             <img src={index_image_url}/>
           </div>
           <span className="event-index-item-price">

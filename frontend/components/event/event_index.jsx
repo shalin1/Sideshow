@@ -21,10 +21,13 @@ class EventIndex extends React.Component {
     }
 
     return (
-      <div>
-        <section class="leading">
+      <div className="Home">
+        <section className="leading">
+          <div className="welcome-box">
+            <h1 className="homepage-header">Find your next experience</h1>
+          </div>
+          <span className="ui-text-subhead">Events for you in Brooklyn, NY </span>
         </section>
-        <span className="ui-text-subhead">Events for you in Brooklyn, NY </span>
           {content}
       </div>
     );
