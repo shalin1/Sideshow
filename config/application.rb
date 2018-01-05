@@ -14,5 +14,17 @@ module Sideshow
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    config.paperclip_defaults = {
+      :storage => :s3,
+      s3_credentials: {
+        :bucket => ENV['s3_bucket'], #these values safely stored in application.yml thanks to figaro!
+        :access_key_id => ENV['s3_access_key_id'],
+        :secret_access_key => ENV['s3_region'],
+        :s3_region => ENV['s3_region']
+    }
+}
+
+
   end
 end
