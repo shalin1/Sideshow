@@ -2,7 +2,6 @@ import * as APIUtil from '../util/event_api_util';
 
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 
 const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
@@ -27,5 +26,6 @@ export const fetchEvent = id => dispatch => (
 );
 
 export const createEvent = event => dispatch => (
-  APIUtil.createEvent(event).then(event => (dispatch(receiveEvent(event))))
+  APIUtil.createEvent(event).then(event => (
+    dispatch(receiveEvent(event))))
 );
