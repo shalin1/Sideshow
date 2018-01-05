@@ -1,8 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-import EventShowContainer from '../event_show/event_show_container';
-
 class EventIndexItem extends React.Component {
   constructor(props) {
     super(props);

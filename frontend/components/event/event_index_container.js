@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import EventIndex from './event_index';
-import { fetchEvents } from '../..actions/event_actions';
+import { fetchEvents } from '../../actions/event_actions';
 
 const mapStateToProps = state => ({
-  events: state.entities.events
+  events: Object.values(state.entities.events)
 });
 
 const mapDispatchToProps = dispatch => ({

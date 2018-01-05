@@ -1,16 +1,10 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
 
-const EventIndex = ({ events }) => (
-  <div>
-    <h1>Events: </h1>
-    {events.map(event => (
-      <EventIndexItem
-        event={event}
-        key={event.id}
-=      />
-    ))}
-  </div>
-);
-
-export default BenchIndex;
+export default ({ events }) => {
+  return (
+    <div>
+      <h1>Events: </h1>
+    </div>
+  )
+};
