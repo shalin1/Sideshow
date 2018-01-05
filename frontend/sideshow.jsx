@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {signup, login, logout} from './actions/session_actions';
-import {userExists} from './util/session_api_util';
-import Modal from 'react-modal';
+
+// TESTING START
+import { signup, login, logout } from './actions/session_actions';
+import { userExists } from './util/session_api_util';
+import { showEvent, eventIndex, newEvent, editEvent, deleteEvent } from './util/event_api_util';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -24,9 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.userExists = userExists
+  window.eventIndex = eventIndex
+  window.newEvent = newEvent
+  window.editEvent = editEvent
+  window.deleteEvent = deleteEvent
 // TESTING END
 
-  Modal.setAppElement(document.body);
   ReactDOM.render(<Root store={ store } />, root);
 
 });
