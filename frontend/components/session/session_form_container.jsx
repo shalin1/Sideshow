@@ -6,7 +6,7 @@ import { resetErrors } from '../../actions/error_actions';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   errors: state.errors.session,
-  validEmail: state.ui.validEmail,
+  validEmail: state.ui.validEmail.email,
   currentUser: state.session.currentUser,
   sessionModalActive: state.ui.sessionModalActive
 });
