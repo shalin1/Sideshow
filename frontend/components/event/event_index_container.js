@@ -4,7 +4,7 @@ import EventIndex from './event_index';
 import { fetchEvents } from '../../actions/event_actions';
 
 const mapStateToProps = state => ({
-  events: Object.values(state.entities.events)
+  events: Object.keys(state.events).map(id => state.events[id])
 });
 
 const mapDispatchToProps = dispatch => ({

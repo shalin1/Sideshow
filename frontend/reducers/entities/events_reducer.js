@@ -1,20 +1,19 @@
-import merge from 'lodash/merge';
 import { RECEIVE_EVENTS, RECEIVE_EVENT } from '../../actions/event_actions';
+import merge from 'lodash/merge';
 
-const defaultState =
-Object.freeze({events: null});
+const defaultState = Object.freeze({events: null});
 
-const sessionReducer = (state = defaultState, action) => {
-  Object.freeze(state);
+const eventsReducer = (oldState = defaultState, action) => {
+  Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_EVENTS:
-      return {events: action.events};
+      return merge({},action.events);
     case RECEIVE_EVENT:
       const newEvent = {[action.event.id]:action.event} ;
-      return merge( {}, state, newEvent );
+      return merge( {}, oldState, newEvent );
     default:
-      return state;
+      return oldState;
   }
 };
 
-export default sessionReducer;
+export default eventsReducer;

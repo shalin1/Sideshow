@@ -1,7 +1,7 @@
 import { RECEIVE_VALID_EMAIL, SHOW_MODAL } from '../actions/session_actions';
 import merge from 'lodash/merge';
 
-const uiReducer = (state = {
+export default (state = {
   validEmail: {email: "", exist: false},
   sessionModalActive: false
   }, action) => {
@@ -16,5 +16,3 @@ const uiReducer = (state = {
       return state;
   }
 };
-
-export default uiReducer;
