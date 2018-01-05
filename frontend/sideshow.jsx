@@ -6,7 +6,6 @@ import Root from './components/root';
 // TESTING START
 import { signup, login, logout } from './actions/session_actions';
 import { userExists } from './util/session_api_util';
-import { showEvent, eventIndex, newEvent, editEvent, deleteEvent } from './util/event_api_util';
 import { fetchEvents, fetchEvent } from './actions/event_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,10 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login = login;
   window.logout = logout;
   window.userExists = userExists;
-  window.eventIndex = eventIndex;
-  window.newEvent = newEvent;
-  window.editEvent = editEvent;
-  window.deleteEvent = deleteEvent;
   window.fetchEvents = fetchEvents;
   window.fetchEvent = fetchEvent;
 // TESTING END

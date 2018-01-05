@@ -8,8 +8,8 @@ import SigninFormContainer from './signin_form_container';
 class sessionModal extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-    this.state = { isOpen: true };
+    this.state = {
+      isOpen: true };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
