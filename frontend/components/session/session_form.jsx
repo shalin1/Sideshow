@@ -5,13 +5,13 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     let email;
-    if (Boolean(props.validEmail.email)) {
-      email = props.validEmail.email;
+    if (Boolean(props.validEmail)) {
+      email = props.validEmail;
     } else {
       email = "";
     }
     this.state = {
-      email: props.validEmail.email,
+      email: email,
       password: "",
       first_name: "",
       last_name: "",
