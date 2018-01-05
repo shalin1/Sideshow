@@ -5,9 +5,9 @@ import { resetErrors } from '../../actions/error_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
+  currentUser: state.session.currentUser,
   errors: state.errors.session,
   validEmail: state.ui.validEmail.email,
-  currentUser: state.session.currentUser,
   sessionModalActive: state.ui.sessionModalActive
 });
 
@@ -21,8 +21,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     action = user => dispatch(signup(user));
     formType = 'Sign Up';
   } else {
-    formType = 'Sign In';
     action = null;
+    formType = 'Sign In';
   }
   return {
     action,
