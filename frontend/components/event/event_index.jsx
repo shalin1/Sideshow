@@ -22,17 +22,13 @@ class EventIndex extends React.Component {
 
     return (
       <div className="Home">
-        <section className="hero-carousel">
-          //carousel goes here later
-        </section>
-        <section className="event-index">
-          <div></div>
-        </section>
-            <h1 className="homepage-header">Find your next experience</h1>
-            <div className="welcome-box">
-            </div>
-        <div className="ui-text-subhead">Events for you in Brooklyn, NY </div>
-          {content}
+        <div className="welcome-box">
+          <h1 className="homepage-header">Find your next experience</h1>
+        </div>
+        <div className="ui-text-subhead">
+          Events for you in Brooklyn, NY
+        </div>
+        {content}
       </div>
     );
   }

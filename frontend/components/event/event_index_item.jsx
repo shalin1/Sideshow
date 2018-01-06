@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class EventIndexItem extends React.Component {
   constructor(props) {
@@ -13,22 +13,29 @@ class EventIndexItem extends React.Component {
   }
 
   render() {
-    const { index_image_url, ticket_price, title, event_start, venue_name } = this.props.event;
+    const {
+      index_image_url,
+      ticket_price,
+      title,
+      event_start,
+      venue_name
+    } = this.props.event;
+
     return (
-      <article
-        className="event-index"
+      <div
+        className="event-index-item"
         onClick={this.handleClick}
       >
-        <section className="event-index-item-image">
-          <div className="event-index-image">
+        <section className="event-index-item-header">
+          <div className="event-index-item-image">
             <img src={index_image_url}/>
           </div>
-          <span className="event-index-item-price">
+          <span className="event-index-item-label">
             {ticket_price}
           </span>
         </section>
 
-        <section className="event-index-item-info">
+        <section className="event-index-item-body">
           <span className="event-index-item-date">
             {event_start}
           </span>
@@ -39,7 +46,13 @@ class EventIndexItem extends React.Component {
             {venue_name}
           </span>
         </section>
-      </article>
+
+        <section className="event-index-item-footer">
+          <div className="event-index-item-categories">
+            #Underground //categories
+          </div>
+        </section>
+      </div>
     );
   }
 }
