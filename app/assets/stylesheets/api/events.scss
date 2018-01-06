@@ -2,21 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home {
-  font-family: Benton Sans,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
-}
-
-.hero-carousel {
+.home-hero-image {
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 60px;
   width: 100%;
   height: 36vw;
   transition: height .5s ease-in;
   max-height: 500px;
   margin-bottom: 90px;
   position: relative;
-  background: url('https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fbg.jpg?1509627430438') center #333 no-repeat;
-  background-size: cover;
   z-index: -10;
 }
 
@@ -48,13 +44,14 @@
   padding: 40px;
 }
 
-.event-index {
+.cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 30px;
 }
 
 .event-index-item {
+  position: relative;
   border: 4px solid black;
 }
 

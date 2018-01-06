@@ -21,14 +21,19 @@ class EventIndex extends React.Component {
     }
 
     return (
-      <div className="Home">
+      <div>
+        <div className="home-hero-image">
+          <img src="https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fbg.jpg?1509627430438" />
+        </div>
         <div className="welcome-box">
           <h1 className="homepage-header">Find your next experience</h1>
         </div>
         <div className="ui-text-subhead">
           Events for you in Brooklyn, NY
         </div>
-        {content}
+        <section className="cards">
+          {content}
+        </section>
       </div>
     );
   }

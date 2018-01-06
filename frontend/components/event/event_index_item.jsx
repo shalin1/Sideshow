@@ -22,7 +22,7 @@ class EventIndexItem extends React.Component {
     } = this.props.event;
 
     return (
-      <div
+      <article
         className="event-index-item"
         onClick={this.handleClick}
       >
@@ -52,7 +52,7 @@ class EventIndexItem extends React.Component {
             #Underground //categories
           </div>
         </section>
-      </div>
+      </article>
     );
   }
 }
