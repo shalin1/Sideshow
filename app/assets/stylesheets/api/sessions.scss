@@ -75,6 +75,9 @@
   color: white;
   padding: 12px;
   margin: 0px auto;
+  &-disabled {
+    background-color: green;
+  }
 }
 
 .Modal {

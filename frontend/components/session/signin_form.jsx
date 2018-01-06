@@ -53,6 +53,9 @@ class SignInForm extends React.Component {
   }
 
   render() {
+    const { email } = this.state;
+    const buttonDisabled = (email.length <= 4 );
+
     return(
       <div className="session-form-container">
         <section className="login-modal-CTA">
@@ -78,8 +81,8 @@ class SignInForm extends React.Component {
             />
           <br/>
           <button
-            onClick={this.handleSubmit}
-            className="session-action-button"
+            disabled={buttonDisabled}
+            className={buttonStyle}
           >
             Get Started
           </button>
