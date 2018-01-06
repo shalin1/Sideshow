@@ -1,6 +1,7 @@
 
 .nav-container {
   position: absolute;
+  top: 0px;
   display: flex;
   flex: 0 0 auto;
   justify-content: space-between;
@@ -27,8 +28,8 @@
     color: #f6682f;
     font-weight: 400;
     background: -webkit-linear-gradient(#F86820, #fd348b);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
   }
 }
@@ -70,6 +71,17 @@
   background-color: #EFF2F5;
 }
 
+.footer-container {
+  background-color: rgb(40, 44, 53);
+  border-top: 4px solid rgb(102, 106, 115);
+  padding-left: 40px;
+}
+
+.footer-icon {
+  color: #d8d8d8;
+  padding: 20px 30px;
+
+}
 //
 //   display: inline-block;
 //   font-size: 15px;

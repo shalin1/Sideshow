@@ -27,7 +27,7 @@ class EventIndex extends React.Component {
         <section className="home-content">
 
           <article className="welcome-box">
-            <h1 className="homepage-header">Find your next experience</h1>
+            <h1 className="homepage-header-text">Find your next experience</h1>
           </article>
 
           <article className="ui-text-subhead">
