@@ -27,14 +27,14 @@ class EventIndex extends React.Component {
         <section className="home-content">
 
           <article className="welcome-box">
-            <h1 className="homepage-header-text">Find your next experience</h1>
+            <h1 className="welcome-text">Find your next experience</h1>
           </article>
 
-          <article className="ui-text-subhead">
-            <h3 className="text-subhead">Events for you in Brooklyn, NY</h3>
+          <article className="ui-text-box">
+            <h3 className="ui-text">Events for you in Brooklyn, NY</h3>
           </article>
 
-          <section className="cards">
+          <section className="event-index-grid">
             {content}
           </section>
 

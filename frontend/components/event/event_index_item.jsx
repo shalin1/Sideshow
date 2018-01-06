@@ -27,12 +27,10 @@ class EventIndexItem extends React.Component {
         onClick={this.handleClick}
       >
         <section className="event-index-item-header">
-          <div className="event-index-item-image">
+            <span className="event-index-item-label">
+              {ticket_price}
+            </span>
             <img src={index_image_url}/>
-          </div>
-          <span className="event-index-item-label">
-            {ticket_price}
-          </span>
         </section>
 
         <section className="event-index-item-body">

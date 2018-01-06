@@ -28,44 +28,37 @@
 }
 
 .home-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
   position: relative;
   top: -140px;
+  margin: 15px;
 }
 
 .welcome-box {
   background-image: linear-gradient(rgba(255, 255, 255, 0.87) 0%, white 25%);
-  margin: 10px 40px;
   padding: 20px;
-  width: 85%;
-  margin: 0px auto;
-  max-width: 700px;
+  max-width: 1050px;
   position: relative;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
-  width: 20ev;
-  max-width: 1050px;
   height: 150px;
   border-radius: 4px;
   z-index: 20;
 }
 
-
-.ui-text-subhead {
-  font-size: 20px;
-  line-height: 25px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  margin: 20px 0 0 0;
+@media only screen and (max-width :550px ) {
+  .welcome-box {
+    opacity: 0;
+    margin-top: -60px;
+  }
 }
 
-
-.homepage-header-text {
+.welcome-text {
   color: #F86820;
   text-align: center;
   margin: 20px;
   font-family: "Benton Sans",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
-  font-size: 45px;
+  font-size: calc(26px + 3vw);
   font-weight: 200;
   line-height: 60px;
   text-rendering: optimizeLegibility;
@@ -75,16 +68,26 @@
   -webkit-text-fill-color: transparent;
 }
 
-.text-subhead {
+.ui-text-box {
+  font-size: 20px;
+  line-height: 25px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
+.ui-text {
   font-family: "Benton Sans",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
   display: inline-block;
+  text-align: center;
   vertical-align: middle;
   font-size: 25px;
   line-height: 30px;
   font-weight: 200;
 }
 
-.cards {
+.event-index-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 30px;
@@ -92,15 +95,21 @@
 
 .event-index-item {
   position: relative;
-}
+  &-header {
+    height: 8mv;
+    width: 16mv;
+    object-fit: cover;
+    transition: background-color .5s;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  &-body {
+    border: 2px solid red;
+  }
+  &-footer {
+    border: 2px solid green;
+  }
 
-.event-index-item-image {
-  height: 8mv;
-  width: 16mv;
-  object-fit: cover;
-  transition: background-color .5s;
-  overflow: hidden;
-  text-align: center;
-  width: 100%;
-  height: 100%;
 }
