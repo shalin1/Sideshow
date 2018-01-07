@@ -20,17 +20,19 @@ class EventIndexItem extends React.Component {
       event_start,
       venue_name
     } = this.props.event;
-
+    const eventImage = {
+      backgroundImage: 'url(' + index_image_url + ')'
+    };
     return (
       <article
         className="event-index-item"
         onClick={this.handleClick}
       >
-        <section className="event-index-item-header">
-            <span className="event-index-item-label">
-              {ticket_price}
-            </span>
-            <img src={index_image_url}/>
+        <section
+          className="event-index-item-header"
+          style={eventImage}
+        >
+            <div className="event-index-item-price">${ticket_price}</div>
         </section>
 
         <section className="event-index-item-body">
@@ -46,8 +48,11 @@ class EventIndexItem extends React.Component {
         </section>
 
         <section className="event-index-item-footer">
-          <div className="event-index-item-categories">
-            #Underground //categories
+          <span className="event-index-item-categories">
+            #Underground #Party
+          </span>
+          <div className="event-index-item-bookmark">
+            <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
           </div>
         </section>
       </article>

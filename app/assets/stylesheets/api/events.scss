@@ -2,80 +2,146 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home-flex-box {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 0px;
-}
-
-.home-hero-image {
-  display: block;
-  float: center;
-  margin-top: 60px;
-  width: 100%;
-  height: 30vw;
-  transition: height .03s;
-  max-height: 350px;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 40px;
-  background-image: url("https://s3.amazonaws.com/sideshow-development/concert.jpg");
-  background-size: cover;
-  z-index: 10;
-}
-
-.home-content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: -140px;
-  margin: 15px;
-}
-
-.welcome-box {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.87) 0%, white 25%);
-  padding: 20px;
-  max-width: 1050px;
-  position: relative;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
-  height: 150px;
-  border-radius: 4px;
-  z-index: 20;
-}
-
-@media only screen and (max-width :550px ) {
-  .welcome-box {
-    opacity: 0;
-    margin-top: -60px;
+.home{
+  &-hero-image {
+    display: block;
+    margin-top: 60px;
+    width: 100%;
+    height: 30vw;
+    transition: height .05s;
+    max-height: 350px;
+    padding: 40px;
+    background-image: url("https://s3.amazonaws.com/sideshow-development/concert.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
+  }
+  &-content {
+    float: center;
+    width: 100%;
+    max-width: 1079px;
+    box-sizing: border-box;
+    margin: -140px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-.welcome-text {
-  color: #F86820;
-  text-align: center;
-  margin: 20px;
-  font-family: "Benton Sans",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
-  font-size: calc(26px + 3vw);
-  font-weight: 200;
-  line-height: 60px;
-  text-rendering: optimizeLegibility;
-  display: block;
-  background: -webkit-linear-gradient(#F86820, #fd348b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.event-index {
+  &-search-box {
+    width: 90%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.87) 0%, white 25%);
+    height: 180px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.25);
+    border-radius: 6px;
+    z-index: 20;
+  }
+  @media only screen and (max-width :550px ) {
+    &-search-box {
+      opacity: 0;
+      margin-top: -60px;
+    }
+  }
+  &-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  }
+  &-intro {
+    margin-top: 20px;
+    padding: 15px
+  }
+  &-item {
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    padding: 15px;
+    &-header {
+      width: 100%;
+      padding-top: 50%;
+      object-fit: cover;
+      overflow: hidden;
+      text-align: center;
+      background: -webkit-linear-gradient(#F86820, #fd348b);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+    }
+    &-price {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-weight: 200;
+      color: #282C35;
+      background: white;
+      opacity: 0.92;
+      padding: 2px 10px;
+      font-family: sans-serif;
+      font-size: 12px;
+    }
+    &-body {
+      height: 96px;
+      background-color: white;
+    }
+    &-footer {
+      background-color: white;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 42px;
+      border-top: 1px solid rgb(239, 242, 245);
+    }
+    &-categories {
+      font-size: 12px;
+      padding: 0 0 0 20px;
+    }
+    &-bookmark {
+      padding: 0 10px;
+      border-left: 1px solid rgb(239, 242, 245);
+    }
+  }
 }
 
-.ui-text-box {
-  font-size: 20px;
-  line-height: 25px;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  margin: 20px 0 0 0;
+
+
+
+.text{
+  &-header {
+    &-search-box {
+      color: #F86820;
+      text-align: center;
+      margin: 40px;
+      font-family: "Lato", sans-serif;
+      font-size: calc(16px + 2.5vw);
+      font-weight: 100;
+      line-height: 60px;
+      text-rendering: optimizeLegibility;
+      display: block;
+      background: -webkit-linear-gradient(#F86820, #fd348b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &-event-index {
+    &-intro{
+      font-size: 25px;
+      line-height: 30px;
+      font-weight: 200;
+      padding: 10px 15px;
+      display: flex;
+      margin: 20px 0 0 0;
+    }
+  }
+  &-body{
+
+  }
+  &-box {
+  }
 }
+
 
 .ui-text {
   font-family: "Benton Sans",-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,Helvetica,Tahoma,Arial,sans-serif;
@@ -85,31 +151,4 @@
   font-size: 25px;
   line-height: 30px;
   font-weight: 200;
-}
-
-.event-index-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 30px;
-}
-
-.event-index-item {
-  position: relative;
-  &-header {
-    height: 8mv;
-    width: 16mv;
-    object-fit: cover;
-    transition: background-color .5s;
-    overflow: hidden;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-  }
-  &-body {
-    border: 2px solid red;
-  }
-  &-footer {
-    border: 2px solid green;
-  }
-
 }

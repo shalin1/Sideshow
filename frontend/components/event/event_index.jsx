@@ -21,26 +21,21 @@ class EventIndex extends React.Component {
     }
 
     return (
-      <section className="home-flex-box">
-        <div className="home-hero-image"></div>
-
+      <section>
+        <div className="home-hero-image">
+        </div>
         <section className="home-content">
-
-          <article className="welcome-box">
-            <h1 className="welcome-text">Find your next experience</h1>
+          <article className="event-index-search-box">
+            <h1 className="text-header-search-box">Find your next experience</h1>
           </article>
-
-          <article className="ui-text-box">
-            <h3 className="ui-text">Events for you in Brooklyn, NY</h3>
+          <article className="event-index-intro">
+            <h3 className="text-event-index-intro">Events for you in Brooklyn, NY</h3>
           </article>
-
           <section className="event-index-grid">
             {content}
           </section>
-
         </section>
-
-    </section>
+      </section>
     );
   }
 }
