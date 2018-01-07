@@ -82,7 +82,7 @@ class SignInForm extends React.Component {
           <br/>
           <button
             disabled={buttonDisabled}
-            className={buttonStyle}
+            className="session-action-button demo-login"
           >
             Get Started
           </button>
@@ -90,7 +90,12 @@ class SignInForm extends React.Component {
           <br/>
           <br/>
           <br/>
-          <button onClick={this.handleDemoLogin} className="session-action-button demo-login">Demo Log In</button>
+          <button
+            onClick={this.handleDemoLogin}
+            className="session-action-button demo-login"
+          >
+            Demo Log In
+          </button>
         </div>
         </form>
       </div>
