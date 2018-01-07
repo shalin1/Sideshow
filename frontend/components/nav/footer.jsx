@@ -12,8 +12,6 @@ export default ({currentUser, logout}) => {
         <Link to='/' className="nav-link">
           <i className="fa fa-linkedin-square fa-3x footer-icon" aria-hidden="true"></i>
         </Link>
-
-
       </nav>
     </footer>
   );

@@ -1,53 +1,63 @@
-
-.nav-container {
-  position: absolute;
-  top: 0px;
-  display: flex;
-  flex: 0 0 auto;
-  justify-content: space-between;
-  margin: 0 auto;
-  width: 100%;
-  height: 60px;
-  line-height: 1.2em;
-  box-shadow: none;
-  -webkit-appearance: none;
-  border-bottom: 1px solid #F5F5F5;
-  background-color: white;
-  font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  text-transform: uppercase;
-}
-
-.nav-left {
-  border-right: 1px solid #EFF2F5;
-  .logo {
-    text-transform: capitalize;
-    font-family: 'Ewert';
-    font-size: 26px;
-    height: 26px;
+.nav {
+  &-container {
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: space-between;
+    margin: 0 auto;
     width: 100%;
-    color: #f6682f;
-    font-weight: 400;
-    background: -webkit-linear-gradient(#F86820, #fd348b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    height: 60px;
+    line-height: 1.2em;
+    box-shadow: none;
+    -webkit-appearance: none;
+    border-bottom: 1px solid #F5F5F5;
+    background-color: white;
+    font-family: "Benton Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    text-transform: uppercase;
+  }
+  &-left {
+    border-right: 1px solid #EFF2F5;
+    .logo {
+      text-transform: capitalize;
+      font-family: 'Ewert';
+      font-size: 26px;
+      height: 26px;
+      width: 100%;
+      color: #f6682f;
+      font-weight: 400;
+      background: -webkit-linear-gradient(#F86820, #fd348b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+  &-right {
+    display: flex;
+  }
+  &-link-container {
+    background: white;
+    display: block;
+    border-left: 1px solid #EFF2F5;
+    letter-spacing: 0.5px;
+    padding: 20px 20px 0px 20px;
 
   }
+  &-link {
+    font-size: 12px;
+    color: #45494E;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    line-height: 19px;
+  }
+
+
 }
+
 
 .avatar-icon {
   padding-right: 5px;
 }
-.nav-right {
-  display: flex;
-}
 
-.nav-link-container {
-  background: white;
-  display: block;
-  border-left: 1px solid #EFF2F5;
-  letter-spacing: 0.5px;
-  padding: 20px 20px 0px 20px;
-}
 
 
 .session-link {
@@ -58,101 +68,21 @@
   text-transform: uppercase;
 }
 
-.nav-link {
-  font-size: 12px;
-  color: #45494E;
-  letter-spacing: 0.5px;
-  font-weight: 400;
-  line-height: 19px;
-}
-
 
 .nav-right .nav-link:hover {
-  background-color: #EFF2F5;
+  background-color: black;
 }
 
-.footer-container {
-  background-color: rgb(40, 44, 53);
-  border-top: 4px solid rgb(102, 106, 115);
-  padding-left: 40px;
+.footer{
+  &-container {
+    display: none;
+    background-color: rgb(40, 44, 53);
+    border-top: 4px solid rgb(102, 106, 115);
+    padding-left: 40px;
+    bottom: 0px;
+  }
+  &-icon {
+    color: #d8d8d8;
+    padding: 20px 30px;
+  }
 }
-
-.footer-icon {
-  color: #d8d8d8;
-  padding: 20px 30px;
-
-}
-//
-//   display: inline-block;
-//   font-size: 15px;
-//   margin: 0px auto;
-//   font-weight: 400;
-//   line-height: 19px;
-//   vertical-align: top;
-//   color: #45494E;
-//   text-transform: uppercase;
-//   border-left: 1px solid #EFF2F5;
-//   padding: 22px 20px 19px 20px;
-//   letter-spacing: 0.5px;
-//   background-color: white;
-// }
-//
-// .nav-right {
-//   display: flex;
-//   justify-content: flex-end;
-//   font-size: 16px;
-//   color: gray;
-//   font-family:sans-serif;
-//   margin: 10px 20px;
-//   :hover {
-//     background-color: #EFF2F5;
-//   }
-// }
-//
-// .logo {
-//   display: block;
-//   float: left;
-//   margin: 0px 20px;
-//   width: 110px;
-//   height: 60px;
-//   text-decoration: none;
-//   color: #f6682F;
-//   line-height: 1.4;
-// }
-//
-// .logged-in-user .avatar-icon {
-//   top: 19px;
-//   left: 20px;
-//   position: absolute;
-//   color: #666A73;
-// }
-
-// .logged-in-user .avatar-img {
-//   height: 30px;
-//   width: 30px;
-//   max-height: 30px;
-//   max-width: 30px;
-//   border: 3px solid #D2D6DF;
-//   position: absolute;
-//   left: 20px;
-//   top: 13px;
-// }
-
-// .nav-link .ico-arrow-tail-down {
-//   font-size: 12px;
-//   display: inline-block;
-//   left: 3px;
-//   top: 0;
-//   line-height: 15px;
-//   position: relative;
-//   color: #666A73; }
-//
-
-// .nav-left {
-//   display: flex;
-//   font-size: 16px;
-//   color: gray;
-//   font-family:sans-serif;
-//   margin: 0;
-// }
-//

@@ -26,25 +26,28 @@ class EventIndexItem extends React.Component {
     return (
       <article
         className="event-index-item"
-        onClick={this.handleClick}
       >
         <section
           className="event-index-item-header"
           style={eventImage}
+          onClick={this.handleClick}
         >
             <div className="event-index-item-price">${ticket_price}</div>
         </section>
 
-        <section className="event-index-item-body">
+        <section
+          className="event-index-item-body"
+          onClick={this.handleClick}
+        >
           <span className="event-index-item-date">
             {event_start}
           </span>
-          <span className="event-index-item-title">
+          <div className="event-index-item-title">
             {title}
-          </span>
-          <span className="event-index-item-venue">
+          </div>
+          <div className="event-index-item-venue">
             {venue_name}
-          </span>
+          </div>
         </section>
 
         <section className="event-index-item-footer">
