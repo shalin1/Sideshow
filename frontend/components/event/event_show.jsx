@@ -38,7 +38,6 @@ class EventShow extends React.Component {
       return(
         <div
           className="event-show-background"
-          style={eventImage}
         >
           <article className="event-show-container">
 
@@ -52,23 +51,43 @@ class EventShow extends React.Component {
                   {title}
                 </div>
                 <div className="event-show-hero-price">
-                  {ticket_price}
+                  ${ticket_price}
                 </div>
               </figcaption>
             </header>
 
             <section className="event-show-CTA-container">
               <div className="bookmark-button-event-show">
+                <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
               </div>
-              <button className="event-show-CTA-button"
-                onClick={this.handleClick}
-              >
-                Register Now
-              </button>
+              <div>
+                <button className="event-show-CTA-button"
+                  onClick={this.handleClick}
+                  >
+                  Register Now
+                </button>
+              </div>
             </section>
 
             <section className="event-show-body-container">
-
+              <article className="event-show-body-description">
+                  <p>
+                    <h3 className="label-primary">Description</h3>
+                  </p>
+                  <br/>
+                  {description}
+              </article>
+              <aside className="event-show-body-aside">
+                <div className="event-show-body-aside-location">
+                  <p>
+                    <h3 className="label-primary">Location</h3>
+                  </p>
+                  <br/>
+                    {venue_name}
+                    <br/> 
+                    {venue_address}
+                </div>
+              </aside>
             </section>
 
           </article>
