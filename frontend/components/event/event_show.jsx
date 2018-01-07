@@ -2,6 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class EventShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
   componentWillMount() {
     this.props.fetchEvent(this.props.eventId);
   }
@@ -18,6 +23,10 @@ class EventShow extends React.Component {
     );
   }
 
+  handleClick() {
+    console.log("Regitration button clicked");
+  }
+
   render () {
     if (this.props.event !== undefined) {
       const { title, ticket_price, event_start, event_end, description, venue_name,
@@ -31,23 +40,38 @@ class EventShow extends React.Component {
           className="event-show-background"
           style={eventImage}
         >
-          <section className="event-show-container">
-            <section className="event-show-hero">
-              <div className="event-show-hero-image" style={eventImage}></div>
-              <div className="event-show-hero-info-container">
+          <article className="event-show-container">
+
+            <header className="event-show-hero">
+              <figure className="event-show-hero-image" style={eventImage}></figure>
+              <figcaption className="event-show-hero-info-container">
                 <div className="event-show-hero-date">
                   {event_start}
+                </div>
+                <div className="event-show-hero-title">
                   {title}
+                </div>
+                <div className="event-show-hero-price">
                   {ticket_price}
                 </div>
-              </div>
-            </section>
-            <section>
+              </figcaption>
+            </header>
+
+            <section className="event-show-CTA-container">
               <div className="bookmark-button-event-show">
-                
               </div>
+              <button className="event-show-CTA-button"
+                onClick={this.handleClick}
+              >
+                Register Now
+              </button>
             </section>
-          </section>
+
+            <section className="event-show-body-container">
+
+            </section>
+
+          </article>
         </div>
       );
     } else {
