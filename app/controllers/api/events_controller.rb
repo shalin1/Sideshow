@@ -5,7 +5,12 @@ class Api::EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.find_by(id: params[:id])
+    if @event
+      render :show
+    else
+      render json: ['Could not find event'], status: 404
+    end
   end
 
   def create

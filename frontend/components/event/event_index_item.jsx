@@ -14,14 +14,14 @@ class EventIndexItem extends React.Component {
 
   render() {
     const {
-      index_image_url,
+      event_index_image_url,
       ticket_price,
       title,
       event_start,
       venue_name
     } = this.props.event;
     const eventImage = {
-      backgroundImage: 'url(' + index_image_url + ')'
+      backgroundImage: 'url(' + event_index_image_url + ')',
     };
     return (
       <article

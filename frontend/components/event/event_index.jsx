@@ -6,13 +6,12 @@ class EventIndex extends React.Component {
     this.props.fetchEvents();
   }
 
-
   render () {
-    let content;
+    let event_index_items;
     if (!this.props.events) {
-      content = <h1>loading....</h1>;
+      event_index_items = <h1>loading....</h1>;
     } else {
-      content = this.props.events.map( event => (
+      event_index_items = this.props.events.map( event => (
         <EventIndexItem
           event={event}
           key={event.id}
@@ -32,7 +31,7 @@ class EventIndex extends React.Component {
             <h3 className="text-event-index-intro">Events for you in Brooklyn, NY</h3>
           </article>
           <section className="event-index-grid">
-            {content}
+            {event_index_items}
           </section>
         </section>
       </section>

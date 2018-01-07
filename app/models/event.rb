@@ -6,8 +6,8 @@ class Event < ApplicationRecord
   has_attached_file(
     :hero_image,
     styles: {
-      big: "1000x1000",
-      medium: "600x600",
+      big: "1200x1200",
+      medium: "720x720",
       small: "300x300"
     }
   )
