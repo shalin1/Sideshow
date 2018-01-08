@@ -1,3 +1,5 @@
+@import 'api/fonts';
+
 .nav {
   &-container {
     position: absolute;
@@ -18,30 +20,18 @@
     z-index: 100;
   }
   &-left {
-    border-right: 1px solid #EFF2F5;
-    .logo {
-      text-transform: capitalize;
-      font-family: 'Ewert';
-      font-size: 26px;
-      height: 26px;
-      width: 100%;
-      color: #f6682f;
-      font-weight: 400;
-      background: -webkit-linear-gradient(#F86820, #fd348b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+
   }
   &-right {
     display: flex;
   }
   &-link-container {
+    border-right: 1px solid #EFF2F5;
     background: white;
     display: block;
     border-left: 1px solid #EFF2F5;
     letter-spacing: 0.5px;
     padding: 20px 20px 0px 20px;
-
   }
   &-link {
     font-size: 12px;
@@ -87,3 +77,5 @@
     padding: 20px 30px;
   }
 }
+
+.logo { @include font-logo(); }

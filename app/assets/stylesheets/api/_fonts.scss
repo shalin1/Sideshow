@@ -1,0 +1,22 @@
+
+
+@mixin font-logo() {
+  text-transform: capitalize;
+  font-family: $decorator-font-stack;
+  font-size: 26px;
+  height: 26px;
+  width: 100%;
+  color: $eventbrite;
+  font-weight: 400;
+  background: $pornj-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+$body-font-stack:  'Open-Sans', 'Raleway', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+$title-font-stack:  'Raleway', 'Open-Sans', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+$decorator-font-stack:  'Ewert', 'Raleway', 'Open-Sans',  Helvetica, "Roboto", Arial, sans-serif;
+
+$pornj-gradient: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
+
+$eventbrite: #f6682f
