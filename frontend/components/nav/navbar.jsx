@@ -5,25 +5,23 @@ import UserNavContainer from './user_nav_container'
 export default ({currentUser, logout}) => {
   return (
     <header className="nav-container">
-      <nav className="nav-left ">
-        <div className="nav-link-container">
-          <Link to='/'>
-            <h3 className="logo">
-              Sideshow
-            </h3>
-          </Link>
-        </div>
-      </nav>
+      <Link to='/'>
+        <span className="nav-link font-nav-logo">
+            Sideshow
+        </span>
+      </Link>
       <nav className="nav-right">
-        <div className="nav-link-container">
-          <Link to="events/new" className="font-link-emphasis">
-            Create Event
-          </Link>
-        </div>
+
         <UserNavContainer
           currentUser={currentUser}
           logout={logout}
         />
+
+      <Link to="events/new">
+        <div className="font-nav-link-emphasis nav-link">
+            Create Event
+        </div>
+      </Link>
 
       </nav>
     </header>

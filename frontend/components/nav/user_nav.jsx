@@ -4,20 +4,24 @@ import ReactModal from 'react-modal';
 
 const LoggedInUser = (currentUser, logout) => (
   <div className="nav-right">
-    <span className="nav-link-container">
-      <i className="fa fa-user avatar-icon nav-link" aria-hidden="true" />
-      <span className="nav-link">{currentUser.first_name}</span>
-    </span>
-    <span className="nav-link-container">
-      <button onClick={logout} className='session-link'>Sign Out</button>
-    </span>
+    <div className="nav-link">
+      <i className="fa fa-user avatar-icon" aria-hidden="true" />
+      <span className="font-nav-link">{currentUser.first_name}</span>
+    </div>
+    <button onClick={logout}>
+      <div className="nav-link font-nav-link">
+      Sign Out
+      </div>
+    </button>
   </div>
 );
 
 const SignInUser = () => (
-  <span className="nav-link-container">
-    <Link className="session-link" to="/signin">Sign In</Link>
-  </span>
+  <Link to="/signin">
+    <div className="nav-link font-nav-link">
+      Sign In
+    </div>
+  </Link>
 );
 
 const UserNav = ({ currentUser, logout }) => (

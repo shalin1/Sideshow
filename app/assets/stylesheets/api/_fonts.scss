@@ -1,13 +1,40 @@
-@mixin font-link-emphasis() {
-  font-size: 13px;
-  font-weight: 600;
-  color: $link-color;
-  line-height: 19px;
+@mixin font-nav-link() {
+  color: $darker-grey;
+  font-family: $skinny-font-stack;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+
   text-transform: uppercase;
+  transition: color .4s ease-out
 }
 
+@mixin font-nav-link-emphasis() {
+  font-family: $title-font-stack;
+  font-size: 12px;
+  font-weight: 500;
+  color: $link-color;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  transition: color .4s ease-out
+}
 
-@mixin font-logo() {
+@mixin font-header-search-box() {
+  text-align: center;
+  margin: 40px;
+  font-family: $skinny-font-stack;
+  font-size: calc(18px + 2vw);
+  font-weight: 100;
+  line-height: 60px;
+  text-rendering: optimizeLegibility;
+  display: block;
+  color: $eventbrite;
+  background: $pornj-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin font-nav-logo() {
   text-transform: capitalize;
   font-family: $decorator-font-stack;
   font-size: 26px;
@@ -20,11 +47,17 @@
   -webkit-text-fill-color: transparent;
 }
 
+
 $body-font-stack:  'Open-Sans', 'Raleway', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
-$title-font-stack:  'Raleway', 'Open-Sans', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
+$title-font-stack:  'Roboto', 'Raleway' 'Open-Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$skinny-font-stack: 'Raleway', 'Open-Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $decorator-font-stack:  'Ewert', 'Raleway', 'Open-Sans',  Helvetica, "Roboto", Arial, sans-serif;
 
 $pornj-gradient: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
+$pornj-gradient-reversed: radial-gradient(farthest-corner at 80% 100%, #f86044 0,#fd348b 100%);
 
 $eventbrite: #f6682f;
 $link-color: #0278b8;
+$link-hover: #013653;
+$lightest-grey: #EFF2F5;
+$darker-grey: #45494E;

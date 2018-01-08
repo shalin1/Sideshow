@@ -1,6 +1,7 @@
 // Place all the styles related to the api/events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'fonts';
 
 .home{
   &-hero-image {
@@ -253,21 +254,10 @@
 
 
 
-.text{
+.font{
   &-header {
     &-search-box {
-      color: #F86820;
-      text-align: center;
-      margin: 40px;
-      font-family: "Lato", sans-serif;
-      font-size: calc(16px + 2.5vw);
-      font-weight: 100;
-      line-height: 60px;
-      text-rendering: optimizeLegibility;
-      display: block;
-      background: -webkit-linear-gradient(#F86820, #fd348b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      @include font-header-search-box
     }
   }
   &-event-index {
