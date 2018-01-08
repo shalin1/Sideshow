@@ -21,7 +21,7 @@
   font-family: $skinny-font-stack;
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   transition: color .4s ease-out
 }
@@ -58,10 +58,11 @@
   font-family: $decorator-font-stack;
   font-size: 26px;
   height: 26px;
-  width: 100%;
   color: $eventbrite;
   font-weight: 400;
   background: $pornj-gradient;
+  border-right: 1px solid #EFF2F5;
+  padding: 20px 20px 15px 20px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -82,3 +83,4 @@ $lightest-grey: #EFF2F5;
 $middle-grey: #666A73;
 $darker-grey: #45494E;
 $near-black: #282C35;
+$off-white: #F8F8FA

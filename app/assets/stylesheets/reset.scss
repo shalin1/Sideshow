@@ -1,6 +1,6 @@
 html, body, header, nav, h1, a,
 ul, li, strong, main, i,
-section, img, div, h2, h3, h4, h5, p, form,
+section, img, h2, h3, h4, h5, p, form,
 fieldset, label, textarea, figure,
 span, article, footer, button, time, small {
   margin: 0;
@@ -13,7 +13,7 @@ span, article, footer, button, time, small {
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
-  background: transparent;
+  background: off-white;
 }
 
 html { height: 100%; overflow:auto; }

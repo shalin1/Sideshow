@@ -35,24 +35,37 @@
       position: absolute;
       top: 60px;
       width: 100%;
-      z-index: 100;
-      background-color: grey;
-      background-size: cover;
+      height: 540px;
+      background: $off-white;
+      background-size:cover;
       background-repeat: no-repeat;
-      background-position: center center;
+      background-position: top;
+      z-index: -200;
+      filter: blur(17px);
+      &-boundary {
+        width: 100%;
+        height: 100%;
+        background: off-white;
+        position: absolute;
+        top: 600px;
+        z-index: -20;
+
+      }
     }
     &-container {
-      margin: 0px auto;
+      margin: 60px auto;
       width: 100%;
       max-width: 1080px;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+      z-index: 10;
+      border-radius: 5px;
     }
     @media only screen and (min-width: 1080px) {
       &-container {
-        margin-top: 40px;
+        margin: 100px auto;
       }
     }
     &-hero {
@@ -75,15 +88,37 @@
         width: 33.33%;
         background-color: rgba(255, 255, 255, 0.9);
         border: 1px green;
+        padding: 25px 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
       }
-      &-date {
-
+      &-date-lg {
+        font-family: $skinny-font-stack;
+        text-transform: uppercase;
+        font-size: 23px;
+        font-weight: 100;
+      }
+      &-date-sm {
+        font-family: $skinny-font-stack;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
       }
       &-title {
+        font-family: $title-font-stack;
+        color: $near-black;
+        font-size: 24px;
+        font-weight: 500;
 
       }
       &-price {
-
+        font-family: $title-font-stack;
+        font-size: 14px;
+        font-weight: 100;
+        letter-spacing: 1.3px;
       }
     }
     &-CTA {
@@ -92,7 +127,8 @@
         height: calc(70px-15vw);
         background: white;
         display: flex;
-        align-items: space-between;
+        justify-content: space-between;
+        align-items: center;
         padding: 10px 0;
         box-sizing: border-box;
         border: 1px solid rgb(210, 214, 223);
@@ -106,6 +142,15 @@
         background: #0093D7;
         color: white;
         font-size: 14px;
+        margin-right: 15px;
+      }
+      &-bookmark {
+        transform: scale(.75);
+        -webkit-text-stroke: 1px white;
+        padding: 0 30px 0 20px;
+        &-container {
+          height: 100%;
+        }
       }
     }
     &-body {
@@ -118,14 +163,27 @@
       &-description {
         width: 66.66%;
         padding: 0 15% 0 10px;
+        font-family: $body-font-stack;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 22px;
+        letter-spacing: 1.2px;
+        color: $middle-grey;
 
       }
       &-aside {
         width: 33.3%;
+        min-width: 150px;
         padding: 0 10px;
         box-sizing: border-box;
-        background: pink;
-      }
+        padding: 0 15px 0 10px;
+        font-family: $skinny-font-stack;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: 1.2px;
+        color: $middle-grey;
+    }
     }
   }
 
@@ -155,7 +213,7 @@
           opacity: 0;
           margin-top: -60px;
     }
-    }
+  }
     &-item {
       position: relative;
       box-sizing: border-box;
@@ -167,7 +225,7 @@
         object-fit: cover;
         overflow: hidden;
         text-align: center;
-        background: -webkit-linear-gradient(#F86820, #fd348b);
+        background: $pornj-gradient;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
@@ -244,7 +302,8 @@
         padding: 0 0 0 20px;
       }
       &-bookmark {
-        padding: 0 10px;
+        padding: 100% 10px 100% 20px;;
+        transform: scale(.75);
         border-left: 1px solid rgb(239, 242, 245);
         -webkit-text-stroke: 1px white;
       }
@@ -252,8 +311,14 @@
   }
 }
 
-
-
+.label-primary{
+  text-transform: uppercase;
+  font-family: $title-font-stack;
+  -webkit-font-smoothing: antialiased;
+  color: $near-black;
+  font-size: 13px;
+  font-weight: 700;
+}
 .font{
   &-header {
     &-search-box {
