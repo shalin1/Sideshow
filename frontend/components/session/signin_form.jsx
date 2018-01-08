@@ -8,7 +8,8 @@ class SignInForm extends React.Component {
       email: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLogin = this.handleDemoLogin.bind(this);   }
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+}
 
   handleSubmit(e) {
     e.preventDefault();
@@ -73,6 +74,7 @@ class SignInForm extends React.Component {
 
             <ul className="login-errors">{this.renderErrors()}</ul>
             <input
+              ref={(input) => { this.textInput = input; }}
               className="form-input"
               type='text'
               placeholder="Enter email"

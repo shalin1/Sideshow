@@ -2,17 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'fonts';
-.form-container {
-  width: 60%;
-  height: 60%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0px auto;
-  position: relative;
-  top: 100px;
+.session {
+  &-form-container {
+    width: 60%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px auto;
+    position: relative;
+    top: 100px;
+  }
 }
-
 .login-errors {
   color: red;
   font-size: 12px;
@@ -25,7 +26,7 @@
     color: white;
     margin: 0px auto;
     &-container {
-      background: orange;
+      background: $pornj-gradient;
       width:72px;
       height:72px;
       background-color: #F6682F;
@@ -39,7 +40,7 @@
 }
 
 .user-prompt-medium {
-  font-family: "Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: $skinny-font-stack;
   color: $middle-grey;
   font-weight: 200;
   text-align: center;
@@ -53,6 +54,7 @@
 
 .user-prompt-small {
   color: $middle-grey;
+  font-family: $skinny-font-stack;
   font-weight: 200;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -74,22 +76,24 @@
   border-radius: 40px;
   padding: 1px 31px 31px;
   background-color: #F6682F;
+  background-color: $pornj-gradient;
   color: white;
   padding: 12px;
   margin: 10px auto;
   &-disabled {
-    background-color: green;
+    background-color: $lightest-grey;
   }
 }
 
 .Modal {
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border-radius: 10px;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 15px;
   background-color: white;
+  outline: 0;
 }
 
 .Overlay {
@@ -121,12 +125,8 @@ right: 20px;
 z-index: 1;
 }
 
-.session-action-button:hover {
-  background-image: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
-}
-
 .demo-login {
-  background-image: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
+  background-image: $pornj-gradient;
 }
 
 .form-label {
@@ -139,42 +139,27 @@ z-index: 1;
 }
 
 .form-input-box {
-  background-color: rgb(195, 198, 207);
-  border: 2px;
   box-sizing: border-box;
-  color: rgb(69, 73, 78);
   display: block;
   font-size: 16.8px;
   font-weight:400;
   height:43px;
   letter-spacing:normal;
   line-height:22px;
-  margin-bottom:0px;
-  margin-left:0px;
-  margin-right:0px;
-  margin-top:0px;
-  outline-color:rgb(69, 73, 78);
-  outline-style:none;
-  outline-width:0px;
-  padding-bottom:1px;
-  padding-left:1px;
-  padding-right:1px;
-  padding-top:1px;
+  outline: 0;
+  padding: 1px;
   position:relative;
-  text-size-adjust:100%;
   width:360;
-  -webkit-box-direction:normal;
-  -webkit-font-smoothing:antialiased;
-}
+  }
+  
 
 .form-input {
   background-color: white;
-  border-radius: 2px;
-  border: 0px;
+  border: 1px solid $lighter-grey;
   box-sizing:border-box;
-  color: $middle-grey;
+  color: $darker-grey;
   display:block;
-  font-family: $title-font-stack;
+  font-family: $body-font-stack;
   font-size:16.8px;
   font-weight:400;
   height:41px;
@@ -183,8 +168,12 @@ z-index: 1;
   padding-right:12px;
   padding-top:8px;
   width:310px;
+  outline: 0;
   letter-spacing: .7px;
   -webkit-font-smoothing:antialiased;
+  &:focus {
+    border: 1px solid $mint-green;
+  }
 }
 
 .email-field {

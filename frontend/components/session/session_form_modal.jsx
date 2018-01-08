@@ -61,6 +61,7 @@ class sessionModal extends React.Component {
       <div>
         <Modal
           className="Modal"
+          ariaHideApp={false}
           overlayClassName="Overlay"
           isOpen={this.state.isOpen}
           onRequestClose={this.closeModal}

@@ -68,6 +68,15 @@
 }
 
 
+@mixin font-label() {
+  text-transform: uppercase;
+  font-family: $title-font-stack;
+  -webkit-font-smoothing: antialiased;
+  color: $near-black;
+  font-size: 13px;
+  font-weight: 700;
+}
+
 $body-font-stack:  Open-Sans, Raleway, Helvetica-Neue, Helvetica, Roboto, Arial, sans-serif;
 $title-font-stack:  Roboto, Raleway, Open-Sans, Helvetica, Arial, sans-serif;
 $skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
@@ -80,7 +89,9 @@ $eventbrite: #f6682f;
 $link-color: #0278b8;
 $link-hover: #013653;
 $lightest-grey: #EFF2F5;
+$lighter-grey: #d2d6df;
 $middle-grey: #666A73;
 $darker-grey: #45494E;
 $near-black: #282C35;
-$off-white: #F8F8FA
+$off-white: #F8F8FA;
+$mint-green: #39c2c9;

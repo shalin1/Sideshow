@@ -73,7 +73,7 @@ class SessionForm extends React.Component {
     } else {
       return (
         <section className="login-modal-CTA">
-          <div className="login-icon-container">
+          <div className="login-icon-container {}">
             <i className="fa fa-user fa-3x login-icon" aria-hidden="true" color="grey"></i>
           </div>
           <h3 className="user-prompt-medium">Welcome</h3>
@@ -105,6 +105,7 @@ class SessionForm extends React.Component {
               value={this.state.last_name}
               className="form-input "/>
           </div>
+          <br/>
         </div>
       );
     }
@@ -112,7 +113,7 @@ class SessionForm extends React.Component {
 
   render() {
     return(
-      <div className="form-container">
+      <div className="session-form-container">
         {this.renderHeader()}
         <form onSubmit={this.handleSubmit}>
           <label className="form-label">

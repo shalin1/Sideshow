@@ -313,12 +313,7 @@
 }
 
 .label-primary{
-  text-transform: uppercase;
-  font-family: $title-font-stack;
-  -webkit-font-smoothing: antialiased;
-  color: $near-black;
-  font-size: 13px;
-  font-weight: 700;
+  @include font-label;
 }
 .font{
   &-header {
