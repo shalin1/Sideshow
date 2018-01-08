@@ -1,15 +1,51 @@
 import React from 'react';
-
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class EventForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: "",
+      description: "",
+      venue_name: "",
+      venue_address: "",
+      ticket_price: "",
+      tickets_avialable: "",
+      organizer_id: "props.currentUser.id",
+      image_url: "hmmmmmmmmmmm",
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    const email = this.state.email;
+    this.props.userExists({email});
+  }
+
+  componentDidMount() {
+    this.nameInput.focus();
+  }
+
+  update(attribute) {
+    return (e) => {
+      this.setState({[attribute]: e.target.value});
     };
   }
-  render () {
 
+  renderErrors() {
+    return(
+      <ul>
+        {this.props.errors.session.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  render () {
     return (
       <section className="event-form-container">
         <form>
@@ -19,7 +55,12 @@ class EventForm extends React.Component {
           </div>
           <br/>
           <label>Event Title
-            <input className="form-input-box" />
+            <input
+              className="form-input-box"
+              value={this.state.title}
+              onChange={this.update("title")}
+              ref={(input) => { this.nameInput = input; }}
+            />
           </label>
           <br/>
           <label>Venue
@@ -30,73 +71,51 @@ class EventForm extends React.Component {
             <input className="form-input-box" />
           </label>
           <br/>
-          <label>Starts
-            <input className="form-input-box" />
-            <select>
-              <option value="10:30">10:30am</option>
-              <option value="22:30">10:30pm</option>
-            </select>
+
+          <section className="form-datetime-container">
+
+            <div>
+              <label>Starts
+                <input className="form-input-box" />
+                <select>
+                  <option value="10:30">10:30am</option>
+                  <option value="22:30">10:30pm</option>
+                </select>
+              </label>
+            </div>
+
+            <div>
+              <label>Ends
+                <input className="form-input-box" />
+                <select>
+                  <option value="10:30">10:30am</option>
+                  <option value="22:30">10:30pm</option>
+                </select>
+              </label>
+            </div>
+
+          </section>
+          <br/>
+
+          <label>Event Image
+            <div className="event-image-upload-container">
+              <div
+                className="event-form-image-upload-landingpad">
+              </div>
+            </div>
           </label>
-          <label>Ends
-            <input className="form-input-box" />
-            <select>
-              <option value="10:30">10:30am</option>
-              <option value="22:30">10:30pm</option>
-            </select>
+          <br/>
+
+          <label>Event Description
+            <div className="form-rich-text-editor">
+              <textarea value={this.state.description} onChange={this.update('description')} />
+            </div>
           </label>
 
         </form>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
-        <div>
-          foo bar
-        </div>
       </section>
     );
+
   }
 }
-
 export default EventForm;

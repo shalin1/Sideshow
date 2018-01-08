@@ -32,6 +32,31 @@
 
 .event {
   &-form {
+    &-rich-text-editor {
+      width: 75%;
+      height: 200px;
+      background: white;
+    }
+    &-datetime {
+      &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+    }
+    &-image-upload{
+      &-landingpad {
+        border: 2px dashed $lighter-grey;
+        background: white;
+        width: 36vw;
+        height: 190px;
+      }
+      &-container {
+        padding: 5px 10px;
+        background: white;
+        border: 1px solid $lighter-grey;
+      }
+    }
     &container {
       width: 100%;
       max-width: 900px;

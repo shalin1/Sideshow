@@ -14,27 +14,31 @@
     top: 100px;
   }
 }
-.login-errors {
-  color: red;
-  font-size: 12px;
-  margin: 0px;
-  font-family: Roboto Helvetica sans-serif;
-}
 
 .signin-form {
 
 }
 
 .login {
+  &-modal {
+    &-CTA {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+  }
   &-icon {
     color: white;
+    transform: scale(.75);
     margin: 0px auto;
     &-container {
       background: $pornj-gradient;
-      width:72px;
-      height:72px;
+      width:60px;
+      height:60px;
       background-color: #F6682F;
-      border-radius: 72px;
+      border-radius: 60px;
       margin: 0px auto;
       display: flex;
       align-items: center;
@@ -43,32 +47,33 @@
   }
 }
 
-.user-prompt-medium {
-  font-family: $skinny-font-stack;
-  color: $middle-grey;
-  font-weight: 200;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  margin-top: 8px;
-  margin-bottom: 6px;
-  font-size: 30px;
-  line-height: 31.45px;
-}
-
-.user-prompt-small {
-  color: $middle-grey;
-  font-family: $skinny-font-stack;
-  font-weight: 200;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-size: 15px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-bottom: 20px;
-  line-height: 1.3;
-  letter-spacing: -.1px;
+.user-prompt {
+  &-medium {
+    font-family: $skinny-font-stack;
+    color: $middle-grey;
+    font-weight: 200;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    margin-top: 8px;
+    margin-bottom: 6px;
+    font-size: 30px;
+    line-height: 31.45px;
+  }
+  &-small {
+    color: $middle-grey;
+    font-family: $skinny-font-stack;
+    font-weight: 200;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    letter-spacing: -.1px;
+  }
 }
 
 .session-action-button {
@@ -133,49 +138,60 @@ z-index: 1;
   background-image: $pornj-gradient;
 }
 
-.form-label {
-  color: #a3a5ab;
-  font-weight: 200;
-  font-family: "Roboto",Arial,sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-}
 
-.form-input-box {
-  box-sizing: border-box;
-  display: block;
-  font-size: 16.8px;
-  font-weight:400;
-  height:43px;
-  letter-spacing:normal;
-  line-height:22px;
-  outline: 0;
-  padding: 1px;
-  position:relative;
-  width:360;
+
+.form {
+  &-errors {
+    color: red;
+    font-size: 12px;
+    margin: 0px;
+    font-family: Roboto Helvetica sans-serif;
   }
+  &-input-box {
+    box-sizing: border-box;
+    display: block;
+    font-size: 16.8px;
+    font-weight:400;
+    height:43px;
+    letter-spacing:normal;
+    line-height:22px;
+    outline: 0;
+    padding: 1px;
+    position:relative;
+    width:360;
+  }
+  &-label {
+    color: #a3a5ab;
+    font-weight: 200;
+    font-family: $skinny-font-stack;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+  }
+  &-error {
 
-.form-input {
-  background-color: white;
-  border: 1px solid $lighter-grey;
-  box-sizing:border-box;
-  color: $darker-grey;
-  display:block;
-  font-family: $body-font-stack;
-  font-size:16.8px;
-  font-weight:400;
-  height:41px;
-  padding-bottom:9px;
-  padding-left:16px;
-  padding-right:12px;
-  padding-top:8px;
-  width:310px;
-  outline: 0;
-  letter-spacing: .7px;
-  -webkit-font-smoothing:antialiased;
-  &:focus {
-    border: 1px solid $mint-green;
+  }
+  &-input {
+    background-color: white;
+    border: 1px solid $lighter-grey;
+    box-sizing:border-box;
+    color: $darker-grey;
+    display:block;
+    font-family: $body-font-stack;
+    font-size:16.8px;
+    font-weight:400;
+    height:41px;
+    padding-bottom:9px;
+    padding-left:16px;
+    padding-right:12px;
+    padding-top:8px;
+    width:310px;
+    outline: 0;
+    letter-spacing: .7px;
+    -webkit-font-smoothing:antialiased;
+    &:focus {
+      border: 1px solid $mint-green;
+    }
   }
 }
 

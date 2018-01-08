@@ -83,7 +83,6 @@ class SignInForm extends React.Component {
           <div className="form-input-box">
 
             <ul className="login-errors">
-              {this.renderErrors()}
             </ul>
             <input
               ref={(input) => { this.nameInput = input; }}
