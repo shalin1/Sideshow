@@ -39,11 +39,13 @@ class EventIndexItem extends React.Component {
           className="event-index-item-body"
           onClick={this.handleClick}
         >
-          <span className="event-index-item-date">
-            {event_start}
-          </span>
-          <div className="event-index-item-title">
-            {title}
+          <div>
+            <div className="event-index-item-date">
+              Sat, Feb 17 2:00 PM
+            </div>
+            <div className="event-index-item-title">
+              {title}
+            </div>
           </div>
           <div className="event-index-item-venue">
             {venue_name}

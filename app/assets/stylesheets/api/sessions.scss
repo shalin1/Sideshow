@@ -1,7 +1,7 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@import 'fonts';
 .session-form-container {
   width: 60%;
   display: flex;
@@ -38,7 +38,7 @@
 
 .user-prompt-medium {
   font-family: "Benton Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #666a73;
+  color: $middle-grey;
   font-weight: 200;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -50,7 +50,7 @@
 }
 
 .user-prompt-small {
-  color: #666a73;
+  color: $middle-grey;
   font-weight: 200;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -188,7 +188,7 @@ z-index: 1;
   border-top-style:none;
   border-top-width:0px;
   box-sizing:border-box;
-  color: #666a73;
+  color: $middle-grey;
   display:block;
   font-family:"Benton Sans", -apple-system, system-ui, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
   font-size:16.8px;

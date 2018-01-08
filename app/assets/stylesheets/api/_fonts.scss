@@ -1,10 +1,27 @@
+@mixin font-event-index-item-price {
+  font-weight: 100;
+  color: #near-black;
+  font-family: $title-font-stack;
+  font-size: 12px;
+  letter-spacing: 1.3px;
+}
+
+@mixin font-event-index-intro {
+  font-family: $skinny-font-stack;
+  font-size: calc(18px + .5vw);
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  padding: 10px 15px;
+  display: flex;
+}
+
 @mixin font-nav-link() {
   color: $darker-grey;
   font-family: $skinny-font-stack;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.4px;
-
   text-transform: uppercase;
   transition: color .4s ease-out
 }
@@ -16,15 +33,17 @@
   color: $link-color;
   letter-spacing: 0.7px;
   text-transform: uppercase;
-  transition: color .4s ease-out
+  transition: color .4s ease-out;
+  text-overflow: clip;
 }
 
 @mixin font-header-search-box() {
   text-align: center;
   margin: 40px;
   font-family: $skinny-font-stack;
-  font-size: calc(18px + 2vw);
+  font-size: calc(23px + 1.5vw);
   font-weight: 100;
+  letter-spacing: 0.8px;
   line-height: 60px;
   text-rendering: optimizeLegibility;
   display: block;
@@ -60,4 +79,6 @@ $eventbrite: #f6682f;
 $link-color: #0278b8;
 $link-hover: #013653;
 $lightest-grey: #EFF2F5;
+$middle-grey: #666A73;
 $darker-grey: #45494E;
+$near-black: #282C35;

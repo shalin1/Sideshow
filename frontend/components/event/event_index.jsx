@@ -28,7 +28,7 @@ class EventIndex extends React.Component {
             <h1 className="font-header-search-box">Find your next experience</h1>
           </article>
           <article className="event-index-intro">
-            <h3 className="font-event-index-intro">Events for you in Brooklyn, NY</h3>
+            <h3 className="">Events for you in Brooklyn, NY, United States</h3>
           </article>
           <section className="event-index-grid">
             {event_index_items}
