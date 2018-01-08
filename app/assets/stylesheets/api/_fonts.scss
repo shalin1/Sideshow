@@ -1,3 +1,10 @@
+@mixin font-link-emphasis() {
+  font-size: 13px;
+  font-weight: 600;
+  color: $link-color;
+  line-height: 19px;
+  text-transform: uppercase;
+}
 
 
 @mixin font-logo() {
@@ -19,4 +26,5 @@ $decorator-font-stack:  'Ewert', 'Raleway', 'Open-Sans',  Helvetica, "Roboto", A
 
 $pornj-gradient: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
 
-$eventbrite: #f6682f
+$eventbrite: #f6682f;
+$link-color: #0278b8;

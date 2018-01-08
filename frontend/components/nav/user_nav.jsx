@@ -4,8 +4,6 @@ import ReactModal from 'react-modal';
 
 const LoggedInUser = (currentUser, logout) => (
   <div className="nav-right">
-
-
     <span className="nav-link-container">
       <i className="fa fa-user avatar-icon nav-link" aria-hidden="true" />
       <span className="nav-link">{currentUser.first_name}</span>
