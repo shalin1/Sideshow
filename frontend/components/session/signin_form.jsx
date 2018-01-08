@@ -77,11 +77,9 @@ class SignInForm extends React.Component {
           <h3 className="user-prompt-medium">Let's get started</h3>
           <h4 className="user-prompt-small">Enter your email to sign up or log in.</h4>
         </section>
-        <br/>
         <form onSubmit={this.handleSubmit}>
           <label className="form-label">Email address</label>
           <div className="form-input-box">
-
             <ul className="login-errors">
             </ul>
             <input
