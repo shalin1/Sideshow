@@ -68,10 +68,10 @@
 }
 
 
-$body-font-stack:  'Open-Sans', 'Raleway', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
-$title-font-stack:  'Roboto', 'Raleway' 'Open-Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
-$skinny-font-stack: 'Raleway', 'Open-Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$decorator-font-stack:  'Ewert', 'Raleway', 'Open-Sans',  Helvetica, "Roboto", Arial, sans-serif;
+$body-font-stack:  Open-Sans, Raleway, Helvetica-Neue, Helvetica, Roboto, Arial, sans-serif;
+$title-font-stack:  Roboto, Raleway, Open-Sans, Helvetica, Arial, sans-serif;
+$skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
+$decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sans-serif;
 
 $pornj-gradient: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
 $pornj-gradient-reversed: radial-gradient(farthest-corner at 80% 100%, #f86044 0,#fd348b 100%);
