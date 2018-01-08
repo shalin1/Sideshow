@@ -87,25 +87,24 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign Up') {
       return (
         <div className="bonus-fields">
-            <label className="session-form-label">First Name</label>
+          <label className="form-label">First Name</label>
 
-            <div className="session-form-input-box bonus-field">
-              <input
-                type='text'
-                onChange={this.update('first_name')}
-                value={this.state.first_name}
-                className="session-form-input "/>
-            </div>
-            <br/>
-            <label className="session-form-label">Last Name</label>
-            <div className="session-form-input-box bonus-field">
-              <input
-                type='text'
-                onChange={this.update('last_name')}
-                value={this.state.last_name}
-                className="session-form-input "/>
-            </div>
-            <br/>
+          <div className="form-input-box bonus-field">
+            <input
+              type='text'
+              onChange={this.update('first_name')}
+              value={this.state.first_name}
+              className="form-input "/>
+          </div>
+          <br/>
+          <label className="form-label">Last Name</label>
+          <div className="form-input-box bonus-field">
+            <input
+              type='text'
+              onChange={this.update('last_name')}
+              value={this.state.last_name}
+              className="form-input "/>
+          </div>
         </div>
       );
     }
@@ -113,10 +112,10 @@ class SessionForm extends React.Component {
 
   render() {
     return(
-      <div className="session-form-container">
+      <div className="form-container">
         {this.renderHeader()}
         <form onSubmit={this.handleSubmit}>
-          <label className="session-form-label">
+          <label className="form-label">
             Email address
             <br/>
               {this.state.email}
@@ -127,10 +126,10 @@ class SessionForm extends React.Component {
           <br/>
           <br/>
           {this.signupFormBonusFields()}
-          <label className="session-form-label">Password</label>
-          <div className="session-form-input-box">
+          <label className="form-label">Password</label>
+          <div className="form-input-box">
             <input
-              className="session-form-input"
+              className="form-input"
               type='password'
               onChange={this.update('password')}
               value={this.state.password}

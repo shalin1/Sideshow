@@ -20,7 +20,7 @@ class EventIndex extends React.Component {
     }
 
     return (
-      <section>
+      <section className="home-container">
         <div className="home-hero-image">
         </div>
         <section className="home-content">

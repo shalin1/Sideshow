@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'fonts';
-.session-form-container {
+.form-container {
   width: 60%;
+  height: 60%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -19,21 +20,22 @@
   font-family: Roboto Helvetica sans-serif;
 }
 
-.login-icon-container {
-  background: orange;
-  width:72px;
-  height:72px;
-  background-color: #F6682F;
-  border-radius: 72px;
-  margin: 0px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.login-icon {
-  color: white;
-  margin: 0px auto;
+.login {
+  &-icon {
+    color: white;
+    margin: 0px auto;
+    &-container {
+      background: orange;
+      width:72px;
+      height:72px;
+      background-color: #F6682F;
+      border-radius: 72px;
+      margin: 0px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .user-prompt-medium {
@@ -74,7 +76,7 @@
   background-color: #F6682F;
   color: white;
   padding: 12px;
-  margin: 0px auto;
+  margin: 10px auto;
   &-disabled {
     background-color: green;
   }
@@ -87,11 +89,11 @@
   right: 5px;
   bottom: 5px;
   border-radius: 10px;
-  z-index: 50000;
   background-color: white;
 }
 
 .Overlay {
+  z-index: 50000;
   position: fixed;
   top: 0;
   left: 0;
@@ -127,7 +129,7 @@ z-index: 1;
   background-image: radial-gradient(farthest-corner at 80% 100%,#fd348b 0,#f86044 100%);
 }
 
-.session-form-label {
+.form-label {
   color: #a3a5ab;
   font-weight: 200;
   font-family: "Roboto",Arial,sans-serif;
@@ -136,7 +138,7 @@ z-index: 1;
   font-weight: 400;
 }
 
-.session-form-input-box {
+.form-input-box {
   background-color: rgb(195, 198, 207);
   border: 2px;
   box-sizing: border-box;
@@ -165,64 +167,24 @@ z-index: 1;
   -webkit-font-smoothing:antialiased;
 }
 
-.session-form-input {
-  background-color: rgb(255, 255, 255);
-  border-bottom-color:rgb(69, 73, 78);
-  border-bottom-left-radius:2px;
-  border-bottom-right-radius:2px;
-  border-bottom-style: none ;
-  border-bottom-width:0px;
-  border-image-outset:0px;
-  border-image-repeat:stretch;
-  border-image-slice:100%;
-  border-image-source:none;
-  border-image-width:1;
-  border-left-color:rgb(69, 73, 78);
-  border-left-style:none;
-  border-left-width:0px;
-  border-right-color:rgb(69, 73, 78);
-  border-right-style:none;
-  border-right-width:0px;
-  border-top-color:rgb(69, 73, 78);
-  border-top-left-radius:2px;
-  border-top-right-radius:2px;
-  border-top-style:none;
-  border-top-width:0px;
+.form-input {
+  background-color: white;
+  border-radius: 2px;
+  border: 0px;
   box-sizing:border-box;
   color: $middle-grey;
   display:block;
-  font-family:"Benton Sans", -apple-system, system-ui, Roboto, "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+  font-family: $title-font-stack;
   font-size:16.8px;
-  font-stretch:100%;
-  font-style:normal;
-  font-variant-caps:normal;
-  font-variant-east-asian:normal;
-  font-variant-ligatures:normal;
-  font-variant-numeric:normal;
   font-weight:400;
   height:41px;
-  letter-spacing:normal;
-  line-height:normal;
-  outline-color:rgb(69, 73, 78);
-  outline-style:none;
-  overflow-x:hidden;
-  overflow-y:hidden;
   padding-bottom:9px;
   padding-left:16px;
   padding-right:12px;
   padding-top:8px;
-  text-indent:0px;
-  text-size-adjust:100%;
-  text-transform:none;
-  white-space:nowrap;
   width:310px;
-  word-spacing:1px;
-  writing-mode:horizontal-tb;
-  -webkit-appearance:none;
-  -webkit-box-direction:normal;
+  letter-spacing: .7px;
   -webkit-font-smoothing:antialiased;
-  -webkit-rtl-ordering:logical;
-  -webkit-border-image:none;
 }
 
 .email-field {

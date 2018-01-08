@@ -68,12 +68,12 @@ class SignInForm extends React.Component {
         </section>
         <br/>
         <form onSubmit={this.handleSubmit}>
-          <label className="session-form-label">Email address</label>
-          <div className="session-form-input-box">
+          <label className="form-label">Email address</label>
+          <div className="form-input-box">
 
             <ul className="login-errors">{this.renderErrors()}</ul>
             <input
-              className="session-form-input"
+              className="form-input"
               type='text'
               placeholder="Enter email"
               onChange={this.update('email')}
@@ -86,9 +86,6 @@ class SignInForm extends React.Component {
           >
             Get Started
           </button>
-          <br/>
-          <br/>
-          <br/>
           <br/>
           <button
             onClick={this.handleDemoLogin}

@@ -4,14 +4,15 @@
 @import 'fonts';
 
 .home{
-  &-hero-image {
-    display: block;
+  &-container {
     margin-top: 60px;
     width: 100%;
-    height: 30vw;
+  }
+  &-hero-image {
+    display: block;
+    height: 33vw;
     transition: height .05s;
     max-height: 350px;
-    padding: 40px;
     background-image: url("https://s3.amazonaws.com/sideshow-development/concert.jpg");
     background-size: cover;
     background-repeat: no-repeat;
