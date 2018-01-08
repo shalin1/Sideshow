@@ -17,7 +17,7 @@ export default ({currentUser, logout}) => {
           logout={logout}
         />
 
-      <Link to="events/new">
+      <Link to="/create">
         <div className="font-nav-link-emphasis nav-link">
             Create Event
         </div>

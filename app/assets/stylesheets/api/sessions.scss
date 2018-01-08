@@ -21,6 +21,10 @@
   font-family: Roboto Helvetica sans-serif;
 }
 
+.signin-form {
+
+}
+
 .login {
   &-icon {
     color: white;
@@ -76,7 +80,7 @@
   border-radius: 40px;
   padding: 1px 31px 31px;
   background-color: #F6682F;
-  background-color: $pornj-gradient;
+  background: $pornj-gradient;
   color: white;
   padding: 12px;
   margin: 10px auto;
@@ -151,7 +155,6 @@ z-index: 1;
   position:relative;
   width:360;
   }
-  
 
 .form-input {
   background-color: white;
@@ -184,4 +187,8 @@ z-index: 1;
 .edit-icon {
   align-items:flex-end;
   padding-left: 7px
+}
+
+.error {
+  background: red;
 }

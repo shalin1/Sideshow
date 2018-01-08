@@ -5,7 +5,7 @@ class SignInForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: ""
+      email: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -15,16 +15,19 @@ class SignInForm extends React.Component {
     e.preventDefault();
     const email = this.state.email;
     this.props.userExists({email});
+}
+
+
+  componentDidMount() {
+    this.nameInput.focus();
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.ui.validEmail !== nextProps.ui.validEmail) {
       if (nextProps.ui.validEmail.exist) {
         this.props.history.push('/signin/login');
       } else {
         this.props.history.push('/signin/signup');
       }
-    }
   }
 
   handleDemoLogin(e){
@@ -38,6 +41,12 @@ class SignInForm extends React.Component {
   update(attribute) {
     return (e) => {
       this.setState({[attribute]: e.target.value});
+    };
+  }
+
+  validate(email) {
+    return {
+      email: (email.length > 0 && email.includes("@"))
     };
   }
 
@@ -55,7 +64,8 @@ class SignInForm extends React.Component {
 
   render() {
     const { email } = this.state;
-    const buttonDisabled = (email.length <= 4 );
+    const buttonDisabled = (email.length <= 1 );
+    const errors = this.validate(this.state.email);
 
     return(
       <div className="session-form-container">
@@ -72,30 +82,32 @@ class SignInForm extends React.Component {
           <label className="form-label">Email address</label>
           <div className="form-input-box">
 
-            <ul className="login-errors">{this.renderErrors()}</ul>
+            <ul className="login-errors">
+              {this.renderErrors()}
+            </ul>
             <input
-              ref={(input) => { this.textInput = input; }}
+              ref={(input) => { this.nameInput = input; }}
               className="form-input"
               type='text'
               placeholder="Enter email"
               onChange={this.update('email')}
               value={this.state.email}
             />
-          <br/>
-          <button
-            disabled={buttonDisabled}
-            className="session-action-button demo-login"
-          >
-            Get Started
-          </button>
-          <br/>
-          <button
-            onClick={this.handleDemoLogin}
-            className="session-action-button demo-login"
-          >
-            Demo Log In
-          </button>
-        </div>
+            <br/>
+            <button
+              disabled={buttonDisabled}
+              className="session-action-button"
+            >
+              Get Started
+            </button>
+            <br/>
+            <button
+              onClick={this.handleDemoLogin}
+              className="session-action-button demo-login"
+            >
+              Demo Log In
+            </button>
+          </div>
         </form>
       </div>
     );

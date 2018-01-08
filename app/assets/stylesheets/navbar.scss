@@ -56,7 +56,8 @@
 
 .footer{
   &-container {
-    margin-top: 140px;
+    transform: translateY(100%);
+    display: block;
     background-color: rgb(40, 44, 53);
     border-top: 4px solid rgb(102, 106, 115);
     display: block;
