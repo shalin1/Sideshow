@@ -13,11 +13,14 @@
         password: "",
         first_name: "",
         last_name: "",
-        password_errors: [],
         emails_opt_in: true,
       };
       debugger
       this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+      this.nameInput.focus();
     }
 
     renderErrors(field) {
@@ -88,27 +91,31 @@
     signupFormBonusFields() {
       if (this.props.formType === 'Sign Up') {
         return (
-          <div className="bonus-fields">
-            <label className="form-label">First Name</label>
-
+            <div>
+            <label className="form-label">First Name
             <div className="form-input-box bonus-field">
               <input
                 type='text'
                 onChange={this.update('first_name')}
                 value={this.state.first_name}
-                className="form-input "/>
+                className="form-input "
+              />
                 {this.renderErrors("first_name")}
             </div>
+            </label>
             <br/>
-            <label className="form-label">Last Name</label>
-            <div className="form-input-box bonus-field">
-              <input
-                type='text'
-                onChange={this.update('last_name')}
-                value={this.state.last_name}
-                className="form-input "/>
-                {this.renderErrors("last_name")}
-            </div>
+            <label className="form-label">Last Name
+              <div className="form-input-box bonus-field">
+                <input
+                  type='text'
+                  onChange={this.update('last_name')}
+                  value={this.state.last_name}
+                  className="form-input "
+                />
+
+                  {this.renderErrors("last_name")}
+              </div>
+            </label>
             <br/>
           </div>
         );
@@ -116,7 +123,9 @@
     }
 
     render() {
-      debugger
+      const password = (field) => {
+
+      };
       return(
         <div className="session-form-container">
           {this.renderHeader()}
@@ -131,21 +140,22 @@
               </label>
             <br/>
             <br/>
-            {this.signupFormBonusFields()}
-            <label className="form-label">Password</label>
-            <div className="form-input-box">
-              <input
-                className="form-input"
-                type='password'
-                onChange={this.update('password')}
-                value={this.state.password}
-              />
-              {this.renderErrors("password")}
-              <br/>
-              <br/>
+            <label className="form-label">Password
+              <div className="form-input-box">
+                <input
+                  ref={(input) => { this.nameInput = input; }}
+                  className="form-input"
+                  type='password'
+                  onChange={this.update('password')}
+                  value={this.state.password}
+                />
+                {this.renderErrors("password")}
+              </div>
+              </label>
+                <br/>
+                {this.signupFormBonusFields()}
+
               <button onClick={this.handleSubmit} className="session-action-button">Log In</button>
-              <br/>
-            </div>
           </form>
         </div>
       );
