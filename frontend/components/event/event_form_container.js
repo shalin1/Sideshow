@@ -14,13 +14,15 @@ const mapStateToProps = (state, ownProps) => {
       venue_address: "",
       ticket_price: "",
       tickets_avialable: "",
-      event_start: "",
+      start_date: null,
+      start_date_focus: false,
       start_time: "02:00",
-      event_end: "",
+      end_date: null,
+      end_date_focus: false,
       end_time: "23:59",
       imageFile: null,
       imageUrl: null,
-      published: false
+      published: false,
     };
   } else {
     eventData = state.events[ownProps.match.params.eventId];
