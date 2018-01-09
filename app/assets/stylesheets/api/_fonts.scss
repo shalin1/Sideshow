@@ -1,3 +1,16 @@
+$body-font-stack:  Open-Sans, Raleway, Helvetica-Neue, Helvetica, Roboto, Arial, sans-serif;
+$title-font-stack:  Roboto, Raleway, Open-Sans, Helvetica, Arial, sans-serif;
+$skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
+$decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sans-serif;
+
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
 @mixin font-event-index-item-price {
   font-weight: 100;
   color: #near-black;
@@ -75,8 +88,3 @@
   font-size: 13px;
   font-weight: 700;
 }
-
-$body-font-stack:  Open-Sans, Raleway, Helvetica-Neue, Helvetica, Roboto, Arial, sans-serif;
-$title-font-stack:  Roboto, Raleway, Open-Sans, Helvetica, Arial, sans-serif;
-$skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
-$decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sans-serif;

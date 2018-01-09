@@ -33,22 +33,67 @@
 
 .event {
   &-form {
+    width: 100%;
+    max-width: 900px;
+    padding: 10px;
+    &-container {
+      width: 100%;
+      margin: 60px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+    }
+    &-section {
+      &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items:flex-end;
+        margin: 6px;
+        border-bottom: 1px solid $lighter-grey;;
+      }
+      &-text {
+        @include font-event-index-intro();
+        padding: 6px 10px;
+      }
+      &-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        font-size: 43px;
+        font-weight: 100;
+        line-height: 45px;
+        font-family: $skinny-font-stack;
+        background: $pornj-gradient;
+        color: $off-white;
+        padding-bottom: 5px;
+      }
+      &-icon {
+      }
+    }
+    &-label {
+      @include font-label;
+      padding: 6px;
+    }
     &-text {
       &-input {
         background-color: white;
         border: 1px solid $lighter-grey;
         box-sizing:border-box;
-        color: $darker-grey;
+        color: $near-black;
         display:block;
         font-family: $body-font-stack;
-        font-size:16.8px;
-        font-weight:400;
+        font-size:15px;
+        font-weight:700;
         height:41px;
         padding-bottom:9px;
         padding-left:16px;
         padding-right:12px;
-        padding-top:8px;
-        width:310px;
+        padding-top:10px;
+        width:100%;
         border-radius: 3px;
         outline: 0;
         letter-spacing: .7px;
@@ -66,23 +111,26 @@
           letter-spacing:normal;
           line-height:22px;
           outline: 0;
-          padding: 1px;
+          padding: 4px;
           position:relative;
-          width:360;
+          width:100%;
+        }
+        @include placeholder {
+          /* not working :) */;
         }
       }
     }
-    &-rich-text-editor {
+    &-rich-text {
       width: 75%;
       height: 200px;
       background: white;
     }
     &-datetime {
       &-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+        width: 300px
       }
+
+
     }
     &-image-upload{
       &-landingpad {
@@ -96,28 +144,6 @@
         background: white;
         border: 1px solid $lighter-grey;
       }
-    }
-    &-container {
-      width: 100%;
-      max-width: 900px;
-      margin-top: 60px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-    }
-  }
-  &-icon {
-    &-box {
-      width: 50px;
-      font-size: 35px;
-      line-height: 45px;
-      padding-bottom: 5px;
-      font-family: $skinny-font-pack;
-      background: $pornj-gradient;
-      color: $off-white;
-      padding: 0px 9px;
     }
   }
   &-show {
@@ -400,6 +426,8 @@
     }
   }
 }
+
+/*refactor out the below*/
 
 .label-primary{
   @include font-label;
