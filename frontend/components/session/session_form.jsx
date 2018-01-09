@@ -15,7 +15,7 @@
         last_name: "",
         emails_opt_in: true,
       };
-      debugger
+      
       this.handleSubmit = this.handleSubmit.bind(this);
     }
 

@@ -14,9 +14,7 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    debugger
     @event = current_user.events.create!(event_params)
-
     render :show
   end
 

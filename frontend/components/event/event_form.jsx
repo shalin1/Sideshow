@@ -19,7 +19,7 @@ class EventForm extends React.Component {
     e.preventDefault();
     let formData = new FormData();
     console.log(this.state);
-    console.log(formData);
+    console.log('before:' + formData);
     formData.append("event[event_start]", this.state.start_date);
     formData.append("event[event_end]", this.state.end_date);
     formData.append("event[title]", this.state.title);
@@ -29,7 +29,9 @@ class EventForm extends React.Component {
     formData.append("event[ticket_price]", this.state.ticket_price);
     formData.append("event[tickets_available]", this.state.tickets_available);
     formData.append("event[organizer_id]", this.state.organizer_id);
-    formData.append("event[hero_image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("event[hero_image]", this.state.imageFile);
+    }
     this.props.action(formData);
   }
 
