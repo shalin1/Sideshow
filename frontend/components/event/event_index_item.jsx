@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import moment from 'moment';
 
 class EventIndexItem extends React.Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class EventIndexItem extends React.Component {
     const eventImage = {
       backgroundImage: 'url(' + event_index_image_url + ')',
     };
+    const momentStart = moment(this.props.event_start).parseZone();
+    const eventStart = momentStart.format("ddd, MMM D h:mm A");
     return (
       <article
         className="event-index-item"
@@ -32,7 +35,8 @@ class EventIndexItem extends React.Component {
           style={eventImage}
           onClick={this.handleClick}
         >
-            <div className="event-index-item-price">${ticket_price}</div>
+            <div className="event-index-item-price">
+              ${Math.round(ticket_price)}</div>
         </section>
 
         <section
@@ -41,7 +45,7 @@ class EventIndexItem extends React.Component {
         >
           <div>
             <div className="event-index-item-date">
-              Sat, Feb 17 2:00 PM
+              {eventStart}
             </div>
             <div className="event-index-item-title">
               {title}

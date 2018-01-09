@@ -36,8 +36,8 @@ class EventShow extends React.Component {
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
-      let momentStart = moment(this.props.event_start).parseZone();
-      let momentEnd = moment(this.props.event_end).parseZone();
+      const momentStart = moment(this.props.event_start).parseZone();
+      const momentEnd = moment(this.props.event_end).parseZone();
       const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
       const timeStart = momentStart.format("LT");
       const timeEnd = momentEnd.format("LT");
