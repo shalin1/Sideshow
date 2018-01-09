@@ -1,4 +1,5 @@
 @import 'api/fonts';
+@import 'api/colors';
 
 .nav {
   &-container {
@@ -31,7 +32,6 @@
     @include font-nav-link();
   }
 }
-
 
 .avatar-icon {
   padding-right: 5px;

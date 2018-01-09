@@ -55,20 +55,26 @@ class EventForm extends React.Component {
           </div>
           <br/>
           <label>Event Title
-            <input
-              className="form-input-box"
-              value={this.state.title}
-              onChange={this.update("title")}
-              ref={(input) => { this.nameInput = input; }}
-            />
+            <div className="event-form-text-input-container">
+              <input
+                className="event-form-text-input"
+                value={this.state.title}
+                onChange={this.update("title")}
+                ref={(input) => { this.nameInput = input; }}
+              />
+            </div>
           </label>
           <br/>
           <label>Venue
-            <input className="form-input-box" />
+            <input
+              value={this.state.venue}
+              onChange={this.update("venue")}
+              className="event-form-text-input"
+            />
           </label>
           <br/>
           <label>Address
-            <input className="form-input-box" />
+            <input className="event-form-text-input" />
           </label>
           <br/>
 
@@ -76,7 +82,7 @@ class EventForm extends React.Component {
 
             <div>
               <label>Starts
-                <input className="form-input-box" />
+                <input className="event-form-text-input" />
                 <select>
                   <option value="10:30">10:30am</option>
                   <option value="22:30">10:30pm</option>
