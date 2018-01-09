@@ -1,0 +1,60 @@
+@mixin form-input-base {
+  box-sizing:border-box;
+  border: 1px solid $lighter-grey;
+  background-color: white;
+  color: $near-black;
+  display:block;
+  font-family: $body-font-stack;
+  font-size:15px;
+  font-weight:700;
+  height:41px;
+  padding-bottom:9px;
+  padding-left:16px;
+  padding-right:12px;
+  padding-top:10px;
+  width:100%;
+  border-radius: 3px;
+  outline: 0;
+  letter-spacing: .7px;
+  -webkit-font-smoothing:antialiased;
+  &:focus {
+    border: 1px solid $peppy-blue;
+  }
+  &-container {
+    box-sizing: border-box;
+    display: block;
+    padding: 5.5px;
+  }
+}
+
+@mixin form-base-textarea {
+  width: 100%;
+  max-width: 560px;
+  height: 180px;
+  resize: none;
+  border: 1px solid $lighter-grey;
+  color: $near-black;
+  font-family: $body-font-stack;
+  font-size:15px;
+  font-weight:700;
+  padding-bottom:9px;
+  padding-left:16px;
+  padding-right:12px;
+  padding-top:10px;
+  border-radius: 3px;
+  &:focus {
+    border: 1px solid $peppy-blue;
+  }
+  &-container {
+    box-sizing: border-box;
+    display: block;
+    padding: 5.5px;
+  }
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}

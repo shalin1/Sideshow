@@ -4,12 +4,6 @@ $skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-s
 $decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sans-serif;
 
 
-@mixin placeholder {
-  ::-webkit-input-placeholder {@content}
-  :-moz-placeholder           {@content}
-  ::-moz-placeholder          {@content}
-  :-ms-input-placeholder      {@content}
-}
 
 @mixin font-event-index-item-price {
   font-weight: 100;
