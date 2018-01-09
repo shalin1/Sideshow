@@ -104,6 +104,20 @@ class EventForm extends React.Component {
 
           <br/>
 
+          <label className="event-form-label">Price
+            <div className="event-form-text-input-container">
+              <input
+                className="event-form-price-input"
+                type="text" 
+                value={this.state.price}
+                onChange={this.update("price")}
+                placeholder="$"
+              />
+            </div>
+          </label>
+
+          <br/>
+
           <section className="event-form-datetime-container">
             <div className="event-form-datetime-input">
                 <label className="event-form-label">Starts</label>
@@ -178,22 +192,27 @@ class EventForm extends React.Component {
             </div>
           </label>
 
-          <div className="event-form-submit">
-            <button
-              onClick={this.handleSaveEvent}
-              className="form-button-plain"
-            >
-              Save
-            </button>
-            <button
-              onClick={this.handlePublishEvent}
-              className="form-button-emphasis"
+        </form>
+        <div className="event-form-button-container">
+          <h1 className="event-form-button-caption">
+            Nice job! You're almost done.
+          </h1>
+          <div className="event-form-button-container-flex">
+          <button
+            onClick={this.handleSaveEvent}
+            className="event-form-button-plain"
+          >
+            Save
+          </button>
+          <button
+            onClick={this.handlePublishEvent}
+            className="event-form-button-emphasis"
             >
               Make Your Event Live
             </button>
-
           </div>
-        </form>
+
+        </div>
       </section>
     );
 
