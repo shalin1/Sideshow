@@ -328,13 +328,15 @@
     }
     &-body {
       &-container {
-        padding: 40px 10%;
+        padding: 60px 10%;
         background: white;
         display: flex;
+        width: 80%;
         flex-direction: row;
+        justify-content: center;
       }
       &-description {
-        width: 66.66%;
+        width: 100%;
         padding: 0 15% 0 10px;
         font-family: $body-font-stack;
         font-weight: 700;
@@ -345,18 +347,22 @@
 
       }
       &-aside {
-        width: 33.3%;
-        min-width: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 33.33%;
+        min-width: 200px;
         padding: 0 10px;
         box-sizing: border-box;
-        padding: 0 15px 0 10px;
         font-family: $skinny-font-stack;
         font-weight: 700;
         font-size: 16px;
         line-height: 22px;
         letter-spacing: 1.2px;
         color: $middle-grey;
-    }
+        &-item {
+        }
+      }
     }
   }
 

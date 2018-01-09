@@ -26,8 +26,7 @@ class EventForm extends React.Component {
     formData.append("event[tickets_available]", this.state.tickets_available);
     formData.append("event[organizer_id]", this.state.organizer_id);
     formData.append("event[hero_image]", this.state.imageFile);
-
-    this.props.action(this.formData);
+    this.props.action(formData);
   }
 
   componentDidMount() {
@@ -151,8 +150,8 @@ class EventForm extends React.Component {
                   <div className="event-form-datetime-calendar-container">
                     <input
                       className="event-form-datetime-calendar"
-                      value={this.state.start_date}
-                      onChange={this.update("start_date")}
+                      value={this.state.event_start}
+                      onChange={this.update("event_start")}
                       placeholder="02/17/2018"
                     />
                   </div>
@@ -160,7 +159,7 @@ class EventForm extends React.Component {
                     <select
                       className="event-form-datetime-time"
                       value={this.state.start_time}
-                      onChange={this.update("start_date")}
+                      onChange={this.update("start_time")}
                     >
                       <option className="event-form-datetime-time-option" value="23:59">11:59pm</option>
                       <option className="event-form-datetime-time-option" value="00:00">Midnight</option>
@@ -178,8 +177,8 @@ class EventForm extends React.Component {
                   <div className="event-form-datetime-calendar-container">
                     <input
                       className="event-form-datetime-calendar"
-                      value={this.state.end_date}
-                      onChange={this.update("end_date")}
+                      value={this.state.event_end}
+                      onChange={this.update("event_end")}
                       placeholder="02/17/2018"
                     />
                   </div>
@@ -187,7 +186,7 @@ class EventForm extends React.Component {
                     <select
                       className="event-form-datetime-time"
                       value={this.state.end_time}
-                      onChange={this.update("end_date")}
+                      onChange={this.update("end_time")}
                     >
                       <option className="event-form-datetime-time-option" value="23:59">11:59pm</option>
                       <option className="event-form-datetime-time-option" value="00:00">Midnight</option>

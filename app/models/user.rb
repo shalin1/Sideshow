@@ -3,6 +3,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
+  has_many :events,
+  foreign_key: :organizer_id,
+  class_name: 'Event'
+
   attr_reader :password
 
   def password=(password)

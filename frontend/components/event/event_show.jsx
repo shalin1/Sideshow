@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -35,7 +36,13 @@ class EventShow extends React.Component {
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
-
+      let momentStart = moment(this.props.event_start).parseZone();
+      let momentEnd = moment(this.props.event_end).parseZone();
+      const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
+      const timeStart = momentStart.format("LT");
+      const timeEnd = momentEnd.format("LT");
+      const startMonth = momentStart.format("MMM");
+      const startDay = momentStart.format("D");
       return(
         <div className="event-show-container-marginfix">
           <div
@@ -53,11 +60,11 @@ class EventShow extends React.Component {
               <figcaption className="event-show-hero-info-container">
                 <div>
                   <span className="event-show-hero-date-sm">
-                    Jan
+                    {startMonth}
                   </span>
                   <br/>
                   <span className="event-show-hero-date-lg">
-                    10
+                    {startDay}
                   </span>
                   <br/>
                   <br/>
@@ -86,17 +93,27 @@ class EventShow extends React.Component {
 
             <section className="event-show-body-container">
               <article className="event-show-body-description">
-                  <h3 className="label-primary">Description</h3>
-                  <br/>
-                  {description}
+                <h3 className="label-primary">Description</h3>
+                <br/>
+                {description}
               </article>
-              <aside className="event-show-body-aside">
-                <h3 className="label-primary">Location</h3>
+              <div className="event-show-body-aside">
+                <aside className="event-show-body-aside-item">
+                  <h3 className="label-primary">Date and Time</h3>
+                  <br/>
+                  {startDateFull}
+                  <br/>
+                  {timeStart} - {timeEnd}
+                </aside>
                 <br/>
-                {venue_name}
-                <br/>
-                {venue_address}
-              </aside>
+                <aside className="event-show-body-aside-item">
+                  <h3 className="label-primary">Location</h3>
+                  <br/>
+                  {venue_name}
+                  <br/>
+                  {venue_address}
+                </aside>
+              </div>
             </section>
 
           </article>
