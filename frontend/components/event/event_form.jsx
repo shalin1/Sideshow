@@ -4,27 +4,30 @@ import { Link, withRouter, Redirect } from 'react-router-dom';
 class EventForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      description: "",
-      venue_name: "",
-      venue_address: "",
-      ticket_price: "",
-      tickets_avialable: "",
-      start_date: "",
-      start_time: "",
-      end_date: "",
-      end_time: "",
-      organizer_id: "props.currentUser.id",
-      image_url: "hmmmmmmmmmmm",
-    };
+
+    this.state = this.props.event;
+    this.setState = this.setState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const email = this.state.email;
-    this.props.userExists({email});
+    let formData = new FormData();
+    console.log(this.state);
+    console.log(formData);
+    formData.append("event[event_start]", this.state.start_date);
+    formData.append("event[event_end]", this.state.end_date);
+    formData.append("event[title]", this.state.title);
+    formData.append("event[description]", this.state.description);
+    formData.append("event[venue_name]", this.state.venue_name);
+    formData.append("event[venue_address]", this.state.venue_address);
+    formData.append("event[ticket_price]", this.state.ticket_price);
+    formData.append("event[tickets_available]", this.state.tickets_available);
+    formData.append("event[organizer_id]", this.state.organizer_id);
+    formData.append("event[hero_image]", this.state.imageFile);
+
+    this.props.action(this.formData);
   }
 
   componentDidMount() {
@@ -36,6 +39,24 @@ class EventForm extends React.Component {
       this.setState({[attribute]: e.target.value});
     };
   }
+
+  updateFile() {
+    return (e) => {
+      e.preventDefault();
+      const reader = new FileReader();
+      const file = e.currentTarget.files[0];
+      reader.onloadend = () =>
+        this.setState({ imageUrl: reader.result, imageFile: file});
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        this.setState({ imageUrl: "", imageFile: null });
+      }
+
+    };
+  }
+
 
   renderErrors() {
     return(
@@ -50,6 +71,10 @@ class EventForm extends React.Component {
   }
 
   render () {
+    const uploadedImage = {
+      backgroundImage: 'url(' + this.state.imageUrl + ')',
+    };
+
     return (
       <section className="event-form-container">
         <form className="event-form">
@@ -81,8 +106,8 @@ class EventForm extends React.Component {
               <input
                 className="event-form-text-input"
                 type="text"
-                value={this.state.venue}
-                onChange={this.update("venue")}
+                value={this.state.venue_name}
+                onChange={this.update("venue_name")}
                 placeholder="Enter the venue's name"
               />
             </div>
@@ -95,8 +120,8 @@ class EventForm extends React.Component {
               <input
                 className="event-form-text-input"
                 type="text"
-                value={this.state.address}
-                onChange={this.update("address")}
+                value={this.state.venue_address}
+                onChange={this.update("venue_address")}
                 placeholder="Enter the venue's address"
               />
             </div>
@@ -108,9 +133,9 @@ class EventForm extends React.Component {
             <div className="event-form-text-input-container">
               <input
                 className="event-form-price-input"
-                type="text" 
-                value={this.state.price}
-                onChange={this.update("price")}
+                type="text"
+                value={this.state.ticket_price}
+                onChange={this.update("ticket_price")}
                 placeholder="$"
               />
             </div>
@@ -180,7 +205,10 @@ class EventForm extends React.Component {
           <label className="event-form-label">Event Image
             <div className="event-image-upload-container">
               <div
-                className="event-form-image-upload-landingpad">
+                className="event-form-image-upload-landingpad"
+                style={uploadedImage}
+              >
+                <input type="file" onChange={this.updateFile()} />
               </div>
             </div>
           </label>
@@ -199,13 +227,13 @@ class EventForm extends React.Component {
           </h1>
           <div className="event-form-button-container-flex">
           <button
-            onClick={this.handleSaveEvent}
+            onClick={this.handleSubmit}
             className="event-form-button-plain"
           >
             Save
           </button>
           <button
-            onClick={this.handlePublishEvent}
+            onClick={this.handleSubmit}
             className="event-form-button-emphasis"
             >
               Make Your Event Live

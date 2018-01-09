@@ -12,18 +12,23 @@ export const fetchEvent = id => (
   })
 );
 
-export const newEvent = event => (
+export const createEvent = event => (
   $.ajax({
     method: 'POST',
     url: 'api/events',
+    processData: false,
+    contentType: false,
     data: event
   })
 );
 
-export const editEvent = event => (
+export const updateEvent = event => (
   $.ajax({
     method: 'PATCH',
     url: `api/events/${event.id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
     data: {event}
   })
 );

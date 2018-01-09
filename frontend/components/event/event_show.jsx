@@ -34,7 +34,6 @@ class EventShow extends React.Component {
       venue_address, event_show_image_url } = this.props.event;
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
-
       };
 
       return(

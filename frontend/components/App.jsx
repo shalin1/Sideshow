@@ -5,7 +5,7 @@ import SessionFormContainer from './session/session_form_container';
 import NavBarContainer from './nav/navbar_container';
 import FooterContainer from './nav/footer';
 import EventIndex from './event/event_index_container';
-import EventNew from './event/event_form';
+import EventForm from './event/event_form_container';
 import EventShow from './event/event_show_container';
 import {AuthRoute} from '../util/route_util';
 
@@ -17,7 +17,7 @@ const App = () => (
     <AuthRoute exact path="/signin" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/login" component={SessionFormContainer} />
-    <Route exact path="/create" component={EventNew} />
+    <Route exact path="/create" component={EventForm} />
     <Route exact path="/events/:id" component={EventShow} />
     <FooterContainer />
   </div>

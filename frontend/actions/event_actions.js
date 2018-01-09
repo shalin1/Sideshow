@@ -29,3 +29,8 @@ export const createEvent = event => dispatch => (
   APIUtil.createEvent(event).then(event => (
     dispatch(receiveEvent(event))))
 );
+
+export const updateEvent = event => dispatch => (
+  APIUtil.updateEvent(event).then(event => (
+    dispatch(receiveEvent(event))))
+);
