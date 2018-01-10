@@ -88,7 +88,6 @@ class EventForm extends React.Component {
   }
 
   render () {
-    debugger
     if (this.props.event === {}) {
       return (
         <h1>loading...</h1>
