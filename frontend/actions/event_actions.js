@@ -4,6 +4,7 @@ import { resetErrors } from './error_actions';
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_EVENT_ERRORS = "RECEIVE_ERRORS";
+export const REMOVE_EVENT = "REMOVE_EVENT";
 import {Route } from 'react-router-dom';
 
 const receiveEvents = events => ({
@@ -23,7 +24,15 @@ const receiveEvent = event => {
     type: RECEIVE_EVENT,
     event
   };
-}
+};
+
+const removeEvent = event => {
+  return {
+    type: REMOVE_EVENT,
+    event
+  };
+};
+
 export const fetchEvents = () => dispatch => (
   APIUtil.fetchEvents().then( events => (
     dispatch(receiveEvents(events))
@@ -49,5 +58,11 @@ export const updateEvent = event => dispatch => (
     dispatch(receiveEvent(event))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
+export const deleteEvent = event => dispatch => (
+  APIUtil.deleteEvent(event.id).then( () => (
+    dispatch(removeEvent(event))
   ))
 );

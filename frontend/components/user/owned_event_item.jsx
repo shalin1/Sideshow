@@ -2,9 +2,14 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
 
-class OwnedEventItem extends React.Component {
+class DashboardEventItem extends React.Component {
   constructor(props) {
     super(props);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete() {
+    this.props.deleteEvent(this.props.event);
   }
 
   render() {
@@ -20,45 +25,31 @@ class OwnedEventItem extends React.Component {
 
     return (
       <article
-        className="user-dashboard-owned-event-item"
+        className="user-dashboard-item-ownevent-container"
       >
-        <section
-          className="event-index-item-header"
-          style={eventImage}
-          onClick={this.handleClick}
-        >
-            <div className="event-index-item-price">
-              ${Math.round(ticket_price)}</div>
-        </section>
-
-        <section
-          className="event-index-item-body"
-          onClick={this.handleClick}
-        >
-          <div>
-            <div className="event-index-item-date">
-              {eventStart}
-            </div>
-            <div className="event-index-item-title">
-              {title}
-            </div>
-          </div>
-          <div className="event-index-item-venue">
-            {venue_name}
-          </div>
-        </section>
-
-        <section className="event-index-item-footer">
-          <span className="event-index-item-categories">
-            #Underground #Party
-          </span>
-          <div className="event-index-item-bookmark">
-            <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
-          </div>
-        </section>
+        <div className="user-dashboard-item-ownevent-title">
+          {title}
+        </div>
+        <div className="user-dashboard-item-ownevent-date">
+          {eventStart}
+        </div>
+        <div className="user-dashboard-item-ownevent-actions">
+          <Link to={`/events/${id}`}>
+            View Event
+          </Link>
+          <Link to={`/events/${id}/edit`}>
+            Edit Event
+          </Link>
+          <button
+            className="user-dashboard-item-button"
+            onClick={this.handleDelete}
+          >
+            Delete Event
+          </button>
+        </div>
       </article>
     );
   }
 }
 
-export default withRouter(OwnedEventItem);
+export default withRouter(DashboardEventItem);

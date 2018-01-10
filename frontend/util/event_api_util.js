@@ -25,7 +25,6 @@ export const createEvent = event => {
 };
 
 export const updateEvent = event => {
-  debugger
   return (
     $.ajax({
       method: 'PATCH',
@@ -37,10 +36,9 @@ export const updateEvent = event => {
   );
 };
 
-export const deleteEvent = event => (
+export const deleteEvent = id => (
   $.ajax({
     method: 'DELETE',
-    url: 'api/events',
-    data: event
+    url: `api/events/${id}`,
   })
 );

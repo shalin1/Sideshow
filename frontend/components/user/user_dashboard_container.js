@@ -5,20 +5,22 @@ import { fetchEvents, deleteEvent } from '../../actions/event_actions';
 const mapStateToProps = (state, ownProps) => {
   let displayedEvents, pageType;
   if (ownProps.match.path === '/myevents') {
-    pageType = "userEvents"
-    displayedEvents = state.entities.events// TODO: show events be
+    pageType = "userEvents";
+    displayedEvents = Object.values(state.entities.events);
   } else {
-    pageType = "error"
-    displayedEvents = "There's something wrong with your routing in the coutainer"
+    pageType = "error";
+    displayedEvents = "There's something wrong with your routing in the coutainer";
   }
   return ({
-    pageType: pageType
+    pageType: pageType,
     events: displayedEvents,
+    currentUser: state.session.currentUser,
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchEvents: () => dispatch(fetchEvents()),
+  deleteEvent: event => dispatch(deleteEvent(event))
 });
 
 export default connect (

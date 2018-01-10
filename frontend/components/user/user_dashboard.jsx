@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import OwnedEventItem from './owned_event_item';
+import DashboardEventShow from './owned_event_item';
 
 class UserDashboard extends React.Component {
 
@@ -8,10 +8,11 @@ class UserDashboard extends React.Component {
     this.props.fetchEvents();
   }
 
+
   render () {
     let dashboard_items;
-    if (pageType === "userEvents") {
-      if (!this.props.events) {
+    if (this.props.pageType === "userEvents") {
+      if (Object.keys(this.props.events).length === 0) {
         dashboard_items =
         <div className="event-render-error">
           <h1>
@@ -20,28 +21,28 @@ class UserDashboard extends React.Component {
           <p>
             Maybe you'd like to
             <Link to="/create">
-            Make an event?
-          </Link>;
-        </p>
-      </div>;
-    } else {
-      dashboard_items = this.props.events.map( event => (
-        
-        <OwnedEventItem
-          event={event}
-          key={event.id}
-        />
-      ));
-    }
+              Make an event?
+            </Link>;
+          </p>
+        </div>;
+      } else {
+        dashboard_items = this.props.events.map( event => (
+          <DashboardEventShow
+            event={event}
+            key={event.id}
+            deleteEvent={this.props.deleteEvent}
+          />
+        ));
+      }
     }
 
-    if (!this.props.user) {
-      return ('loading');
+    if (!this.props.currentUser) {
+      return ('loaggggding');
     } else {
       return (
         <div className="user-dashboard-container">
           <div className="user-dashboard-header">
-            Welcome to your dashboard
+            Welcome to your dashboard, {this.props.currentUser.first_name}!
           </div>
           <section className="user-dashboard-content">
             <nav className="user-dashboard-links">
@@ -55,7 +56,6 @@ class UserDashboard extends React.Component {
             <article className="user-dashboard-items">
               {dashboard_items}
             </article>
-
           </section>
         </div>
       );

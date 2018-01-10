@@ -35,8 +35,8 @@ class EventIndexItem extends React.Component {
           style={eventImage}
           onClick={this.handleClick}
         >
-            <div className="event-index-item-price">
-              ${Math.round(ticket_price)}</div>
+          <div className="event-index-item-price">
+            ${Math.round(ticket_price)}</div>
         </section>
 
         <section

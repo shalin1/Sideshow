@@ -21,7 +21,6 @@ const mapStateToProps = (state, ownProps) => {
       imageFile: null,
       imageUrl: null,
       published: false,
-      errors: state.errors.event,
     };
   } else {
     eventData = state.entities.events[ownProps.match.params.id];
@@ -29,7 +28,10 @@ const mapStateToProps = (state, ownProps) => {
     merge({}, eventData, {errors: state.errors.event});
     formType = "edit";
   }
-  return {event: eventData};
+  return {
+    event: eventData,
+    errors: state.errors.event
+  };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {

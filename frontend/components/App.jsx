@@ -7,7 +7,7 @@ import FooterContainer from './nav/footer';
 import EventIndex from './event/event_index_container';
 import EventForm from './event/event_form_container';
 import EventShow from './event/event_show_container';
-import UserDashboardEvents from './user/user_dashboard_events_container';
+import UserDashboardEvents from './user/user_dashboard_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => (

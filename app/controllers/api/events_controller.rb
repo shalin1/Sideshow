@@ -31,6 +31,14 @@ class Api::EventsController < ApplicationController
       render json:  @event.errors.messages, status: 422
     end
   end
+
+  def destroy
+    @user = current_user
+    @event = current_user.events.find(params[:id])
+    @event.destroy
+    render :show
+  end
+
   private
 
   def event_params

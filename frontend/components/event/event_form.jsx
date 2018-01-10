@@ -81,14 +81,14 @@ class EventForm extends React.Component {
         </ul>
       );
     } else {
-      debugger
       return(
-        <h1>erroriffic</h1>
+        <h1 className="form-errors">errors not loaded</h1>
       );
     }
   }
 
   render () {
+    debugger
     if (this.props.event === {}) {
       return (
         <h1>loading...</h1>
