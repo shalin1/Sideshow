@@ -24,7 +24,7 @@ class EventIndexItem extends React.Component {
     const eventImage = {
       backgroundImage: 'url(' + event_index_image_url + ')',
     };
-    const momentStart = moment(this.props.event_start).parseZone();
+    const momentStart = moment(event_start);
     const eventStart = momentStart.format("ddd, MMM D h:mm A");
     return (
       <article

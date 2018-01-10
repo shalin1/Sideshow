@@ -104,32 +104,21 @@
       }
     }
     &-datetime {
-
-      &-calendar {
-        @include form-input-base();
-        width: 130px;
-      }
-      &-time {
-        @include form-input-base();
-        width: 120px;
-      }
       &-input {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 300px;
+        @include form-input-base();
+        width: 200px;
         &-row {
           display: flex;
           flex-direction: row;
-          justify-content: space-between;
-          width: 66%;
+          justify-content: flex-start;
+          width: 100%;
 
         }
       }
       &-container {
         display: flex;
         flex-wrap: wrap;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
       }
 

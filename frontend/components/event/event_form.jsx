@@ -3,6 +3,7 @@ import 'react-dates/initialize';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
+import Flatpickr from 'react-flatpickr';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -146,150 +147,41 @@ class EventForm extends React.Component {
 
           <br/>
 
-          <section className="event-form-datetime-container">
-            <div className="event-form-datetime-input">
-                <label className="event-form-label">Starts</label>
-
-                <div className="">
-                  <div className="">
-                    <SingleDatePicker
-                      date={this.state.start_date} // momentPropTypes.momentObj or null
-                      onDateChange={start_date => this.setState({ start_date })} // PropTypes.func.isRequired
-                      focused={this.state.start_date_focus} // PropTypes.bool
-                      onFocusChange={({ focused: start_date_focus }) => this.setState({ start_date_focus })} // PropTypes.func.isRequired
-                    />
-
-                  </div>
-                  <div className="event-form-datetime-time-container">
-                    <select
-                      className="event-form-datetime-time"
-                      value={this.state.start_time}
-                      onChange={this.update("start_time")}
-                    >
-                      <option className="event-form-datetime-time-option" value="Midnight">Midnight</option>
-                      <option className="event-form-datetime-time-option" value="12:30">12:30AM</option>
-                      <option className="event-form-datetime-time-option" value="1:00AM">1:00AM</option>
-                      <option className="event-form-datetime-time-option" value="1:30AM">1:30AM</option>
-                      <option className="event-form-datetime-time-option" value="2:00AM">2:00AM</option>
-                      <option className="event-form-datetime-time-option" value="2:30AM">2:30AM</option>
-                      <option className="event-form-datetime-time-option" value="3:00AM">3:00AM</option>
-                      <option className="event-form-datetime-time-option" value="3:30AM">3:30AM</option>
-                      <option className="event-form-datetime-time-option" value="4:00AM">4:00AM</option>
-                      <option className="event-form-datetime-time-option" value="4:30AM">4:30AM</option>
-                      <option className="event-form-datetime-time-option" value="5:00AM">5:00AM</option>
-                      <option className="event-form-datetime-time-option" value="5:30AM">5:30AM</option>
-                      <option className="event-form-datetime-time-option" value="6:00AM">6:00AM</option>
-                      <option className="event-form-datetime-time-option" value="6:30AM">6:30AM</option>
-                      <option className="event-form-datetime-time-option" value="7:00AM">7:00AM</option>
-                      <option className="event-form-datetime-time-option" value="7:30AM">7:30AM</option>
-                      <option className="event-form-datetime-time-option" value="8:00AM">8:00AM</option>
-                      <option className="event-form-datetime-time-option" value="8:30AM">8:30AM</option>
-                      <option className="event-form-datetime-time-option" value="9:00AM">9:00AM</option>
-                      <option className="event-form-datetime-time-option" value="9:30AM">9:30AM</option>
-                      <option className="event-form-datetime-time-option" value="10:00AM">10:00AM</option>
-                      <option className="event-form-datetime-time-option" value="10:30AM">10:30AM</option>
-                      <option className="event-form-datetime-time-option" value="11:00AM">11:00AM</option>
-                      <option className="event-form-datetime-time-option" value="11:30AM">11:30AM</option>
-                      <option className="event-form-datetime-time-option" value="Noon">Noon</option>
-                      <option className="event-form-datetime-time-option" value="12:30AM">12:30AM</option>
-                      <option className="event-form-datetime-time-option" value="1:00AM">1:00AM</option>
-                      <option className="event-form-datetime-time-option" value="1:30AM">1:30AM</option>
-                      <option className="event-form-datetime-time-option" value="2:00AM">2:00AM</option>
-                      <option className="event-form-datetime-time-option" value="2:30AM">2:30AM</option>
-                      <option className="event-form-datetime-time-option" value="3:00AM">3:00AM</option>
-                      <option className="event-form-datetime-time-option" value="3:30AM">3:30AM</option>
-                      <option className="event-form-datetime-time-option" value="4:00AM">4:00AM</option>
-                      <option className="event-form-datetime-time-option" value="4:30AM">4:30AM</option>
-                      <option className="event-form-datetime-time-option" value="5:00AM">5:00AM</option>
-                      <option className="event-form-datetime-time-option" value="5:30AM">5:30AM</option>
-                      <option className="event-form-datetime-time-option" value="6:00AM">6:00AM</option>
-                      <option className="event-form-datetime-time-option" value="6:30AM">6:30AM</option>
-                      <option className="event-form-datetime-time-option" value="7:00AM">7:00AM</option>
-                      <option className="event-form-datetime-time-option" value="7:30AM">7:30AM</option>
-                      <option className="event-form-datetime-time-option" value="8:00AM">8:00AM</option>
-                      <option className="event-form-datetime-time-option" value="8:30AM">8:30AM</option>
-                      <option className="event-form-datetime-time-option" value="9:00AM">9:00AM</option>
-                      <option className="event-form-datetime-time-option" value="9:30AM">9:30AM</option>
-                      <option className="event-form-datetime-time-option" value="10:00AM">10:00AM</option>
-                      <option className="event-form-datetime-time-option" value="10:30AM">10:30AM</option>
-                      <option className="event-form-datetime-time-option" value="11:00AM">11:00AM</option>
-                      <option className="event-form-datetime-time-option" value="11:30AM">11:30AM</option>
-                    </select>
-
-                  </div>
-                </div>
+          <section className="event-form-datetime-row">
+            <div className="event-form-datetime-container">
+              <label className="event-form-label">Start
+                <Flatpickr data-enable-time
+                  className="event-form-datetime-input"
+                  value={this.state.start_date}
+                  onChange={this.update("start_date")}
+                  options={
+                    {
+                      enableTime:true,
+                      altInput:true,
+                      defaultDate: "2018-02-26T20:00"
+                    }
+                  }
+                />
+              </label>
             </div>
-            <div className="event-form-datetime-input">
-                <label className="event-form-label">Ends</label>
 
-                <div className="event-form-datetime-input-row">
-                  <div className="">
-                    <SingleDatePicker
-                      date={this.state.end_date} // momentPropTypes.momentObj or null
-                      onDateChange={end_date => this.setState({ end_date })} // PropTypes.func.isRequired
-                      focused={this.state.end_date_focus} // PropTypes.bool
-                      onFocusChange={({ focused: end_date_focus }) => this.setState({ end_date_focus })} // PropTypes.func.isRequired
-                    />
-                  </div>
-                  <div className="event-form-datetime-time-container">
-                    <select
-                      className="event-form-datetime-time"
-                      value={this.state.end_time}
-                      onChange={this.update("end_time")}
-                    >
-                      <option className="event-form-datetime-time-option" value="Midnight">Midnight</option>
-                      <option className="event-form-datetime-time-option" value="12:30">12:30AM</option>
-                      <option className="event-form-datetime-time-option" value="1:00AM">1:00AM</option>
-                      <option className="event-form-datetime-time-option" value="1:30AM">1:30AM</option>
-                      <option className="event-form-datetime-time-option" value="2:00AM">2:00AM</option>
-                      <option className="event-form-datetime-time-option" value="2:30AM">2:30AM</option>
-                      <option className="event-form-datetime-time-option" value="3:00AM">3:00AM</option>
-                      <option className="event-form-datetime-time-option" value="3:30AM">3:30AM</option>
-                      <option className="event-form-datetime-time-option" value="4:00AM">4:00AM</option>
-                      <option className="event-form-datetime-time-option" value="4:30AM">4:30AM</option>
-                      <option className="event-form-datetime-time-option" value="5:00AM">5:00AM</option>
-                      <option className="event-form-datetime-time-option" value="5:30AM">5:30AM</option>
-                      <option className="event-form-datetime-time-option" value="6:00AM">6:00AM</option>
-                      <option className="event-form-datetime-time-option" value="6:30AM">6:30AM</option>
-                      <option className="event-form-datetime-time-option" value="7:00AM">7:00AM</option>
-                      <option className="event-form-datetime-time-option" value="7:30AM">7:30AM</option>
-                      <option className="event-form-datetime-time-option" value="8:00AM">8:00AM</option>
-                      <option className="event-form-datetime-time-option" value="8:30AM">8:30AM</option>
-                      <option className="event-form-datetime-time-option" value="9:00AM">9:00AM</option>
-                      <option className="event-form-datetime-time-option" value="9:30AM">9:30AM</option>
-                      <option className="event-form-datetime-time-option" value="10:00AM">10:00AM</option>
-                      <option className="event-form-datetime-time-option" value="10:30AM">10:30AM</option>
-                      <option className="event-form-datetime-time-option" value="11:00AM">11:00AM</option>
-                      <option className="event-form-datetime-time-option" value="11:30AM">11:30AM</option>
-                      <option className="event-form-datetime-time-option" value="Noon">Noon</option>
-                      <option className="event-form-datetime-time-option" value="12:30AM">12:30AM</option>
-                      <option className="event-form-datetime-time-option" value="1:00AM">1:00AM</option>
-                      <option className="event-form-datetime-time-option" value="1:30AM">1:30AM</option>
-                      <option className="event-form-datetime-time-option" value="2:00AM">2:00AM</option>
-                      <option className="event-form-datetime-time-option" value="2:30AM">2:30AM</option>
-                      <option className="event-form-datetime-time-option" value="3:00AM">3:00AM</option>
-                      <option className="event-form-datetime-time-option" value="3:30AM">3:30AM</option>
-                      <option className="event-form-datetime-time-option" value="4:00AM">4:00AM</option>
-                      <option className="event-form-datetime-time-option" value="4:30AM">4:30AM</option>
-                      <option className="event-form-datetime-time-option" value="5:00AM">5:00AM</option>
-                      <option className="event-form-datetime-time-option" value="5:30AM">5:30AM</option>
-                      <option className="event-form-datetime-time-option" value="6:00AM">6:00AM</option>
-                      <option className="event-form-datetime-time-option" value="6:30AM">6:30AM</option>
-                      <option className="event-form-datetime-time-option" value="7:00AM">7:00AM</option>
-                      <option className="event-form-datetime-time-option" value="7:30AM">7:30AM</option>
-                      <option className="event-form-datetime-time-option" value="8:00AM">8:00AM</option>
-                      <option className="event-form-datetime-time-option" value="8:30AM">8:30AM</option>
-                      <option className="event-form-datetime-time-option" value="9:00AM">9:00AM</option>
-                      <option className="event-form-datetime-time-option" value="9:30AM">9:30AM</option>
-                      <option className="event-form-datetime-time-option" value="10:00AM">10:00AM</option>
-                      <option className="event-form-datetime-time-option" value="10:30AM">10:30AM</option>
-                      <option className="event-form-datetime-time-option" value="11:00AM">11:00AM</option>
-                      <option className="event-form-datetime-time-option" value="11:30AM">11:30AM</option>
-                    </select>
-
-                  </div>
-                </div>
+            <div className="event-form-datetime-container">
+              <label className="event-form-label">End
+                <Flatpickr data-enable-time
+                  className="event-form-datetime-input"
+                  value={this.state.end_date}
+                  onChange={this.update("end_date")}
+                  options={
+                    {
+                      enableTime:true,
+                      altInput:true,
+                      defaultDate: "2018-02-26T20:00"
+                    }
+                  }
+                />
+              </label>
             </div>
+
           </section>
 
           <br/>
@@ -300,7 +192,10 @@ class EventForm extends React.Component {
                 className="event-form-image-upload-landingpad"
                 style={uploadedImage}
               >
-                <input type="file" onChange={this.updateFile()} />
+                <input
+                  type="file"
+                  onChange={this.updateFile()}
+                  className="event-image-upload-button"/>
               </div>
             </div>
           </label>

@@ -22,11 +22,6 @@
   &:focus {
     border: 1px solid $peppy-blue;
   }
-  &-container {
-    box-sizing: border-box;
-    display: block;
-    padding: 5.5px;
-  }
 }
 
 @mixin form-base-textarea {
