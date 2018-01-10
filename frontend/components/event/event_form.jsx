@@ -24,8 +24,6 @@ class EventForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
-    console.log(this.state);
-    console.log('before:' + formData);
     formData.append("event[event_start]", this.state.event_start);
     formData.append("event[event_end]", this.state.event_end);
     formData.append("event[title]", this.state.title);
