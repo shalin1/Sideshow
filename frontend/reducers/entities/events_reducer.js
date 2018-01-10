@@ -1,8 +1,10 @@
 import { RECEIVE_EVENTS, RECEIVE_EVENT } from '../../actions/event_actions';
 import merge from 'lodash/merge';
 
+const defaultState = {
+}
 
-const eventsReducer = (oldState = {}, action) => {
+const eventsReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_EVENTS:

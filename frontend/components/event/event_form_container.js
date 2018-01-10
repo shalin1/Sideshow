@@ -13,16 +13,16 @@ const mapStateToProps = (state, ownProps) => {
       venue_name: "",
       venue_address: "",
       ticket_price: "",
-      tickets_avialable: "",
+      tickets_available: "",
       start_date: "2018-02-26T20:00:00.000Z",
       end_date: "2018-02-27T05:00:00.000Z",
-
       imageFile: null,
       imageUrl: null,
       published: false,
     };
   } else {
-    eventData = state.events[ownProps.match.params.eventId];
+    debugger
+    eventData = state.entities.events[ownProps.match.params.id];
   }
   return {event: eventData};
 };
