@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import UserDashboard from './user_dashboard';
-import { fetchEvents, deleteEvent } from '../../actions/event_actions';
+import { fetchCurrentUserEvents, deleteEvent } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let displayedEvents, pageType;

@@ -1,3 +1,60 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'fonts';
+@import 'colors';
+@import 'forms';
+.user {
+  &-dashboard {
+    &-container {
+      margin: 80px 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 3px;
+    }
+    &-header {
+      @include font-header-search-box;
+    }
+    &-links {
+      display: flex;
+      justify-content: space-around;
+    }
+    &-link {
+      @include font-nav-link;
+      font-size: 26px;
+    &-items {
+      &-container {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    }
+    &-ownevents {
+      &-item {
+        &-container {
+          border: 1px solid $lighter-grey;
+          margin: 20px;
+          width: 80%;
+          padding: 30px;
+          border-radius: 3px;
+        }
+        &-title {
+          @include font-event-index-intro;
+          padding-left: 0;
+        }
+        &-date {
+          @include font-label;
+        }
+        &-actions > * {
+          @include event-button-base;
+          background-image: $pornj-gradient;
+          padding: 20px;
+          width: 20%;
+        }
+      }
+    }
+  }
+}

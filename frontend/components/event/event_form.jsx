@@ -39,7 +39,9 @@ class EventForm extends React.Component {
     if (this.state.id) {
       formData.append("event[id]", this.state.id);
     }
-    this.props.action(formData);
+    this.props.action(formData).then(
+      this.props.history.push(`/events/${this.state.id}`)
+    );
   }
 
 
@@ -172,37 +174,37 @@ class EventForm extends React.Component {
               <div className="event-form-datetime-container">
                 <label className="event-form-label">Start</label>
 
-                  <Flatpickr data-enable-time
-                    className="event-form-datetime-input"
-                    value={this.state.event_start}
-                    onChange={event_start => { this.setState({event_start}); }}
-                    options={
-                      {
+                <Flatpickr data-enable-time
+                  className="event-form-datetime-input"
+                  value={this.state.event_start}
+                  onChange={event_start => { this.setState({event_start}); }}
+                  options={
+                    {
                         dateFormat: "M j, h:iK",
                         altFormat: "M j, h:iK",
                         enableTime:true,
                         altInput:true,
                         defaultHour: "22"
-                      }
                     }
-                  />
+                  }
+                />
               </div>
 
               <div className="event-form-datetime-container">
                 <label className="event-form-label">End              </label>
 
-                  <Flatpickr data-enable-time
-                    className="event-form-datetime-input"
-                    value={this.state.event_end}
-                    onChange={event_end => { this.setState({event_end}); }}
-                    options={
-                      {
+                <Flatpickr data-enable-time
+                  className="event-form-datetime-input"
+                  value={this.state.event_end}
+                  onChange={event_end => { this.setState({event_end}); }}
+                  options={
+                    {
                         altFormat: "M j, h:iK",
                         enableTime:true,
                         altInput:true,
-                      }
                     }
-                  />
+                  }
+                />
               </div>
 
             </section>
@@ -212,17 +214,17 @@ class EventForm extends React.Component {
             <label className="event-form-label">
               Event Image
             </label>
-              <div className="event-image-upload-container">
-                <div
-                  className="event-form-image-upload-landingpad"
-                  style={uploadedImage}
-                >
-                  <input
-                    type="file"
-                    onChange={this.updateFile()}
-                    className="event-image-upload-button"/>
-                </div>
+            <div className="event-image-upload-container">
+              <div
+                className="event-form-image-upload-landingpad"
+                style={uploadedImage}
+              >
+                <input
+                  type="file"
+                  onChange={this.updateFile()}
+                className="event-image-upload-button"/>
               </div>
+            </div>
             <br/>
 
             <label className="event-form-label">Event Description
@@ -237,15 +239,10 @@ class EventForm extends React.Component {
               Nice job! You're almost done.
             </h1>
             <div className="event-form-button-container-flex">
-            <button
-              onClick={this.handleSubmit}
-              className="event-form-button-plain"
-            >
-              Save
-            </button>
-            <button
-              onClick={this.handleSubmit}
-              className="event-form-button-emphasis"
+
+              <button
+                onClick={this.handleSubmit}
+                className="event-form-button-emphasis"
               >
                 Make Your Event Live
               </button>

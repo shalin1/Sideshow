@@ -37,7 +37,12 @@ class UserDashboard extends React.Component {
     }
 
     if (!this.props.currentUser) {
-      return ('loaggggding');
+      return (
+        <div className="loading">
+          <span>loading....</span>
+          <i class="fa fa-hourglass fa-spin fa-3x" aria-hidden="true" />);
+        </div>
+      );
     } else {
       return (
         <div className="user-dashboard-container">
@@ -53,7 +58,7 @@ class UserDashboard extends React.Component {
                 <Link to="/myevents">My Bookmarks</Link>
               </div>
             </nav>
-            <article className="user-dashboard-items">
+            <article className="user-dashboard-items-container">
               {dashboard_items}
             </article>
           </section>
