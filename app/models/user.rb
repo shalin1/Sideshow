@@ -7,6 +7,10 @@ class User < ApplicationRecord
   foreign_key: :organizer_id,
   class_name: 'Event'
 
+  has_many :tickets,
+  foreign_key: :ticket_holder_id,
+  class_name: 'Ticket'
+
   attr_reader :password
 
   def password=(password)

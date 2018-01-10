@@ -6,6 +6,8 @@ class Event < ApplicationRecord
   foreign_key: :organizer_id,
   class_name: 'User'
 
+  has_many :tickets
+
   has_attached_file(
     :hero_image,
     styles: {

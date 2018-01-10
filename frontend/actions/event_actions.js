@@ -36,15 +36,13 @@ export const fetchEvent = id => dispatch => (
   )
 );
 
-export const createEvent = event => dispatch => {
-  debugger
-  APIUtil.createEvent(event)
-  .then(event => (
+export const createEvent = event => dispatch => (
+  APIUtil.createEvent(event).then(event => (
     dispatch(receiveEvent(event))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-  ));
-};
+  ))
+);
 
 export const updateEvent = event => dispatch => (
   APIUtil.updateEvent(event).then(event => (

@@ -15,6 +15,12 @@ class EventForm extends React.Component {
     this.update = this.update.bind(this);
   }
 
+  componentWillMount() {
+    if (this.props.match.params.id) {
+      this.props.fetchEvent(this.props.match.params.id);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
@@ -61,25 +67,35 @@ class EventForm extends React.Component {
   }
 
 
-  renderErrors() {
-    if (this.props.errors) {
-      console.log(this.props.errors);
+  renderErrors(field) {
+    if (this.props.errors !== undefined) {
       return(
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`} className="form-error-message">
-              {error}
-            </li>
-          ))}
+        <ul className="form-errors">
+          {
+            this.props.errors[field].map((error, i) => (
+              <li key={`error-${i}`} className="form-error-message">
+                {error}
+              </li>
+            ))
+          }
         </ul>
+      );
+    } else {
+      debugger
+      return(
+        <h1>erroriffic</h1>
       );
     }
   }
 
   render () {
-    if (this.props.event !== undefined) {
-    let uploadedImage;
-    if (this.state.imageUrl) {
+    if (this.props.event === {}) {
+      return (
+        <h1>loading...</h1>
+      );
+    } else {
+      let uploadedImage;
+      if (this.state.imageUrl) {
         uploadedImage = {backgroundImage: 'url(' + this.state.imageUrl + ')'};
       } else {
         uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
@@ -241,11 +257,7 @@ class EventForm extends React.Component {
           </div>
         </section>
       );
-    } else {
-    return (
-      <h1>loading...</h1>
-    );
-  }
+    }
   }
 }
 

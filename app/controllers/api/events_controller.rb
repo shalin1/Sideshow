@@ -15,7 +15,7 @@ class Api::EventsController < ApplicationController
 
   def create
     @event = current_user.events.new(event_params)
-    if @event.save!
+    if @event.save
       render :show
     else
       render json: @event.errors.messages, status: 422

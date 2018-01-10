@@ -12,9 +12,11 @@ const LoggedInUser = (currentUser, logout) => (
     <div className="nav-link">
       <i className="fa fa-user avatar-icon" aria-hidden="true" />{currentUser.first_name}
     </div>
-    <div className="nav-link">
-      <button onClick={logout}>Sign Out</button>
-    </div>
+    <button onClick={logout}>
+      <div className="nav-link">
+        Sign Out
+      </div>
+    </button>
   </div>
 );
 
