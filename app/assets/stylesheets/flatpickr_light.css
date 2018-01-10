@@ -44,7 +44,7 @@
 }
 .flatpickr-calendar.static {
   position: absolute;
-  top: calc(100% + 2px);
+  top: calc(100% + 200px);
 }
 .flatpickr-calendar.static.open {
   z-index: 999;
@@ -225,7 +225,7 @@
   right: 0;
   width: 14px;
   padding: 0 4px 0 2px;
-  height: 50%;
+  height: 75%;
   line-height: 50%;
   opacity: 0;
   cursor: pointer;

@@ -8,10 +8,12 @@ const receiveEvents = events => ({
   events
 });
 
-const receiveEvent = event => ({
-  type: RECEIVE_EVENT,
-  event
-});
+const receiveEvent = event => {
+  return {
+    type: RECEIVE_EVENT,
+    event
+  };
+};
 
 export const fetchEvents = () => dispatch => (
   APIUtil.fetchEvents().then( events => (
@@ -30,7 +32,10 @@ export const createEvent = event => dispatch => (
     dispatch(receiveEvent(event))))
 );
 
-export const updateEvent = event => dispatch => (
-  APIUtil.updateEvent(event).then(event => (
-    dispatch(receiveEvent(event))))
-);
+export const updateEvent = event => dispatch => {
+  debugger
+  return (
+    APIUtil.updateEvent(event).then(event => (
+      dispatch(receiveEvent(event))))
+  );
+};
