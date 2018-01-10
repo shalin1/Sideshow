@@ -5,7 +5,7 @@ export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_EVENT_ERRORS = "RECEIVE_ERRORS";
 export const REMOVE_EVENT = "REMOVE_EVENT";
-import {Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const receiveEvents = events => ({
   type: RECEIVE_EVENTS,
@@ -46,17 +46,19 @@ export const fetchEvent = id => dispatch => (
 );
 
 export const createEvent = event => dispatch => (
-  APIUtil.createEvent(event).then(event => (
-    dispatch(receiveEvent(event))
-  ), err => (
+  APIUtil.createEvent(event).then(event => {
+    dispatch(receiveEvent(event));
+    return event;
+  }, err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );
 
 export const updateEvent = event => dispatch => (
-  APIUtil.updateEvent(event).then(event => (
-    dispatch(receiveEvent(event))
-  ), err => (
+  APIUtil.updateEvent(event).then(event => {
+    dispatch(receiveEvent(event));
+    return event;
+  }, err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
 );

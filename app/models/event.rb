@@ -1,6 +1,13 @@
 class Event < ApplicationRecord
   validates :event_start, :event_end,:title,:description,:venue_name,
   :venue_address,:ticket_price,:tickets_available,:organizer_id, presence: true
+  validate :event_cannot_end_after_it_starts
+
+  def event_cannot_end_after_it_starts
+    errors.add(:event_start, "must be after event_end") if
+      !event_start.blank? && :event_end > :event_start
+  end
+
 
   belongs_to :user,
   foreign_key: :organizer_id,

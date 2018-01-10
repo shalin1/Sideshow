@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
       tickets_available: 100,
       event_start: Date.now(),
       event_end: Date.now(),
+      organizer_id: state.session.currentUser.id,
       imageFile: null,
       imageUrl: null,
       published: false,
@@ -38,7 +39,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const action = (ownProps.match.path === "/create") ? createEvent : updateEvent;
   return ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
-    action: event => dispatch(action(event))
+    resetErrors: () => dispatch(resetErrors()),
+    action: event => dispatch(action(event)),
   });
 };
 

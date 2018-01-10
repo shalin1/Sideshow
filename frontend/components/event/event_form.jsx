@@ -39,8 +39,9 @@ class EventForm extends React.Component {
     if (this.state.id) {
       formData.append("event[id]", this.state.id);
     }
+    this.props.resetErrors();
     this.props.action(formData).then(
-      this.props.history.push(`/events/${this.state.id}`)
+      (event) => this.props.history.push(`/events/${event.id}`)
     );
   }
 
@@ -61,7 +62,7 @@ class EventForm extends React.Component {
       if (file) {
         reader.readAsDataURL(file);
       } else {
-        this.setState({ imageUrl: "", imageFile: null });
+        this.setState({ eventShowUrl: "https://s3.amazonaws.com/sideshow-development/Screen+Shot+2018-01-10+at+5.09.04+PM.png" });
       }
     };
   }
@@ -137,6 +138,7 @@ class EventForm extends React.Component {
                   placeholder="Enter the venue's name"
                 />
               </div>
+              {this.renderErrors("venue_name")}
             </label>
 
             <br/>
@@ -151,6 +153,7 @@ class EventForm extends React.Component {
                   placeholder="Enter the venue's address"
                 />
               </div>
+              {this.renderErrors("venue_address")}
             </label>
 
             <br/>
@@ -166,6 +169,7 @@ class EventForm extends React.Component {
                   placeholder="$"
                 />
               </div>
+              {this.renderErrors("ticket_price")}
             </label>
 
             <br/>
@@ -189,7 +193,7 @@ class EventForm extends React.Component {
                   }
                 />
               </div>
-
+              {this.renderErrors("event_start")}
               <div className="event-form-datetime-container">
                 <label className="event-form-label">End              </label>
 
@@ -225,13 +229,17 @@ class EventForm extends React.Component {
                 className="event-image-upload-button"/>
               </div>
             </div>
+            {this.renderErrors("imageUrl")}
+
+
             <br/>
 
             <label className="event-form-label">Event Description
               <div className="event-form-rich-text-container">
-                <textarea className="event-form-rich-text" value={this.state.description} onChange={this.update('description')} />
               </div>
             </label>
+            <textarea className="event-form-rich-text" value={this.state.description} onChange={this.update('description')} />
+            {this.renderErrors("description")}
 
           </form>
           <div className="event-form-button-container">
