@@ -62,15 +62,18 @@ class EventForm extends React.Component {
 
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.session.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors) {
+      console.log(this.props.errors);
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`} className="form-error-message">
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render () {
@@ -104,6 +107,7 @@ class EventForm extends React.Component {
                   placeholder="Give it a short distinct name"
                 />
               </div>
+              {this.renderErrors("title")}
             </label>
 
             <br/>

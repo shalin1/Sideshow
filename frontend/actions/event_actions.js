@@ -11,18 +11,19 @@ const receiveEvents = events => ({
   events
 });
 
-const receiveErrors = errors => ({
+const receiveErrors = errors => {
+  return {
   type: RECEIVE_EVENT_ERRORS,
   errors
-});
+};
+};
 
 const receiveEvent = event => {
   return {
     type: RECEIVE_EVENT,
     event
   };
-};
-
+}
 export const fetchEvents = () => dispatch => (
   APIUtil.fetchEvents().then( events => (
     dispatch(receiveEvents(events))
@@ -35,13 +36,15 @@ export const fetchEvent = id => dispatch => (
   )
 );
 
-export const createEvent = event => dispatch => (
-  APIUtil.createEvent(event).then(event => (
+export const createEvent = event => dispatch => {
+  debugger
+  APIUtil.createEvent(event)
+  .then(event => (
     dispatch(receiveEvent(event))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-  ))
-);
+  ));
+};
 
 export const updateEvent = event => dispatch => (
   APIUtil.updateEvent(event).then(event => (

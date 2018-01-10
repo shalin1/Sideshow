@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import EventForm from './event_form';
 import { fetchEvent, createEvent, updateEvent } from '../../actions/event_actions';
-
+import { resetErrors } from '../../actions/error_actions';
+import merge from 'lodash/merge';
 
 const mapStateToProps = (state, ownProps) => {
   let eventData, formType;
@@ -20,10 +21,13 @@ const mapStateToProps = (state, ownProps) => {
       imageFile: null,
       imageUrl: null,
       published: false,
+      errors: state.errors.event,
     };
   } else {
     eventData = state.entities.events[ownProps.match.params.id];
-    formType = "edit"
+
+    merge({}, eventData, {errors: state.errors.event});
+    formType = "edit";
   }
   return {event: eventData};
 };
