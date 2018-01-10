@@ -35,7 +35,6 @@ class EventForm extends React.Component {
     if (this.state.id) {
       formData.append("event[id]", this.state.id);
     }
-    
     this.props.action(formData);
   }
 
@@ -59,7 +58,6 @@ class EventForm extends React.Component {
       } else {
         this.setState({ imageUrl: "", imageFile: null });
       }
-
     };
   }
 
@@ -77,10 +75,14 @@ class EventForm extends React.Component {
   }
 
   render () {
-      if (this.props.event !== undefined) {
-    const uploadedImage = {
-      backgroundImage: 'url(' + this.state.imageUrl + ')',
-    };
+    if (this.props.event !== undefined) {
+    let uploadedImage;
+    if (this.state.imageUrl) {
+        uploadedImage = {backgroundImage: 'url(' + this.state.imageUrl + ')'};
+      } else {
+        uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
+      }
+
 
       return (
         <section className="event-form-container">
@@ -191,7 +193,9 @@ class EventForm extends React.Component {
 
             <br/>
 
-            <label className="event-form-label">Event Image
+            <label className="event-form-label">
+              Event Image
+            </label>
               <div className="event-image-upload-container">
                 <div
                   className="event-form-image-upload-landingpad"
@@ -203,7 +207,6 @@ class EventForm extends React.Component {
                     className="event-image-upload-button"/>
                 </div>
               </div>
-            </label>
             <br/>
 
             <label className="event-form-label">Event Description
@@ -235,7 +238,6 @@ class EventForm extends React.Component {
           </div>
         </section>
       );
-
     } else {
     return (
       <h1>loading...</h1>

@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 export default (state = {
   validEmail: {email: "", exist: false},
-  sessionModalActive: false
+  sessionModalActive: false,
   }, action) => {
   Object.freeze(state);
   switch (action.type) {

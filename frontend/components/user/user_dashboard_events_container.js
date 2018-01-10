@@ -1,0 +1,19 @@
+import { connect } from 'react-redux';
+import UserDashboard from './user_dashboard';
+import { fetchEvents, deleteEvent } from '../../actions/event_actions';
+
+const mapStateToProps = state => {
+  return ({
+    events: Object.values(state.entities.events)
+  });
+};
+
+const mapDispatchToProps = dispatch => ({
+  fetchEvents: () => dispatch(fetchEvents()),
+  deleteEvent: id => dispatch(deleteEvent(id))
+});
+
+export default connect (
+  mapStateToProps,
+  mapDispatchToProps
+)(UserDashboard);

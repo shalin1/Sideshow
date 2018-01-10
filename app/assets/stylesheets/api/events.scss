@@ -134,11 +134,19 @@
         min-width: 300px;
         height: 190px;
         margin: 7px;
+        background-size: cover;
+        background-position: center center;
+        align-items: center;
+        justify-content: center;
       }
       &-container {
         padding: 5px 10px;
         background: white;
         border: 1px solid $lighter-grey;
+        display: flex;
+      }
+      &-button {
+        @include event-button-base;
       }
     }
     &-button {
