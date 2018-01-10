@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      
+
       render json: @user.errors.messages, status: 422
     end
   end
@@ -29,6 +29,7 @@ class Api::UsersController < ApplicationController
       render json: ["No user with that email"], status: 422
     end
   end
+
 
   def user_params
     params.require(:user).permit(:email, :password, :first_name, :last_name, :emails_opt_in)

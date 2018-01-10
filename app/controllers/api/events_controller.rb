@@ -4,6 +4,12 @@ class Api::EventsController < ApplicationController
     @events = Event.all
   end
 
+  def currentUserEvents
+    @user = current_user
+    @events = Event.where(id: @user.event_ids)
+    render :index
+  end
+
   def show
     @event = Event.find_by(id: params[:id])
     if @event
@@ -38,6 +44,7 @@ class Api::EventsController < ApplicationController
     @event.destroy
     render :show
   end
+
 
   private
 

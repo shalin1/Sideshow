@@ -3,6 +3,10 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
+  def event_ids
+    return events.map(&:id)
+  end
+
   has_many :events,
   foreign_key: :organizer_id,
   class_name: 'Event'
