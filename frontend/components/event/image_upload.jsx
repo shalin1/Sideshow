@@ -13,7 +13,6 @@ class ImageUpload extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    console.log('image submitted...');
   }
 
   _handleImageChange(e) {

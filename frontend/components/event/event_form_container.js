@@ -36,7 +36,6 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const action = (ownProps.match.path === "/create") ? createEvent : updateEvent;
-  console.log(action);
   return ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
     action: event => dispatch(action(event))

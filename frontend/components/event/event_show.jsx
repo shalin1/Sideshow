@@ -26,7 +26,6 @@ class EventShow extends React.Component {
   }
 
   handleClick() {
-    console.log("Regitration button clicked");
   }
 
   render () {
