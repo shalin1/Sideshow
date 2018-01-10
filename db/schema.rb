@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20180105160652) do
     t.datetime "hero_image_updated_at"
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
     t.index ["title"], name: "index_events_on_title"
-  end
+  end 
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
