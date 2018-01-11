@@ -8,14 +8,17 @@ class UserDashboard extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
-    this.props.fetchEvents();
-    this.props.fetchTickets();
+  componentDidMount() {
+    this.props.pageIsLoading();
+    this.props.fetchEvents().then(
+      () => this.props.fetchTickets().then(
+        () => this.props.pageFinishedLoading()
+      )
+    );
   }
 
   render () {
-    if (this.props.content === undefined) {
-      debugger
+    if (this.props.loading) {
       return (
         <div className="loading">
           <span>loading....</span>

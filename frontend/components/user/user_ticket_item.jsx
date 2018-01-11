@@ -19,7 +19,7 @@ class DashboardTicketShow extends React.Component {
   }
 
   render() {
-    debugger
+
     const {
       id, event_id, ticket_holder_id
     } = this.props.ticket;

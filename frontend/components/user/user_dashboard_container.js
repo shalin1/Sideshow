@@ -2,32 +2,34 @@ import { connect } from 'react-redux';
 import UserDashboard from './user_dashboard';
 import { fetchEvent, fetchEvents, userEvents, deleteEvent } from '../../actions/event_actions';
 import { fetchTickets, deleteTicket } from '../../actions/ticket_actions';
+import { pageIsLoading, pageFinishedLoading } from '../../actions/loading_toggle_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
-  let currentUser = state.session.currentUser;
-  if (ownProps.match.path === '/my_events' || ownProps.match.path === 'my_dashboard') {
-    console.log("rendering myEvents");
-    pageType = "userEvents";
-    content = currentUser.event_ids.map( event_id => (
-      state.entities.events.event_id
-    ));
-  } else if (ownProps.match.path === '/my_tickets') {
-    console.log("rendering myTickets");
-    pageType = "userTickets";
-    content = currentUser.tickets;
-  } else if (ownProps.match.path === '/my_bookmarks') {
-    console.log("rendering myBookmarks");
-    pageType = "userBookmarks";
-    content = currentUser.bookmarks;
-  } else {
-    pageType = "uh-oh";
-    content = "There's something wrong with your routing in the coutainer";
+  const currentUser = state.session.currentUser;
+  switch (ownProps.match.path) {
+    case '/my_events':
+      pageType = "userEvents";
+      if (state.ui.loading) {
+        content = "loading";
+      } else {
+        
+        content = currentUser.event_ids.map(id => (
+          state.entities.events[id]
+        ));
+      }
+      break;
+    case '/my_bookmarks':
+    case '/my_tickets':
+      break;
+    default:
   }
+
   return ({
     pageType: pageType,
     content: content,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    loading: state.ui.loading,
   });
 };
 
@@ -35,7 +37,9 @@ const mapDispatchToProps = dispatch => ({
   deleteEvent: event => dispatch(deleteEvent(event)),
   fetchEvent: id => dispatch(fetchEvent(id)),
   fetchEvents: () => dispatch(fetchEvents()),
-  fetchTickets: () => dispatch(fetchTickets())
+  fetchTickets: () => dispatch(fetchTickets()),
+  pageIsLoading: () => dispatch(pageIsLoading()),
+  pageFinishedLoading: () => dispatch(pageFinishedLoading()),
 });
 
 export default connect (
