@@ -1,11 +1,27 @@
 import React from 'react';
-
 class TicketPurchaseModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props;
+    this.state = {
+      tix_quantity: 1
+    };
     this.handleClose = this.handleClose.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleSubmit(e) {
+    const ticket = {
+      ticket_holder_id: this.props.currentUser.id,
+      event_id: this.props.event.id
+    };
+    this.props.createTicket(ticket);
+  }
+
+  handleChange(event) {
+     this.setState({tix_quantity: event.target.value});
+     debugger
+   }
 
   handleClose() {
     this.props.hideTicketingModal();
@@ -13,7 +29,7 @@ class TicketPurchaseModal extends React.Component {
 
   render() {
     return (
-      <div className="tickets-modal-overlay" onClick={this.handleClose}>
+      <div className="tickets-modal-overlay">
         <div className="tickets-modal-container">
           <button
             className="tickets-modal-close"
@@ -21,14 +37,50 @@ class TicketPurchaseModal extends React.Component {
           >
             x
           </button>
+
           <section className="tickets-modal-header">
             <h1 className="tickets-modal-header-content">Register</h1>
           </section>
-          <button
-            onClick={this.purchaseTickets} className="ticket-modal-checkout-button"
-          >
-            CHECKOUT
-          </button>
+
+          <section className="tickets-modal-box">
+            <div>
+              <span>
+                ${this.props.event.ticket_price}
+                <br/>
+                + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
+              </span>
+            </div>
+            <div>
+              <form>
+                <select value={this.state.tix_quantity} onChange={this.handleChange}>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                </select>
+              </form>
+            </div>
+
+
+          </section>
+
+          <section className="tickets-modal-footer">
+            <div className="tickets-modal-labels">
+              <span>Qty:{this.state.tix_quantity}</span>
+              <span>USD ${(this.props.event.ticket_price * this.state.tix_quantity * 1.1347).toFixed(2)}</span>
+            </div>
+            <button onClick={this.handleSubmit} value="TEST">
+              CHECKOUT
+            </button>
+
+
+          </section>
         </div>
       </div>
     );

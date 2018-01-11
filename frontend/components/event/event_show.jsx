@@ -7,6 +7,7 @@ import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
+    
     this.handleTicketing = this.handleTicketing.bind(this);
   }
 
@@ -45,7 +46,7 @@ class EventShow extends React.Component {
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
-      const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal /> : null;
+      const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event}/> : null;
 
         const momentStart = moment(event_start).parseZone();
         const momentEnd = moment(event_end).parseZone();

@@ -5,6 +5,7 @@
 @import 'modal';
 @import 'fonts';
 @import 'forms';
+
 .tickets {
   &-modal {
     &-overlay {
@@ -21,11 +22,11 @@
     &-container {
       position: absolute;
       top: 150px;
-      height: 400px;
+      height: 300px;
       width: 600px;
       border: 2px solid $pornj-gradient;
       border-radius: 5px;
-      background: white;
+      background: $off-white;
       z-index: 6000;
       display: flex;
       flex-direction: column;
@@ -40,7 +41,7 @@
     &-header {
       height: 60px;
       width: 100%;
-      background: white;
+      background: $off-white;
       display: flex;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
@@ -53,10 +54,44 @@
         font-size: 30px;
       }
     }
+    &-footer {
+      height: 60px;
+      width: 100%;
+      background: white;
+      display: flex;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      flex-direction: row;
+      justify-content: space-between;
+      border-top: 1px solid $lightest-grey;
+    }
     &-checkout-button {
       background: pink;
       padding: 10px 30px;
-      background: $pornj-gradient;
+    }
+    &-labels {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;;
+    }
+    &-labels span {
+      @include font-label;
+      padding: 20px;
+    }
+    &-box {
+      height: 100px;
+      width: 570px;
+      box-sizing: border-box;
+      background: white;
+      margin: 15px 15px 40px 15px;
+      border: 1px solid $lighter-grey;
+      border-radius: 3px;
+      border-left: 8px solid $eventbrite;
+      padding: 15px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
   }
