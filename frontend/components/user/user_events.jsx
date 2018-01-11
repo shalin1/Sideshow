@@ -16,38 +16,31 @@ class UserEvents extends React.Component {
 
   render() {
     const {
-      id,
-      title,
-      event_start,
-      tickets_available,
-      tickets,
-      event_show_url
+      id, title, event_start, tickets_available, tickets, event_show_url
     } = this.props.event;
 
     const eventStart = moment(event_start).format("ddd, MMM D h:mm A");
 
     return (
-      <article
-        className="user-dashboard-ownevents-item-container"
-      >
-        <div className="user-dashboard-ownevents-item-title">
-          {title}
-        </div>
+      <article className="user-dashboard-ownevents-item-container">
         <div className="user-dashboard-ownevents-item-date">
           {eventStart}
         </div>
+        <div className="user-dashboard-ownevents-item-title">
+          {title}
+        </div>
         <div className="user-dashboard-ownevents-item-actions">
           <Link to={`/events/${id}`}>
-            View Event
+            View<br/>Event
           </Link>
           <Link to={`/events/${id}/edit`}>
-            Edit Event
+            Edit<br/>Event
           </Link>
           <button
             className="user-dashboard-button"
             onClick={this.handleDelete}
           >
-            Delete Event
+            Delete<br/>Event
           </button>
         </div>
       </article>

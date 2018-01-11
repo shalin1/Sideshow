@@ -15,7 +15,6 @@ class UserDashboard extends React.Component {
 
   render () {
     let dashboardContent;
-
     switch (this.props.pageType) {
       case "userEvents":
         if (Object.keys(this.props.content).length === 0) {
@@ -25,7 +24,7 @@ class UserDashboard extends React.Component {
             <p>Maybe you'd like to <Link to="/create"> make one now?</Link></p>
           </div>;
         } else {
-          dashboardContent = this.props.content.map(  event => (
+          dashboardContent = this.props.content.map( event => (
             <DashboardEventShow
               event={event}
               key={event.id}
@@ -72,7 +71,7 @@ class UserDashboard extends React.Component {
         dashboardContent = "SOMETHING IS WRONG";
       }
 
-    if (this.props.event === undefined) {
+    if (this.props.content === undefined) {
       return (
         <div className="loading">
           <span>loading....</span>

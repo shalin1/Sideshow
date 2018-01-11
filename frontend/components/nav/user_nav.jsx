@@ -4,7 +4,7 @@ import ReactModal from 'react-modal';
 
 const LoggedInUser = (currentUser, logout) => (
   <div className="nav-right">
-    <Link to="/myevents">
+    <Link to="/my_events">
       <div className="nav-link">
         Manage Events
       </div>
