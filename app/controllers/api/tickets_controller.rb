@@ -9,6 +9,10 @@ class Api::TicketsController < ApplicationController
     end
   end
 
+  def index
+    @tickets = Ticket.all
+  end
+
   def show
     @ticket = Ticket.find_by(id: params[:id])
     if @ticket

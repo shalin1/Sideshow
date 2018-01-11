@@ -14,9 +14,9 @@ const receiveEvents = events => ({
 
 const receiveErrors = errors => {
   return {
-  type: RECEIVE_EVENT_ERRORS,
-  errors
-};
+    type: RECEIVE_EVENT_ERRORS,
+    errors
+  };
 };
 
 const receiveEvent = event => {

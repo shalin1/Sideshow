@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import UserDashboard from './user_dashboard';
 import { fetchEvent, fetchEvents, userEvents, deleteEvent } from '../../actions/event_actions';
+import { fetchTickets, deleteTicket } from '../../actions/ticket_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
@@ -8,7 +9,9 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.path === '/my_events' || ownProps.match.path === 'my_dashboard') {
     console.log("rendering myEvents");
     pageType = "userEvents";
-    content = currentUser.events;
+    content = currentUser.event_ids.map( event_id => (
+      state.entities.events.event_id
+    ));
   } else if (ownProps.match.path === '/my_tickets') {
     console.log("rendering myTickets");
     pageType = "userTickets";
@@ -31,7 +34,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   deleteEvent: event => dispatch(deleteEvent(event)),
   fetchEvent: id => dispatch(fetchEvent(id)),
-  fetchEvents: () => dispatch(fetchEvents())
+  fetchEvents: () => dispatch(fetchEvents()),
+  fetchTickets: () => dispatch(fetchTickets())
 });
 
 export default connect (

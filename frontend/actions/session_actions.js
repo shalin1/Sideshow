@@ -56,8 +56,6 @@ export const userExists = email => dispatch => (
   .then(validEmail => dispatch(receiveValidEmail(validEmail)))
 );
 
-
-
 export const demoLogin = (demoUser) => dispatch => (
   APIUtil.login(demoUser)
   .then(user => dispatch(receiveCurrentUser(user)))
