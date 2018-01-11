@@ -7,10 +7,13 @@ export const RECEIVE_EVENT_ERRORS = "RECEIVE_ERRORS";
 export const REMOVE_EVENT = "REMOVE_EVENT";
 import { Route } from 'react-router-dom';
 
-const receiveEvents = events => ({
-  type: RECEIVE_EVENTS,
-  events
-});
+const receiveEvents = events => {
+
+  return {
+    type: RECEIVE_EVENTS,
+    events
+  };
+};
 
 const receiveErrors = errors => {
   return {

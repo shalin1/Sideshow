@@ -26,6 +26,7 @@ class Api::TicketsController < ApplicationController
     @user = current_user
     @ticket = current_user.tickets.find(params[:id])
     @ticket.destroy
+    render :show
   end
 
   private

@@ -8,12 +8,10 @@ class DashboardTicketShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
 
-  componentDidMount() {
-  }
-
   handleDelete() {
-    this.props.deleteTicket(this.props.ticket);
-    
+    this.props.deleteTicket(this.props.ticket).then(
+      () => location.reload()
+    );
   }
 
   render() {
@@ -29,7 +27,7 @@ class DashboardTicketShow extends React.Component {
           {event.title}
         </div>
         <div>
-          {event.price}
+          ${event.ticket_price}
         </div>
         <div className="user-dashboard-ticket-actions">
           <button

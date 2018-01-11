@@ -39,6 +39,7 @@ class UserDashboard extends React.Component {
             dashboardContent = this.props.content.map( event => (
               <DashboardEventShow
                 event={event}
+                key={event.id}
                 deleteEvent={this.props.deleteEvent}
               />
             ));
@@ -58,6 +59,7 @@ class UserDashboard extends React.Component {
                 key={registration.ticket.id}
                 event={registration.event}
                 deleteTicket={this.props.deleteTicket}
+                fetchTickets={this.props.fetchTickets}
               />
             ));
           }

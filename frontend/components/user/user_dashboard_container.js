@@ -7,7 +7,7 @@ import { pageIsLoading, pageFinishedLoading } from '../../actions/loading_toggle
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
   const currentUser = state.session.currentUser;
-  const events = state.entities.events
+  const events = state.entities.events;
   switch (ownProps.match.path) {
     case '/my_events':
       pageType = "userEvents";
@@ -24,6 +24,7 @@ const mapStateToProps = (state, ownProps) => {
       if (state.ui.loading) {
         content = "loading";
       } else {
+        debugger
         content = currentUser.tickets.map(ticket => ({
           ticket: ticket,
           event: events[ticket.event_id]

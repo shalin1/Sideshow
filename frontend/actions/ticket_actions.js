@@ -48,8 +48,12 @@ export const createTicket = ticket => dispatch => (
     dispatch(receiveErrors(err.responseJSON))
 ));
 
-export const deleteTicket = ticket => dispatch => (
-  APIUtil.deleteTicket(ticket.id).then( () => (
-    dispatch(removeTicket(ticket.id))
-  ))
-);
+export const deleteTicket = ticket => dispatch => {
+  debugger
+
+  return (
+    APIUtil.deleteTicket(ticket).then( () => (
+      dispatch(removeTicket(ticket))
+    ))
+  );
+};
