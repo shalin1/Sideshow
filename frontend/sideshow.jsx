@@ -7,6 +7,7 @@ import Root from './components/root';
 import { signup, login, logout } from './actions/session_actions';
 import { userExists } from './util/session_api_util';
 import { fetchEvents, fetchEvent } from './actions/event_actions';
+import { createTicket } from './actions/ticket_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.userExists = userExists;
   window.fetchEvents = fetchEvents;
   window.fetchEvent = fetchEvent;
+  window.createTicket = createTicket;
 // TESTING END
 
   ReactDOM.render(<Root store={ store } />, root);
