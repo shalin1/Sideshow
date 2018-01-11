@@ -3,7 +3,7 @@ class Api::TicketsController < ApplicationController
   def create
     @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
-      render :show
+      render `api/users/show/${current_user.id}`
     else
       render json: @ticket.errors.messages, status: 422
     end
@@ -22,8 +22,7 @@ class Api::TicketsController < ApplicationController
     @user = current_user
     @ticket = current_user.tickets.find(params[:id])
     @ticket.destroy
-    render
-
+  end
 
   private
 
