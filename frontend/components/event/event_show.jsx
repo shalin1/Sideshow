@@ -1,17 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import moment from 'moment';
+import Modal from 'react-modal';
 
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleTicketing = this.handleTicketing.bind(this);
   }
+
 
   componentWillMount() {
     this.props.fetchEvent(this.props.eventId);
     window.scrollTo(0, 0);
   }
+
+  handleTicketing() {
+    console.log('u clicked');
+    if (this.props.currentUser) {
+      this.props.showTicketingModal();
+    } else {
+      this.props.history.push("/signin");
+    }
+  }
+
 
   renderErrors() {
     return(
@@ -23,9 +35,6 @@ class EventShow extends React.Component {
         ))}
       </ul>
     );
-  }
-
-  handleClick() {
   }
 
   render () {
@@ -44,9 +53,10 @@ class EventShow extends React.Component {
       const startDay = momentStart.format("D");
       return(
         <div className="event-show-container-marginfix">
+
           <div
-          className="event-show-background"
-          style={eventImage}
+            className="event-show-background"
+            style={eventImage}
           >
           </div>
           <div className="event-show-background-boundary">
@@ -83,8 +93,8 @@ class EventShow extends React.Component {
               </button>
               <div>
                 <button className="event-show-CTA-button"
-                  onClick={this.handleClick}
-                  >
+                  onClick={this.handleTicketing}
+                >
                   Register Now
                 </button>
               </div>

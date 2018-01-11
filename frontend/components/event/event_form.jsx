@@ -22,6 +22,7 @@ class EventForm extends React.Component {
     }
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
@@ -101,7 +102,7 @@ class EventForm extends React.Component {
         } else {
           uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
         }
-      
+
 
       return (
         <section className="event-form-container">

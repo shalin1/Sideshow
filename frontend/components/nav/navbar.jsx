@@ -7,7 +7,7 @@ export default ({currentUser, logout}) => {
     <header className="nav-container">
       <Link to='/'>
         <span className="nav-link font-nav-logo">
-            Sideshow
+          Sideshow
         </span>
       </Link>
       <nav className="nav-right">
@@ -17,11 +17,11 @@ export default ({currentUser, logout}) => {
           logout={logout}
         />
 
-      <Link to="/create">
-        <div className="font-nav-link-emphasis nav-link">
+        <Link to="/create">
+          <div className="font-nav-link-emphasis nav-link">
             Create Event
-        </div>
-      </Link>
+          </div>
+        </Link>
 
       </nav>
     </header>
