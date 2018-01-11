@@ -52,11 +52,11 @@ class UserDashboard extends React.Component {
               <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
             </div>;
           } else {
-            dashboardContent = this.props.content.map( ticket => (
+            dashboardContent = this.props.content.map( registration => (
               <DashboardTicketShow
-                ticket={ticket}
-                key={ticket.id}
-                fetchEvent={this.props.fetchEvent}
+                ticket={registration.ticket}
+                key={registration.ticket.id}
+                event={registration.event}
                 deleteTicket={this.props.deleteTicket}
               />
             ));

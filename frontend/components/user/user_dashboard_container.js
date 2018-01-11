@@ -7,6 +7,7 @@ import { pageIsLoading, pageFinishedLoading } from '../../actions/loading_toggle
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
   const currentUser = state.session.currentUser;
+  const events = state.entities.events
   switch (ownProps.match.path) {
     case '/my_events':
       pageType = "userEvents";
@@ -14,12 +15,20 @@ const mapStateToProps = (state, ownProps) => {
         content = "loading";
       } else {
         content = currentUser.event_ids.map(id => (
-          state.entities.events[id]
+          events[id]
         ));
       }
       break;
-    case '/my_bookmarks':
     case '/my_tickets':
+      pageType = "userTickets";
+      if (state.ui.loading) {
+        content = "loading";
+      } else {
+        content = currentUser.tickets.map(ticket => ({
+          ticket: ticket,
+          event: events[ticket.event_id]
+        }));
+      }
       break;
     default:
   }
@@ -34,6 +43,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   deleteEvent: event => dispatch(deleteEvent(event)),
+  deleteTicket: ticket => dispatch(deleteTicket(ticket)),
   fetchEvent: id => dispatch(fetchEvent(id)),
   fetchEvents: () => dispatch(fetchEvents()),
   fetchTickets: () => dispatch(fetchTickets()),

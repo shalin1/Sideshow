@@ -9,12 +9,11 @@ class UserEvents extends React.Component {
   }
 
   handleDelete() {
-    debugger
     this.props.deleteEvent(this.props.event);
   }
 
   render() {
-    
+
     const {
       id, title, event_start, tickets_available, tickets, event_show_url
     } = this.props.event;

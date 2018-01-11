@@ -9,43 +9,34 @@ class DashboardTicketShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchEvent(this.props.ticket.event_id);
   }
 
   handleDelete() {
-    this.props.deleteTicket(this.props.ticket).then(
-      () => window.location.reload()
-    );
+    this.props.deleteTicket(this.props.ticket);
+    
   }
 
   render() {
-
-    const {
-      id, event_id, ticket_holder_id
-    } = this.props.ticket;
-
-    const eventStart = moment(event_start).format("ddd, MMM D h:mm A");
+    const event = this.props.event;
+    const ticket = this.props.ticket;
 
     return (
       <article className="user-dashboard-ticket-container">
         <div className="user-dashboard-ticket-date">
-          {eventStart}
+          {event.event_start}
         </div>
         <div className="user-dashboard-ticket-title">
-          {title}
+          {event.title}
+        </div>
+        <div>
+          {event.price}
         </div>
         <div className="user-dashboard-ticket-actions">
-          <Link to={`/events/${id}`}>
-            View<br/>Event
-          </Link>
-          <Link to={`/events/${id}/edit`}>
-            Edit<br/>Event
-          </Link>
           <button
             className="user-dashboard-button"
             onClick={this.handleDelete}
           >
-            Delete<br/>Event
+            Refund<br/>Ticket
           </button>
         </div>
       </article>
