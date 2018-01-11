@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import DashboardEventShow from './owned_event_item';
+import DashboardEventShow from './user_events';
 import DashboardTicketShow from './user_tickets';
 import DashboardBookmarkShow from './user_bookmarks';
+
 class UserDashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +25,7 @@ class UserDashboard extends React.Component {
             <p>Maybe you'd like to <Link to="/create"> make one now?</Link></p>
           </div>;
         } else {
-          dashboardContent = this.props.content.map( event => (
+          dashboardContent = this.props.content.map(  event => (
             <DashboardEventShow
               event={event}
               key={event.id}
@@ -32,13 +33,14 @@ class UserDashboard extends React.Component {
             />
           ));
         }
+        break;
       case "userTickets":
         if (Object.keys(this.props.content).length === 0) {
           dashboardContent =
           <div className="user-dashboard-render-error">
             <h2>You haven't bought any tickets!</h2>
             <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
-          </div>
+          </div>;
         } else {
           dashboardContent = this.props.content.map( ticket => (
             <DashboardTicketShow
@@ -48,13 +50,14 @@ class UserDashboard extends React.Component {
             />
           ));
         }
+        break;
       case "userBookmarks":
         if (Object.keys(this.props.content).length === 0) {
           dashboardContent =
           <div className="user-dashboard-render-error">
             <h2>You haven't bought any tickets!</h2>
             <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
-          </div>
+          </div>;
         } else {
           dashboardContent = this.props.content.map( ticket => (
             <DashboardBookmarkShow
@@ -66,14 +69,14 @@ class UserDashboard extends React.Component {
         }
         break;
       default:
-        dashboardContent = "SOMETHING IS WRONG"
+        dashboardContent = "SOMETHING IS WRONG";
       }
 
     if (this.props.event === undefined) {
       return (
         <div className="loading">
           <span>loading....</span>
-          <i class="fa fa-hourglass fa-spin fa-3x" aria-hidden="true" />);
+          <i className="fa fa-hourglass fa-spin fa-3x" aria-hidden="true" />);
         </div>
       );
     } else {

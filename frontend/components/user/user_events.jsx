@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
 
-class DashboardEventItem extends React.Component {
+class UserEvents extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
@@ -55,4 +55,4 @@ class DashboardEventItem extends React.Component {
   }
 }
 
-export default withRouter(DashboardEventItem);
+export default withRouter(UserEvents);

@@ -5,13 +5,16 @@ import { fetchEvent, fetchEvents, userEvents, deleteEvent } from '../../actions/
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
   let currentUser = state.session.currentUser;
-  if (ownProps.match.path === '/myevents') {
+  if (ownProps.match.path === '/my_events' || ownProps.match.path === 'my_dashboard') {
+    console.log("rendering myEvents");
     pageType = "userEvents";
     content = currentUser.events;
-  } else if (ownProps.match.path === '/mytickets') {
+  } else if (ownProps.match.path === '/my_tickets') {
+    console.log("rendering myTickets");
     pageType = "userTickets";
     content = currentUser.tickets;
-  } else if (ownProps.match.path === '/bookmarks') {
+  } else if (ownProps.match.path === '/my_bookmarks') {
+    console.log("rendering myBookmarks");
     pageType = "userBookmarks";
     content = currentUser.bookmarks;
   } else {

@@ -17,8 +17,8 @@ class TicketPurchaseModal extends React.Component {
         event_id: this.props.event.id
       }
     };
-    
     this.props.createTicket(ticket);
+    this.handleClose();
   }
 
   handleChange(event) {
@@ -69,7 +69,6 @@ class TicketPurchaseModal extends React.Component {
               </form>
             </div>
 
-
           </section>
 
           <section className="tickets-modal-footer">
@@ -80,7 +79,6 @@ class TicketPurchaseModal extends React.Component {
             <button onClick={this.handleSubmit} value="TEST">
               CHECKOUT
             </button>
-
 
           </section>
         </div>
