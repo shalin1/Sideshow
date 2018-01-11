@@ -3,18 +3,24 @@ import UserDashboard from './user_dashboard';
 import { fetchEvent, fetchEvents, userEvents, deleteEvent } from '../../actions/event_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  let displayedEvents, pageType;
+  let content, pageType;
+  let currentUser = state.session.currentUser;
   if (ownProps.match.path === '/myevents') {
     pageType = "userEvents";
-    displayedEvents = state.session.currentUser.events;
-
+    content = currentUser.events;
+  } else if (ownProps.match.path === '/mytickets') {
+    pageType = "userTickets";
+    content = currentUser.tickets;
+  } else if (ownProps.match.path === '/bookmarks') {
+    pageType = "userBookmarks";
+    content = currentUser.bookmarks;
   } else {
-    pageType = "error";
-    displayedEvents = "There's something wrong with your routing in the coutainer";
+    pageType = "uh-oh";
+    content = "There's something wrong with your routing in the coutainer";
   }
   return ({
     pageType: pageType,
-    events: displayedEvents,
+    content: content,
     currentUser: state.session.currentUser
   });
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import DashboardEventShow from './owned_event_item';
 
 class UserDashboard extends React.Component {
@@ -8,12 +8,11 @@ class UserDashboard extends React.Component {
     this.props.fetchEvents();
   }
 
-
   render () {
-    let dashboard_items;
+    let dashboardContent;
     if (this.props.pageType === "userEvents") {
       if (Object.keys(this.props.events).length === 0) {
-        dashboard_items =
+        dashboardContent =
         <div className="event-render-error">
           <h1>
             Nothing to see here right now
@@ -26,7 +25,7 @@ class UserDashboard extends React.Component {
           </p>
         </div>;
       } else {
-        dashboard_items = this.props.events.map( event => (
+        dashboardContent = this.props.events.map( event => (
           <DashboardEventShow
             event={event}
             key={event.id}
@@ -52,14 +51,23 @@ class UserDashboard extends React.Component {
           <section className="user-dashboard-content">
             <nav className="user-dashboard-links">
               <div className="user-dashboard-link">
-                <Link to="/myevents">My Events</Link>
+                <NavLink activeClassName="user-dashboard-link-selected"to="/myevents">
+                  My Events
+                </NavLink>
               </div>
               <div className="user-dashboard-link">
-                <Link to="/myevents">My Bookmarks</Link>
+                <NavLink activeClassName="user-dashboard-link-selected"to="/bookmarks">
+                  My Bookmarks
+                </NavLink>
+              </div>
+              <div className="user-dashboard-link">
+                <NavLink activeClassName="user-dashboard-link-selected"to="/mytickets">
+                  My Bookmarks
+                </NavLink>
               </div>
             </nav>
             <article className="user-dashboard-items-container">
-              {dashboard_items}
+              {dashboardContent}
             </article>
           </section>
         </div>
