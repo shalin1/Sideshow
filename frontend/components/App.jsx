@@ -22,6 +22,7 @@ const App = () => (
     <ProtectedRoute exact path="/events/:id/edit" component={EventForm} />
     <ProtectedRoute exact path="/myevents" component={UserDashboardEvents} />
     <Route exact path="/events/:id" component={EventShow} />
+    
     <FooterContainer />
   </div>
 );

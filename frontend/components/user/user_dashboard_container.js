@@ -6,9 +6,8 @@ const mapStateToProps = (state, ownProps) => {
   let displayedEvents, pageType;
   if (ownProps.match.path === '/myevents') {
     pageType = "userEvents";
-    displayedEvents = state.session.currentUser.event_ids.map(
-      event_id => (state.entities.events[event_id])
-    );
+    displayedEvents = state.session.currentUser.events;
+
   } else {
     pageType = "error";
     displayedEvents = "There's something wrong with your routing in the coutainer";

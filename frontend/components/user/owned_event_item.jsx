@@ -10,6 +10,7 @@ class DashboardEventItem extends React.Component {
 
   handleDelete() {
     this.props.deleteEvent(this.props.event).then(
+      () => window.location.reload()
     );
   }
 

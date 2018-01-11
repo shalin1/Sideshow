@@ -16,6 +16,7 @@ class EventForm extends React.Component {
   }
 
   componentWillMount() {
+    window.scrollTo(0, 0);
     if (this.props.match.params.id) {
       this.props.fetchEvent(this.props.match.params.id);
     }
@@ -89,18 +90,18 @@ class EventForm extends React.Component {
   }
 
   render () {
-    if (this.props.event === {}) {
+    if (this.props.event === {} || this.state === null) {
       return (
         <h1>loading...</h1>
       );
     } else {
       let uploadedImage;
-      if (this.state.imageUrl) {
-        uploadedImage = {backgroundImage: 'url(' + this.state.imageUrl + ')'};
-      } else {
-        uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
-      }
-
+        if (this.state.imageUrl) {
+          uploadedImage = {backgroundImage: 'url(' + this.state.imageUrl + ')'};
+        } else {
+          uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
+        }
+      
 
       return (
         <section className="event-form-container">
@@ -217,18 +218,18 @@ class EventForm extends React.Component {
 
             <label className="event-form-label">
               Event Image
-            </label>
-            <div className="event-image-upload-container">
-              <div
-                className="event-form-image-upload-landingpad"
-                style={uploadedImage}
-              >
-                <input
-                  type="file"
-                  onChange={this.updateFile()}
-                className="event-image-upload-button"/>
+              <div className="event-image-upload-container">
+                <div
+                  className="event-form-image-upload-landingpad"
+                  style={uploadedImage}
+                >
+                  <input
+                    type="file"
+                    onChange={this.updateFile()}
+                  className="event-image-upload-button"/>
+                </div>
               </div>
-            </div>
+            </label>
             {this.renderErrors("imageUrl")}
 
 

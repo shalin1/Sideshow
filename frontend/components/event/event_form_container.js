@@ -20,8 +20,9 @@ const mapStateToProps = (state, ownProps) => {
       event_end: Date.now(),
       organizer_id: state.session.currentUser.id,
       imageFile: null,
-      imageUrl: null,
+      imageUrl: "",
       published: false,
+      event_show_image_url: 'https://s3.amazonaws.com/sideshow-development/Screen+Shot+2018-01-10+at+7.20.36+PM.png'
     };
   } else {
     eventData = state.entities.events[ownProps.match.params.id];
