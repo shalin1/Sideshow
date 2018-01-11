@@ -19,7 +19,7 @@ export default (oldState = defaultState, action) => {
     case SHOW_TICKETING_MODAL:
       return merge({}, oldState, {ticketingModalActive: true});
     case HIDE_TICKETING_MODAL:
-      return merge({}, oldState, {ticketingModalActive: true});
+      return merge({}, oldState, {ticketingModalActive: false});
     default:
       return oldState;
   }

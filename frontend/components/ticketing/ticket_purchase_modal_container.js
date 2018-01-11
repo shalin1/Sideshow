@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import { showTicketingModal, hideTicketingModal } from '../../actions/session_actions';
+import { showTicketingModal, hideTicketingModal } from '../../actions/modal_actions';
 import TicketPurchaseModal from './ticket_purchase_modal';
 import { resetErrors } from '../../actions/error_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.ticketing,
-  sessionModalActive: state.ui.sessionModalActive,
+  ticketModalActive: state.ui.ticketModalActive,
   currentUser: state.session.currentUser,
-  currentEventId: ownProps.match.params
 });
 
 const mapDispatchToProps = dispatch => {

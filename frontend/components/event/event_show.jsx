@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import moment from 'moment';
 import Modal from 'react-modal';
+import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -24,13 +25,12 @@ class EventShow extends React.Component {
     }
   }
 
-
   renderErrors() {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
           <li className='form-error-item' key={`error-${i}`}>
-          {error}
+            {error}
           </li>
         ))}
       </ul>
@@ -39,19 +39,23 @@ class EventShow extends React.Component {
 
   render () {
     if (this.props.event !== undefined) {
+
       const { title, ticket_price, event_start, event_end, description, venue_name,
       venue_address, event_show_image_url } = this.props.event;
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
-      const momentStart = moment(event_start).parseZone();
-      const momentEnd = moment(event_end).parseZone();
-      const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
-      const timeStart = momentStart.format("LT");
-      const timeEnd = momentEnd.format("LT");
-      const startMonth = momentStart.format("MMM");
-      const startDay = momentStart.format("D");
-      return(
+      const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal /> : null;
+
+        const momentStart = moment(event_start).parseZone();
+        const momentEnd = moment(event_end).parseZone();
+        const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
+        const timeStart = momentStart.format("LT");
+        const timeEnd = momentEnd.format("LT");
+        const startMonth = momentStart.format("MMM");
+        const startDay = momentStart.format("D");
+
+        return(
         <div className="event-show-container-marginfix">
 
           <div
@@ -126,6 +130,8 @@ class EventShow extends React.Component {
             </section>
 
           </article>
+
+          {ticketModal}
         </div>
       );
     } else {

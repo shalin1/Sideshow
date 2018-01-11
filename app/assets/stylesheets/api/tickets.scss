@@ -1,3 +1,29 @@
 // Place all the styles related to the api/tickets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'colors';
+
+.tickets {
+  &-modal {
+    &-overlay {
+      position: absolute;
+      top: 0;
+      background: rgba(0,0,0, 0.75);
+      z-index: 1000;
+      height: 8000px;
+      width: 8000px;
+
+    }
+    &-container {
+      position: fixed;
+      top: 25%;
+      height: 400px;
+      width: 600px;
+      border: 2px solid $pornj-gradient;
+      border-radius: 5px;
+      padding: 20px;
+      background: white;
+      z-index: 6000;
+    }
+  }
+}
