@@ -64,7 +64,7 @@ export const updateEvent = event => dispatch => (
 );
 
 export const deleteEvent = event => dispatch => (
-  APIUtil.deleteEvent(event.id).then( () => (
+  APIUtil.deleteEvent(event).then( (event) => (
     dispatch(removeEvent(event))
   ))
 );

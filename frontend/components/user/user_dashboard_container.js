@@ -13,7 +13,6 @@ const mapStateToProps = (state, ownProps) => {
       if (state.ui.loading) {
         content = "loading";
       } else {
-        
         content = currentUser.event_ids.map(id => (
           state.entities.events[id]
         ));

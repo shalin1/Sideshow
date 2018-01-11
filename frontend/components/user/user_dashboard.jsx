@@ -39,7 +39,6 @@ class UserDashboard extends React.Component {
             dashboardContent = this.props.content.map( event => (
               <DashboardEventShow
                 event={event}
-                key={event.id}
                 deleteEvent={this.props.deleteEvent}
               />
             ));
