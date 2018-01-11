@@ -12,15 +12,17 @@ class TicketPurchaseModal extends React.Component {
 
   handleSubmit(e) {
     const ticket = {
-      ticket_holder_id: this.props.currentUser.id,
-      event_id: this.props.event.id
+      ticket: {
+        ticket_holder_id: this.props.currentUser.id,
+        event_id: this.props.event.id
+      }
     };
+    
     this.props.createTicket(ticket);
   }
 
   handleChange(event) {
      this.setState({tix_quantity: event.target.value});
-     debugger
    }
 
   handleClose() {

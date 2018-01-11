@@ -7,7 +7,7 @@ import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.handleTicketing = this.handleTicketing.bind(this);
   }
 
@@ -18,7 +18,6 @@ class EventShow extends React.Component {
   }
 
   handleTicketing() {
-    console.log('u clicked');
     if (this.props.currentUser) {
       this.props.showTicketingModal();
     } else {
