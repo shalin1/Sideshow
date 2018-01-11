@@ -3,6 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import DashboardEventShow from './owned_event_item';
 
 class UserDashboard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentWillMount() {
     this.props.fetchEvents();
@@ -10,28 +13,59 @@ class UserDashboard extends React.Component {
 
   render () {
     let dashboardContent;
-    if (this.props.pageType === "userEvents") {
-      if (Object.keys(this.props.events).length === 0) {
+
+    switch (this.props.pageType) {
+      case userEvents:
+        if (Object.keys(this.props.content).length === 0) {
+          dashboardContent =
+          <div className="user-dashboard-render-error">
+            <h2>You haven't made any events!</h2>
+            <p>Maybe you'd like to <Link to="/create"> make one now?</Link></p>
+          </div>;
+        } else {
+          dashboardContent = this.props.content.map( event => (
+            <DashboardEventShow
+              event={event}
+              key={event.id}
+              deleteEvent={this.props.deleteEvent}
+            />
+          ));
+        }
+      case userTickets:
+        if (Object.keys(this.props.content).length === 0) {
+          dashboardContent =
+          <div className="user-dashboard-render-error">
+            <h2>You haven't bought any tickets!</h2>
+            <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
+          </div>
+        } else {
+          dashboardContent = this.props.content.map( ticket => (
+            <DashboardTicketShow
+              ticket={ticket}
+              key={ticket.id}
+              deleteTicket={this.props.deleteTicket}
+            />
+          ));
+        }
+      case userBookmarks:
+      if (Object.keys(this.props.content).length === 0) {
         dashboardContent =
-        <div className="event-render-error">
-          <h1>
-            Nothing to see here right now
-          </h1>
-          <p>
-            Maybe you'd like to
-            <Link to="/create">
-              Make an event?
-            </Link>;
-          </p>
-        </div>;
+        <div className="user-dashboard-render-error">
+          <h2>You haven't bought any tickets!</h2>
+          <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
+        </div>
       } else {
-        dashboardContent = this.props.events.map( event => (
-          <DashboardEventShow
-            event={event}
-            key={event.id}
-            deleteEvent={this.props.deleteEvent}
+        dashboardContent = this.props.content.map( ticket => (
+          <DashboardBookmarkShow
+            ticket={ticket}
+            key={ticket.id}
+            deleteTicket={this.props.deleteTicket}
           />
         ));
+      }
+        break;
+      default:
+      dashboardContent = "SOMETHING IS WRONG"
       }
     }
 
@@ -66,7 +100,7 @@ class UserDashboard extends React.Component {
                 </NavLink>
               </div>
             </nav>
-            <article className="user-dashboard-items-container">
+            <article className="user-dashboard-content-container">
               {dashboardContent}
             </article>
           </section>
