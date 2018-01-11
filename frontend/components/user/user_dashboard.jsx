@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import DashboardEventShow from './owned_event_item';
-
+import DashboardTicketShow from './user_tickets';
+import DashboardBookmarkShow from './user_bookmarks';
 class UserDashboard extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class UserDashboard extends React.Component {
     let dashboardContent;
 
     switch (this.props.pageType) {
-      case userEvents:
+      case "userEvents":
         if (Object.keys(this.props.content).length === 0) {
           dashboardContent =
           <div className="user-dashboard-render-error">
@@ -31,7 +32,7 @@ class UserDashboard extends React.Component {
             />
           ));
         }
-      case userTickets:
+      case "userTickets":
         if (Object.keys(this.props.content).length === 0) {
           dashboardContent =
           <div className="user-dashboard-render-error">
@@ -47,29 +48,28 @@ class UserDashboard extends React.Component {
             />
           ));
         }
-      case userBookmarks:
-      if (Object.keys(this.props.content).length === 0) {
-        dashboardContent =
-        <div className="user-dashboard-render-error">
-          <h2>You haven't bought any tickets!</h2>
-          <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
-        </div>
-      } else {
-        dashboardContent = this.props.content.map( ticket => (
-          <DashboardBookmarkShow
-            ticket={ticket}
-            key={ticket.id}
-            deleteTicket={this.props.deleteTicket}
-          />
-        ));
-      }
+      case "userBookmarks":
+        if (Object.keys(this.props.content).length === 0) {
+          dashboardContent =
+          <div className="user-dashboard-render-error">
+            <h2>You haven't bought any tickets!</h2>
+            <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
+          </div>
+        } else {
+          dashboardContent = this.props.content.map( ticket => (
+            <DashboardBookmarkShow
+              ticket={ticket}
+              key={ticket.id}
+              deleteTicket={this.props.deleteTicket}
+            />
+          ));
+        }
         break;
       default:
-      dashboardContent = "SOMETHING IS WRONG"
+        dashboardContent = "SOMETHING IS WRONG"
       }
-    }
 
-    if (!this.props.currentUser) {
+    if (this.props.event === undefined) {
       return (
         <div className="loading">
           <span>loading....</span>

@@ -3,7 +3,7 @@ class Api::TicketsController < ApplicationController
   def create
     @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
-      render `api/users/show/${current_user.id}`
+      render :show
     else
       render json: @ticket.errors.messages, status: 422
     end
