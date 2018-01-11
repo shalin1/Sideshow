@@ -1,0 +1,18 @@
+@mixin modal-close-button {
+  background-color: rgba(248,248,250,.7);
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  font-size: 20px;
+  padding: 5px;
+  line-height: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}

@@ -2,28 +2,62 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'colors';
-
+@import 'modal';
+@import 'fonts';
+@import 'forms';
 .tickets {
   &-modal {
     &-overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       background: rgba(0,0,0, 0.75);
       z-index: 1000;
-      height: 8000px;
-      width: 8000px;
-
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
     &-container {
-      position: fixed;
-      top: 25%;
+      position: absolute;
+      top: 150px;
       height: 400px;
       width: 600px;
       border: 2px solid $pornj-gradient;
       border-radius: 5px;
-      padding: 20px;
       background: white;
       z-index: 6000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
+    &-close {
+      @include modal-close-button();
+      top: 15px;
+      right: 15px;
+    }
+    &-header {
+      height: 60px;
+      width: 100%;
+      background: white;
+      display: flex;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      flex-direction: row;
+      justify-content: center;
+      border-bottom: 1px solid $lightest-grey;
+      &-content {
+        @include font-header-search-box;
+        margin: 0;
+        font-size: 30px;
+      }
+    }
+    &-checkout-button {
+      background: pink;
+      padding: 10px 30px;
+      background: $pornj-gradient;
+    }
+
   }
 }

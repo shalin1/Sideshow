@@ -16,16 +16,16 @@ class TicketPurchaseModal extends React.Component {
       <div className="tickets-modal-overlay" onClick={this.handleClose}>
         <div className="tickets-modal-container">
           <button
-            className="events-show-modal-close"
+            className="tickets-modal-close"
             onClick={this.handleClose}
           >
             x
           </button>
-          <section className="modal-tickets-header">
-            <h1 className="modal-tickets-header-content">Select Tickets</h1>
+          <section className="tickets-modal-header">
+            <h1 className="tickets-modal-header-content">Register</h1>
           </section>
           <button
-            onClick={this.purchaseTickets} className="ticket-checkout-button"
+            onClick={this.purchaseTickets} className="ticket-modal-checkout-button"
           >
             CHECKOUT
           </button>
