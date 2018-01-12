@@ -8,8 +8,15 @@ class EventShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      bookmarked: false
     };
     this.handleTicketing = this.handleTicketing.bind(this);
+    this.changeBookmark = this.changeBookmark.bind(this);
+  }
+
+  changeBookmark() {
+    debugger
+    this.setState({bookmarked: !this.state.bookmarked});
   }
 
 
@@ -48,14 +55,15 @@ class EventShow extends React.Component {
       };
       const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event}/> : null;
 
-        const momentStart = moment(event_start).parseZone();
-        const momentEnd = moment(event_end).parseZone();
-        const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
-        const timeStart = momentStart.format("LT");
-        const timeEnd = momentEnd.format("LT");
-        const startMonth = momentStart.format("MMM");
-        const startDay = momentStart.format("D");
-        let bookmarkFill;
+      const momentStart = moment(event_start).parseZone();
+      const momentEnd = moment(event_end).parseZone();
+      const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
+      const timeStart = momentStart.format("LT");
+      const timeEnd = momentEnd.format("LT");
+      const startMonth = momentStart.format("MMM");
+      const startDay = momentStart.format("D");
+      let bookmarkIcon = this.state.bookmarked ? <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" /> : <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />;
+
 
         return(
         <div className="event-show-container-marginfix">
@@ -94,8 +102,8 @@ class EventShow extends React.Component {
             </header>
 
             <section className="event-show-CTA-container">
-              <button className="event-show-CTA-bookmark" onClick="handleBookmarkClick">
-                <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
+              <button className="event-show-CTA-bookmark" onClick={this.changeBookmark}>
+                {bookmarkIcon}
               </button>
               <button className="event-show-CTA-button callback-fill"
                 onClick={this.handleTicketing}
