@@ -94,6 +94,17 @@
           margin-top: 2px;
           font-size: 10px;
         }
+        &-delete {
+          opacity: 0.82;
+          @include font-event-index-item-price;
+          margin-top: 2px;
+          font-size: 10px;
+          color: $eventbrite;
+          transition: color .5s;
+          &:hover {
+            color: red;
+          }
+        }
       }
       &-action {
         background: white;
