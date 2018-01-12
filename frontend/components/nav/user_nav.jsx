@@ -4,12 +4,7 @@ import ReactModal from 'react-modal';
 
 const LoggedInUser = (currentUser, logout) => (
   <div className="nav-right">
-    <Link to="/my_events">
-      <div className="nav-link">
-        Manage Events
-      </div>
-    </Link>
-    <div className="nav-link">
+    <div className="nav-link-user">
       <i className="fa fa-user avatar-icon" aria-hidden="true" />{currentUser.first_name}
     </div>
     <button onClick={logout}>
@@ -17,6 +12,11 @@ const LoggedInUser = (currentUser, logout) => (
         Sign Out
       </div>
     </button>
+    <Link to="/my_events">
+      <div className="nav-link">
+        Dashboard
+      </div>
+    </Link>
   </div>
 );
 

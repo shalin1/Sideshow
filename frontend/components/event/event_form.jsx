@@ -92,7 +92,7 @@ class EventForm extends React.Component {
   render () {
     if (this.props.event === {} || this.state === null) {
       return (
-        <h1>loading...</h1>
+        <div className="loading">loading...</div>
       );
     } else {
       let uploadedImage;

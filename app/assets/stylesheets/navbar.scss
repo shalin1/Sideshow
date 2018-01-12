@@ -23,15 +23,27 @@
     flex-direction: row;
   }
   &-link {
-    background: white;
     display: flex;
     display: block;
     border-left: 1px solid #EFF2F5;
     height: 40px;
     padding: 20px 20px 0 20px;
     @include font-nav-link();
+    background-color: white;
+    transition: background-color 0.4s ease-out;
+    font-size: 11px;
     &:hover {
-      background-color: lightest-grey;
+      background: $lightest-grey;
+    }
+    &-user {
+      display: flex;
+      display: block;
+      border-left: 1px solid #EFF2F5;
+      height: 40px;
+      padding: 20px 20px 0 20px;
+      @include font-nav-link();
+      background-color: white;
+      font-size: 11px;
     }
   }
 }
@@ -59,7 +71,6 @@
 
 .footer{
   &-container {
-    transform: translateY(100%);
     display: block;
     background-color: rgb(40, 44, 53);
     border-top: 4px solid rgb(102, 106, 115);

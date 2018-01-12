@@ -91,7 +91,7 @@ class TicketPurchaseModal extends React.Component {
           <section className="tickets-modal-footer">
             <div className="tickets-modal-labels">
               <span>Qty:{this.state.tix_quantity}</span>
-              <span>USD ${(this.props.event.ticket_price * this.state.tix_quantity * 1.1347).toFixed(2)}</span>
+              <span>USD ${(this.props.event.ticket_price * this.state.ticket_quantity * 1.1347).toFixed(2)}</span>
             </div>
             <button onClick={this.handleSubmit} value="TEST">
               CHECKOUT

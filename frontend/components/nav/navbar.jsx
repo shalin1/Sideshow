@@ -6,19 +6,18 @@ export default ({currentUser, logout}) => {
   return (
     <header className="nav-container">
       <Link to='/'>
-        <span className="nav-link font-nav-logo">
+        <span className="nav-link-user font-nav-logo">
           Sideshow
         </span>
       </Link>
       <nav className="nav-right">
-
         <UserNavContainer
           currentUser={currentUser}
           logout={logout}
         />
 
         <Link to="/create">
-          <div className="font-nav-link-emphasis nav-link">
+          <div className="nav-link-user font-nav-link-emphasis">
             Create Event
           </div>
         </Link>
