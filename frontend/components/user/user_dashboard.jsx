@@ -85,30 +85,25 @@ class UserDashboard extends React.Component {
           dashboardContent = "SOMETHING IS WRONG";
         }
 
-  
-
       return (
         <div className="user-dashboard-container">
-          <div className="user-dashboard-header">
-            Welcome to your dashboard, {this.props.currentUser.first_name}!
+          <div className="user-dashboard-header flex-center">
+            {this.props.currentUser.first_name} {this.props.currentUser.first_name}'s profile
           </div>
           <section className="user-dashboard-content">
             <nav className="user-dashboard-links">
-              <div className="user-dashboard-link">
+              <section className="user-dashboard-links-container">
                 <NavLink activeClassName="user-dashboard-link-selected"to="/my_events">
-                  My Events
+                  <div className="flex-center user-dashboard-link">
+                    My Events
+                  </div>
                 </NavLink>
-              </div>
-              <div className="user-dashboard-link">
                 <NavLink activeClassName="user-dashboard-link-selected"to="/my_tickets">
-                  My Tickets
+                  <div className="flex-center user-dashboard-link">
+                    My Tickets
+                  </div>
                 </NavLink>
-              </div>
-              <div className="user-dashboard-link">
-                <NavLink activeClassName="user-dashboard-link-selected"to="/my_bookmarks">
-                  My Bookmarks
-                </NavLink>
-              </div>
+              </section>
             </nav>
             <article className="user-dashboard-content-container">
               {dashboardContent}

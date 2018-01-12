@@ -13,9 +13,16 @@
       justify-content: flex-start;
       align-items: center;
       &-container {
-        margin: 80px 40px 40px 40px;
+        width: 100vw;
+        background: off-white;
+        margin: 40px 10px;
         padding: 10px;
         background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
       }
     }
     &-ticket {
@@ -112,24 +119,38 @@
       }
     }
     &-container {
-      margin: 80px 40px 40px 40px;
-      padding: 20px;
+      margin: 60px 0;
+      width: 100vw;
       background: white;
-      border-radius: 3px;
     }
     &-header {
-      @include font-header-search-box;
+      width: 100%;
+      height: 119px;
+      color: $near-black;
+      font-family: $title-font-stack;
+      font-size: 35px;
+      font-weight: 600;
     }
     &-links {
       display: flex;
       justify-content: space-around;
-      width: 80vw;
+      width: 100vw;
+      border-bottom:1px solid $lighter-grey;
+      &-container {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        justify-content: center;
+      }
     }
     &-link {
       @include font-nav-link;
-      font-size: 22px;
+      font-size: 12px;
+      padding: 10px 65px ;
+
       &-selected {
         color: $eventbrite;
+        border-bottom: 3px solid $peppy-blue;
       }
       &-items {
         &-container {

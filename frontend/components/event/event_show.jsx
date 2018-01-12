@@ -90,7 +90,7 @@ class EventShow extends React.Component {
                 </div>
               </figcaption>
             </header>
-
+            
             <section className="event-show-CTA-container">
               <button className="event-show-CTA-bookmark">
                 <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
