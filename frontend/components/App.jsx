@@ -11,7 +11,7 @@ import UserDashboard from './user/user_dashboard_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => (
-  <div>
+  <div className="meta-container">
     <NavBarContainer />
 
     <Route exact path="/" component={EventIndex} />

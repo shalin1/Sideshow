@@ -30,11 +30,11 @@ class UserEvents extends React.Component {
         </div>
         <div className="user-dashboard-ownevents-item-actions">
           <Link to={`/events/${id}`}>
-            <i class="fa fa-eye" aria-hidden="true"> </i>
+            <i className="fa fa-eye" aria-hidden="true"> </i>
             View Event
           </Link>
           <Link to={`/events/${id}/edit`}>
-            <i class="fa fa-pencil" aria-hidden="true"> </i>
+            <i className="fa fa-pencil" aria-hidden="true"> </i>
             Edit Event
           </Link>
           <button onClick={this.handleDelete} >

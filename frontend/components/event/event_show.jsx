@@ -54,6 +54,7 @@ class EventShow extends React.Component {
       };
       const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event}/> : null;
 
+      const formattedPrice = Number(this.props.event.ticket_price).toFixed(2);
       const momentStart = moment(event_start).parseZone();
       const momentEnd = moment(event_end).parseZone();
       const startDateFull = momentStart.format("ddd, MMMM M, YYYY");
@@ -95,7 +96,7 @@ class EventShow extends React.Component {
                   </span>
                 </div>
                 <div className="event-show-hero-price">
-                  ${ticket_price}
+                  ${formattedPrice}
                 </div>
               </figcaption>
             </header>
