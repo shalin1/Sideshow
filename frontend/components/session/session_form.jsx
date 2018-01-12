@@ -92,7 +92,7 @@
       if (this.props.formType === 'Sign Up') {
         return (
             <div>
-            <label className="form-label">First Name
+              <label className="form-label">First Name
             <div className="form-input-box bonus-field">
               <input
                 type='text'

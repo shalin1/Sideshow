@@ -9,8 +9,9 @@
   &-form-container {
     width: 60%;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0px auto;
     position: relative;
     top: 70px;
@@ -85,12 +86,11 @@
   font-weight: 400;
   width: 100%;
   border-radius: 40px;
-  padding: 1px 31px 31px;
   background-color: #F6682F;
   background: $pornj-gradient;
   color: white;
   padding: 12px;
-  margin: 10px auto;
+  margin: 15px 0;
   &-disabled {
     background-color: $lightest-grey;
   }
@@ -178,6 +178,12 @@
     -webkit-font-smoothing:antialiased;
     &:focus {
       border: 1px solid $mint-green;
+    }
+    &-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

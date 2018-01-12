@@ -1,4 +1,6 @@
 import React from 'react';
+import { CSSTransitionGroup } from 'react-transition-group';
+
 class TicketPurchaseModal extends React.Component {
   constructor(props) {
     super(props);
@@ -8,6 +10,7 @@ class TicketPurchaseModal extends React.Component {
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   handleSubmit(e) {
