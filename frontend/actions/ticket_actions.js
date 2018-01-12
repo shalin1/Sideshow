@@ -42,6 +42,7 @@ export const fetchTickets = () => dispatch => (
 
 export const createTicket = ticket => dispatch => (
   APIUtil.createTicket(ticket).then(ticket => {
+    
     dispatch(receiveTicket(ticket));
     return ticket;
   }), err => (

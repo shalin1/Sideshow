@@ -146,7 +146,10 @@
         display: flex;
       }
       &-button {
-        @include event-button-base;
+        width: 200px;
+        height: 36px;
+        font-size: 22px;
+
       }
     }
     &-button {
@@ -183,10 +186,11 @@
       &-plain {
         border-radius: 5px;
         height: 46px;
+        width: 200px;
         padding: 0 20px;
         font-weight: 400;
         letter-spacing: 1.5px;
-        margin: 20px;
+        margin: 20px right;
         border: 3px solid $peppy-blue;
         background: white;
         color: $peppy-blue;
@@ -344,8 +348,8 @@
         padding: 0 15% 0 10px;
         font-family: $body-font-stack;
         font-weight: 700;
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 13px;
+        line-height: 20px;
         letter-spacing: 1.2px;
         color: $middle-grey;
 
@@ -365,6 +369,7 @@
         letter-spacing: 1.2px;
         color: $middle-grey;
         &-item {
+          font-size: 14px;
         }
       }
     }
@@ -503,6 +508,8 @@
 
 .label-primary{
   @include font-label;
+  font-weight: 700;
+  font-size: 13px;
 }
 .font{
   &-header {

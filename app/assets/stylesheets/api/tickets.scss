@@ -9,25 +9,18 @@
 .row-container {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  padding: 5px 0px;
-  display: flex;
-  align-items: baseline;
+  align-items: flex-end;
+  justify-content: flex-start;
+  margin-top: 5px;
 
 }
 .tickets {
   &-modal {
-    transition: transform 400ms ease-in
-    &-show {
-      transform: translateX(0)
-    } &-hide {
-      transform: translateX(-100mv)
-    }
     &-text {
       &-formhead {
           @text-transform: capitalize;
           font-family: $skinny;
-          font-size: 24px;
+          font-size: 22px;
           padding: 0;
           font-weight: 700;
           color: $near-black;
@@ -36,26 +29,31 @@
         &-container {
           display: flex;
           flex-direction: column;
-          align-items: space-between
+          justify-content: space-between;
         }
         &-type {
           @include font-event-index-intro;
+          font-size: calc(15px + .5vw);
           padding: 0;
           display: block;
         }
         &-price {
           @include font-event-index-subhead;
-          padding: 0;
+          font-size: calc(9px + .5vw);
+          padding-top: 10px;
+          padding-left: 0px;
           display: block;
           color: $middle-grey;
         }
         &-fee {
           @include font-event-index-subhead;
-          padding: 0;
+          padding: 0px;
           display: block;
+          padding-left: 4px;
+          padding-bottom: 8px;
           color: $middle-grey;
           font-weight: 200;
-          font-size: calc(10px + .5vw)
+          font-size: calc(6px + .5vw)
         }
       }
     }
@@ -70,7 +68,7 @@
           box-sizing: border-box;
           border: 1px solid $business-grey;
           border-radius: 5px;
-          height: 42px;
+          height: 32px;
           width: 78px;
           list-style: disc;
           background: white;
@@ -79,7 +77,28 @@
           font-weight: 100;
         }
       }
-    }
+      &-button {
+        border-radius: 5px;
+        height: 38px;
+        width: 150px;
+        padding: 0 ;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        margin-right: 20px;
+        border: 3px solid $peppy-blue;
+        background: white;
+        color: $peppy-blue;
+        display: flex;
+        justify-content: center;
+        box-sizing: boorder-box;
+        &-:disabled {
+          border: 3px solid #999999;
+          background-color: #cccccc;
+          color: #666666;
+        }
+      }
+    } 
     &-overlay {
       position: fixed;
       top: 0;
@@ -136,11 +155,12 @@
       height: 60px;
       width: 100%;
       background: white;
-      display: flex;
       border-bottom-right-radius: 5px;
       border-bottom-left-radius: 5px;
+      display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
       border-top: 1px solid $lightest-grey;
     }
     &-checkout-button {
@@ -151,10 +171,12 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: baseline;;
+      align-items: baseline;
+      margin-left: 15px;
     }
     &-labels span {
       @include font-label;
+      font-size: 14ppx;
       padding: 20px;
     }
     &-box {
@@ -162,14 +184,15 @@
       width: 570px;
       box-sizing: border-box;
       background: white;
-      margin: 15px 15px 40px 15px;
+      margin: 10px 10px 40px 10px;
       border: 1px solid $lighter-grey;
       border-radius: 3px;
       border-left: 15px solid #0093D7;
-      padding: 20px;
+      padding: 5px 15px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: center;
     }
 
   }
