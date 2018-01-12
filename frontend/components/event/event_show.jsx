@@ -15,7 +15,6 @@ class EventShow extends React.Component {
   }
 
   changeBookmark() {
-    debugger
     this.setState({bookmarked: !this.state.bookmarked});
   }
 
