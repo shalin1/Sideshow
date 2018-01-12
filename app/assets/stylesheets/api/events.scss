@@ -311,9 +311,11 @@
       }
       &-button {
         height: 44px;
-        width: 30vw;
+        width: 30%;
         margin-right: 15px;
         background: $peppy-blue;
+        background-image: $pornj-gradient;
+        border-radius: 22px;
         @include event-button-base {
 
         }
@@ -479,7 +481,7 @@
       }
       &-categories {
         font-size: 12px;
-        padding: 0 0 0 20px;
+        padding: 0 0 0 15px;
       }
       &-bookmark {
         padding: 12px 10px 12px 20px;

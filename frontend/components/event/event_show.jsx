@@ -95,13 +95,11 @@ class EventShow extends React.Component {
               <button className="event-show-CTA-bookmark">
                 <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
               </button>
-              <div>
-                <button className="event-show-CTA-button"
-                  onClick={this.handleTicketing}
-                >
-                  Register Now
-                </button>
-              </div>
+              <button className="event-show-CTA-button"
+                onClick={this.handleTicketing}
+              >
+                Register Now
+              </button>
             </section>
 
             <section className="event-show-body-container">
