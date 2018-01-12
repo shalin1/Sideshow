@@ -1,6 +1,6 @@
 $body-font-stack:  Open-Sans, Raleway, Helvetica-Neue, Helvetica, Roboto, Arial, sans-serif;
 $title-font-stack:  Roboto, Raleway, Open-Sans, Helvetica, Arial, sans-serif;
-$skinny-font-stack: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
+$skinny: Raleway, Open-Sans, Helvetica-Neue, Helvetica, Arial, sans-serif;
 $decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sans-serif;
 
 
@@ -14,18 +14,27 @@ $decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sa
 }
 
 @mixin font-event-index-intro {
-  font-family: $skinny-font-stack;
+  font-family: $skinny;
   font-size: calc(18px + .5vw);
   line-height: 30px;
   font-weight: 400;
   letter-spacing: 1.4px;
-  padding: 10px 15px;
+  padding: 10px 5px;
+  display: flex;
+}
+@mixin font-event-index-subhead {
+  font-family: Helvetica, $body-font-stack;
+  font-size: calc(14px + .5vw);
+  line-height: 30px;
+  font-weight: 400;
+  letter-spacing: 1.4px;
+  padding: 10px 5px;
   display: flex;
 }
 
 @mixin font-nav-link() {
   color: $darker-grey;
-  font-family: $skinny-font-stack;
+  font-family: $skinny;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.2px;
@@ -47,7 +56,7 @@ $decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sa
 @mixin font-header-search-box() {
   text-align: center;
   margin: 40px;
-  font-family: $skinny-font-stack;
+  font-family: $skinny;
   font-size: calc(23px + 1.5vw);
   font-weight: 100;
   letter-spacing: 0.8px;
@@ -76,9 +85,9 @@ $decorator-font-stack:  Ewert, Raleway, Open-Sans,  Helvetica, Roboto, Arial, sa
 
 @mixin font-label() {
   text-transform: uppercase;
-  font-family: $title-font-stack;
+  font-family: $skinny;
   -webkit-font-smoothing: antialiased;
   color: $near-black;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
 }

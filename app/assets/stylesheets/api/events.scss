@@ -67,7 +67,7 @@
         font-size: 43px;
         font-weight: 100;
         line-height: 45px;
-        font-family: $skinny-font-stack;
+        font-family: $skinny;
         background: $pornj-gradient;
         color: $off-white;
         padding-bottom: 5px;
@@ -271,13 +271,13 @@
         justify-content: space-between;
       }
       &-date-lg {
-        font-family: $skinny-font-stack;
+        font-family: $skinny;
         text-transform: uppercase;
         font-size: 23px;
         font-weight: 100;
       }
       &-date-sm {
-        font-family: $skinny-font-stack;
+        font-family: $skinny;
         text-transform: uppercase;
         font-size: 12px;
         font-weight: 700;
@@ -355,7 +355,7 @@
         min-width: 200px;
         padding: 0 10px;
         box-sizing: border-box;
-        font-family: $skinny-font-stack;
+        font-family: $skinny;
         font-weight: 700;
         font-size: 16px;
         line-height: 22px;
@@ -461,7 +461,7 @@
         font-weight: 400;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-family: $skinny-font-stack;
+        font-family: $skinny;
         color: $middle-grey;
         font-size: 12px;
         line-height: 18px;

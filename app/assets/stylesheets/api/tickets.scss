@@ -6,18 +6,57 @@
 @import 'fonts';
 @import 'forms';
 
+.row-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px 0px;
+  display: flex;
+  align-items: baseline;
+
+}
 .tickets {
   &-modal {
+    &-text {
+      &-formhead {
+          @text-transform: capitalize;
+          font-family: $skinny;
+          font-size: 24px;
+          padding: 0;
+          font-weight: 700;
+          color: $near-black;
+
+
+      }
+      &-ticket {
+        &-container {
+          display: flex;
+          flex-direction: column;
+          align-items: space-between
+        }
+        &-type {
+          @include font-event-index-intro;
+          padding: 0;
+          display: block;
+        }
+        &-price {
+          @include font-event-index-subhead;
+          padding: 0;
+          display: block;
+          color: $middle-grey;
+        }
+        &-fee {
+          @include font-event-index-subhead;
+          padding: 0;
+          display: block;
+          color: $middle-grey;
+          font-weight: 200;
+          font-size: calc(10px + .5vw)
+        }
+      }
+    }
     &-form {
       &-input {
-        &-text {
-          font-size: 20px;
-          line-height: 30px;
-          font-weight: 400;
-          padding-bottom: 5px;
-          word-wrap: break-word;
-          font-family: $skinny-font-stack;
-        }
         &-container{
           display: flex;
           align-items: baseline;
@@ -32,7 +71,7 @@
           list-style: disc;
           background: white;
           color: black;
-          font: $skinny-font-stack;
+          font: $skinny;
           font-weight: 100;
         }
       }
@@ -77,12 +116,16 @@
       border-top-right-radius: 5px;
       flex-direction: row;
       justify-content: center;
+      align-items: center;
       border-bottom: 1px solid $lighter-grey;
       border-left
       &-content {
-        @include font-header-search-box;
+        @include font-event-index-intro;
         margin: 0;
-        font-size: 30px;
+        font-size: 40px;
+        font-weight: 700;
+        font-family: $title-font-stack;
+
       }
     }
     &-footer {

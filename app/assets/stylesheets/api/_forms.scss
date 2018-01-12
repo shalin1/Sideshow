@@ -24,6 +24,20 @@
   }
 }
 
+@mixin form-base-select {
+  box-sizing: border-box;
+  border: 1px solid $business-grey;
+  border-radius: 5px;
+  height: 42px;
+  width: 78px;
+  list-style: circle;
+  background: white;
+  color: black;
+  font: $skinny;
+  font-size: 16px;
+  font-weight: 400;
+}
+
 @mixin form-base-textarea {
   width: 100%;
   max-width: 560px;
@@ -54,7 +68,7 @@
   text-align: center;
   border-radius: 2px solid white;
   color: white;
-  font-family: $skinny-font-stack;
+  font-family: $skinny;
   font-size: 14px;
   text-transform: uppercase;
 }

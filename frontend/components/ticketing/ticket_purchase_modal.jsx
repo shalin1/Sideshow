@@ -43,17 +43,27 @@ class TicketPurchaseModal extends React.Component {
           </button>
 
           <section className="tickets-modal-header">
-            <h1 className="tickets-modal-header-content">Register</h1>
+            <div className="tickets-modal-text-formhead">Register</div>
           </section>
 
           <section className="tickets-modal-box">
-            <div>
-              <j3 className="tickets-modal-input-text">
-                ${this.props.event.ticket_price}
-                <br/>
-                + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
-              </j3>
+            <div className="tickets-modal-text-ticket-container">
+              <div className="tickets-modal-text-ticket-type">
+                Advanced Ticket
+              </div>
+
+              <div className="row-container">
+
+                <div className="tickets-modal-text-ticket-price">
+                  ${this.props.event.ticket_price}
+                </div>
+
+                <div className="tickets-modal-text-ticket-fee">
+                  + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
+                </div>
+              </div>
             </div>
+
             <div className="tickets-modal-form-input-container">
               <form>
                 <select
