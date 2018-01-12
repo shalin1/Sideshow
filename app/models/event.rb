@@ -15,6 +15,8 @@ class Event < ApplicationRecord
 
   has_many :tickets
 
+  has_many :attendees, through: :tickets, source: :ticket_holder
+
   has_attached_file(
     :hero_image,
     styles: {

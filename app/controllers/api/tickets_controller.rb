@@ -1,7 +1,7 @@
 class Api::TicketsController < ApplicationController
 
   def create
-    @ticket = current_user.tickets.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
     if @ticket.save
       render :show
     else
@@ -32,6 +32,6 @@ class Api::TicketsController < ApplicationController
   private
 
   def ticket_params
-    params.require(:ticket).permit(:event_id, :ticket_holder_id)
+    params.require(:ticket).permit(:event_id, :ticket_holder_id, :code, :ticket_price, :ticket_quantity)
   end
 end

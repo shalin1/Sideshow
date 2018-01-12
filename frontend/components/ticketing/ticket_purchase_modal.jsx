@@ -14,7 +14,9 @@ class TicketPurchaseModal extends React.Component {
     const ticket = {
       ticket: {
         ticket_holder_id: this.props.currentUser.id,
-        event_id: this.props.event.id
+        event_id: this.props.event.id,
+        ticket_price: (this.props.event.ticket_price * 1.1347).toFixed(2),
+        ticket_quantity: this.state.ticket_quantity
       }
     };
     this.props.createTicket(ticket);
@@ -22,7 +24,7 @@ class TicketPurchaseModal extends React.Component {
   }
 
   handleChange(event) {
-     this.setState({tix_quantity: event.target.value});
+     this.setState({ticket_quantity: event.target.value});
    }
 
   handleClose() {
@@ -54,7 +56,7 @@ class TicketPurchaseModal extends React.Component {
             </div>
             <div>
               <form>
-                <select value={this.state.tix_quantity} onChange={this.handleChange}>
+                <select value={this.state.ticket_quantity} onChange={this.handleChange}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
