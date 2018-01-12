@@ -8,10 +8,39 @@
 
 .tickets {
   &-modal {
+    &-form {
+      &-input {
+        &-text {
+          font-size: 20px;
+          line-height: 30px;
+          font-weight: 400;
+          padding-bottom: 5px;
+          word-wrap: break-word;
+          font-family: $skinny-font-stack;
+        }
+        &-container{
+          display: flex;
+          align-items: baseline;
+        }
+        &-select {
+          font-size: 16px;
+          box-sizing: border-box;
+          border: 1px solid $business-grey;
+          border-radius: 5px;
+          height: 42px;
+          width: 78px;
+          list-style: disc;
+          background: white;
+          color: black;
+          font: $skinny-font-stack;
+          font-weight: 100;
+        }
+      }
+    }
     &-overlay {
       position: fixed;
       top: 0;
-      background: rgba(0,0,0, 0.75);
+      background-color: rgba(40,44,53,.8);
       z-index: 1000;
       height: 100vh;
       width: 100vw;
@@ -37,17 +66,19 @@
       @include modal-close-button();
       top: 15px;
       right: 15px;
+      font-weight: 100
     }
     &-header {
       height: 60px;
       width: 100%;
-      background: $off-white;
+      background: $lightest-grey;
       display: flex;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       flex-direction: row;
       justify-content: center;
-      border-bottom: 1px solid $lightest-grey;
+      border-bottom: 1px solid $lighter-grey;
+      border-left
       &-content {
         @include font-header-search-box;
         margin: 0;
@@ -87,8 +118,8 @@
       margin: 15px 15px 40px 15px;
       border: 1px solid $lighter-grey;
       border-radius: 3px;
-      border-left: 8px solid $eventbrite;
-      padding: 15px;
+      border-left: 15px solid #0093D7;
+      padding: 20px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;

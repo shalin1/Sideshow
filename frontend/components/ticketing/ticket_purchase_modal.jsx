@@ -48,15 +48,17 @@ class TicketPurchaseModal extends React.Component {
 
           <section className="tickets-modal-box">
             <div>
-              <span>
+              <j3 className="tickets-modal-input-text">
                 ${this.props.event.ticket_price}
                 <br/>
                 + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
-              </span>
+              </j3>
             </div>
-            <div>
+            <div className="tickets-modal-form-input-container">
               <form>
-                <select value={this.state.ticket_quantity} onChange={this.handleChange}>
+                <select
+                  className="tickets-modal-form-input-select"
+                  value={this.state.ticket_quantity} onChange={this.handleChange}>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
