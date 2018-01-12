@@ -93,14 +93,14 @@ class UserDashboard extends React.Component {
           <section className="user-dashboard-content">
             <nav className="user-dashboard-links">
               <section className="user-dashboard-links-container">
-                <NavLink activeClassName="user-dashboard-link-selected"to="/my_events">
-                  <div className="flex-center user-dashboard-link">
-                    My Events
-                  </div>
-                </NavLink>
                 <NavLink activeClassName="user-dashboard-link-selected"to="/my_tickets">
                   <div className="flex-center user-dashboard-link">
-                    My Tickets
+                    Upcoming Events
+                  </div>
+                </NavLink>
+                <NavLink activeClassName="user-dashboard-link-selected"to="/my_events">
+                  <div className="flex-center user-dashboard-link">
+                    Organized Events
                   </div>
                 </NavLink>
               </section>

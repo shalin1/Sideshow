@@ -3,7 +3,7 @@ class TicketPurchaseModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tix_quantity: 1
+      ticket_quantity: 1
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +31,10 @@ class TicketPurchaseModal extends React.Component {
     this.props.hideTicketingModal();
   }
 
+
+
   render() {
+
     return (
       <div className="tickets-modal-overlay">
         <div className="tickets-modal-container">

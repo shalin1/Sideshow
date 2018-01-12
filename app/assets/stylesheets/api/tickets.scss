@@ -17,6 +17,12 @@
 }
 .tickets {
   &-modal {
+    transition: transform 400ms ease-in
+    &-show {
+      transform: translateX(0)
+    } &-hide {
+      transform: translateX(-100mv)
+    }
     &-text {
       &-formhead {
           @text-transform: capitalize;

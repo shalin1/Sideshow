@@ -88,6 +88,12 @@
           @include font-event-index-item-price;
           margin-top: 10px;
         }
+        &-code {
+          opacity: 0.78;
+          @include font-event-index-item-price;
+          margin-top: 2px;
+          font-size: 10px;
+        }
       }
       &-action {
         background: white;

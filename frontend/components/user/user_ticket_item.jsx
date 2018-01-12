@@ -22,7 +22,7 @@ class DashboardTicketShow extends React.Component {
     const eventStart = momentStart.format("dddd, MMMM D h:mm A");
     const momentTicketBuy = moment(ticket.created_at);
     const ticketCreateDate = momentTicketBuy.format("MMMM Do, YYYY");
-    const orderValue = ticket.ticket_price * ticket.ticket_quantity;
+    const orderValue = Math.round(ticket.ticket_price * ticket.ticket_quantity, 2);
     const pluralizedTickets = ticket.ticket_quantity > 1 ? "tickets" : "ticket";
 
     return (
@@ -44,6 +44,9 @@ class DashboardTicketShow extends React.Component {
             </div>
             <div className="user-dashboard-ticket-text-price">
               You spent ${orderValue} for {ticket.ticket_quantity} {pluralizedTickets} on {ticketCreateDate}
+            </div>
+            <div className="user-dashboard-ticket-text-code">
+              Order #{ticket.code}
             </div>
           </section>
         </div>

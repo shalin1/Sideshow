@@ -7,7 +7,8 @@ import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+    };
     this.handleTicketing = this.handleTicketing.bind(this);
   }
 
@@ -54,6 +55,7 @@ class EventShow extends React.Component {
         const timeEnd = momentEnd.format("LT");
         const startMonth = momentStart.format("MMM");
         const startDay = momentStart.format("D");
+        let bookmarkFill;
 
         return(
         <div className="event-show-container-marginfix">
@@ -90,12 +92,12 @@ class EventShow extends React.Component {
                 </div>
               </figcaption>
             </header>
-            
+
             <section className="event-show-CTA-container">
-              <button className="event-show-CTA-bookmark">
+              <button className="event-show-CTA-bookmark" onClick="handleBookmarkClick">
                 <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
               </button>
-              <button className="event-show-CTA-button"
+              <button className="event-show-CTA-button callback-fill"
                 onClick={this.handleTicketing}
               >
                 Register Now
