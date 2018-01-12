@@ -9,33 +9,46 @@ class DashboardTicketShow extends React.Component {
   }
 
   handleDelete() {
-    this.props.deleteTicket(this.props.ticket).then(
-      () => location.reload()
-    );
+    this.props.deleteTicket(this.props.ticket);
   }
 
   render() {
     const event = this.props.event;
     const ticket = this.props.ticket;
-
+    const eventImage = {
+      backgroundImage: 'url(' + event.event_index_image_url + ')',
+    };
+    const momentStart = moment(event.event_start);
+    const eventStart = momentStart.format("dddd, MMMM D h:mm A");
     return (
-      <article className="user-dashboard-ticket-container">
-        <div className="user-dashboard-ticket-date">
-          {event.event_start}
-        </div>
-        <div className="user-dashboard-ticket-title">
-          {event.title}
-        </div>
-        <div>
-          ${event.ticket_price}
-        </div>
-        <div className="user-dashboard-ticket-actions">
-          <button
-            className="user-dashboard-button"
-            onClick={this.handleDelete}
+      <article className="user-dashboard-ticket-row">
+        <div className="user-dashboard-ticket-container">
+          <section
+            className="user-dashboard-ticket-image"
+            style={eventImage}
           >
-            Refund<br/>Ticket
-          </button>
+          </section>
+          <section className="user-dashboard-ticket-text-container">
+            <div>
+              <div className="user-dashboard-ticket-text-date">
+                {eventStart}
+              </div>
+              <div className="user-dashboard-ticket-text-title">
+                {event.title}
+              </div>
+            </div>
+            <div className="user-dashboard-ticket-text-price">
+              ${event.ticket_price}
+            </div>
+          </section>
+          <section className="user-dashboard-ticket-action">
+            <button
+              className="user-dashboard-ticket-action-button"
+              onClick={this.handleDelete}
+            >
+              Refund Ticket
+            </button>
+          </section>
         </div>
       </article>
     );

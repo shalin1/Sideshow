@@ -24,7 +24,6 @@ const mapStateToProps = (state, ownProps) => {
       if (state.ui.loading) {
         content = "loading";
       } else {
-        debugger
         content = currentUser.tickets.map(ticket => ({
           ticket: ticket,
           event: events[ticket.event_id]

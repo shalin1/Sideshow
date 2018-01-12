@@ -4,10 +4,115 @@
 @import 'fonts';
 @import 'colors';
 @import 'forms';
+
 .user {
   &-dashboard {
+    &-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      &-container {
+        margin: 80px 40px 40px 40px;
+        padding: 10px;
+        background: white;
+      }
+    }
+    &-ticket {
+      &-container {
+        background: white;
+        margin: 20px;
+        width: 700px;
+        padding: 5px;
+        height: 115px;
+        box-sizing: border-box;
+        border: 1px solid $lighter-grey;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      &-image {
+        width: 200px;
+        height: 100px;
+        border: 1px solid $middle-grey;
+        object-fit: cover;
+        overflow: hidden;
+        background: $pornj-gradient;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      &-text {
+        &-container {
+          display: flex;
+          width: 300px;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          padding: 0 15px;
+        }
+        &-price {
+          background: white;
+          opacity: 0.92;
+          @include font-event-index-item-price;
+          margin-top: 20px;
+        }
+        &-date {
+          font-weight: 100;
+          color: $darker-grey;
+          font-family: $title-font-stack;
+          font-size: 12px;
+          line-height: 18px;
+          height: 18px;
+          text-transform: uppercase;
+          letter-spacing: 1.2px;
+          margin-top: 5px;
+        }
+        &-title {
+          margin: 0 auto;
+          -webkit-line-clamp: 1;
+          font-family: $title-font-stack;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: $near-black;
+          font-size: 15px;
+          max-height: 38px;
+          font-weight: 500;
+          height: 38px;
+          margin-top: 3px;
+          margin: 0;
+        }
+      }
+      &-action {
+        background: white;
+        height: 100px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        &-button {
+          white-space: nowrap;
+          overflow: hidden;
+          width: 120px;
+          @include event-button-base();
+          background: white;
+          border: 3px solid $lighter-grey;
+          color: $lighter-grey;
+          padding: 5px;
+          border-radius: 3px;
+          font-size: 10px
+        }
+      }
+      &-row {
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+      }
+    }
     &-container {
-      margin: 80px 40px;
+      margin: 80px 40px 40px 40px;
       padding: 20px;
       background: white;
       border-radius: 3px;
@@ -18,19 +123,23 @@
     &-links {
       display: flex;
       justify-content: space-around;
+      width: 80vw;
     }
     &-link {
       @include font-nav-link;
-      font-size: 26px;
-    &-items {
-      &-container {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      font-size: 22px;
+      &-selected {
+        color: $eventbrite;
       }
-    }
+      &-items {
+        &-container {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
     }
     &-ownevents {
       &-item {

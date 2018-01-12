@@ -49,8 +49,6 @@ export const createTicket = ticket => dispatch => (
 ));
 
 export const deleteTicket = ticket => dispatch => {
-  debugger
-
   return (
     APIUtil.deleteTicket(ticket).then( () => (
       dispatch(removeTicket(ticket))

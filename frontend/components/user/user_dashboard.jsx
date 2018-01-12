@@ -84,6 +84,9 @@ class UserDashboard extends React.Component {
         default:
           dashboardContent = "SOMETHING IS WRONG";
         }
+
+  
+
       return (
         <div className="user-dashboard-container">
           <div className="user-dashboard-header">

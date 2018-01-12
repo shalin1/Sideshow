@@ -14,7 +14,6 @@ const ticketReducer = (oldState = defaultState, action) => {
     case REMOVE_TICKET:
       let nextState = merge({}, oldState);
       delete nextState[action.ticket.id];
-      
       return nextState;
     default:
       return oldState;
