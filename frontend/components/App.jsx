@@ -13,7 +13,6 @@ import {AuthRoute, ProtectedRoute} from '../util/route_util';
 const App = () => (
   <div className="meta-container">
     <NavBarContainer />
-
     <Route exact path="/" component={EventIndex} />
     <AuthRoute exact path="/signin" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/signup" component={SessionFormContainer} />
