@@ -12,17 +12,16 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      background-color: white;
       &-container {
         width: 100vw;
-        background: off-white;
-        margin: 40px 10px;
+        background: red;
         padding: 10px;
-        background: white;
+        background: $off-white;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-
       }
     }
     &-ticket {
@@ -130,6 +129,7 @@
       font-family: $title-font-stack;
       font-size: 35px;
       font-weight: 600;
+      background: white;
     }
     &-links {
       display: flex;
@@ -172,30 +172,45 @@
           border: 1px solid $lighter-grey;
           border-radius: 3px;
           margin: 20px;
-          width: 80%;
-          padding: 30px;
+          width: 90vw;
+          max-width: 700px;
+          background: white;
+          padding: 10px;
           border-radius: 3px;
         }
         &-title {
           @include font-event-index-intro;
-          padding-left: 0;
+          padding: 0 0 5px 0;
+          font-size: 20px;
         }
         &-date {
           @include font-label;
-          font-size: 14px;
+          font-size: 11px;
+          padding-bottom: 6px
         }
         &-actions {
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
+          justify-content: flex-start;;
+          align-items: center;
         }
         &-actions > * {
-          @include event-button-base;
-
-          background-image: $pornj-gradient;
-          padding: 20px;
-          margin: 5px;
-          width: 30%;
+          font-family: $skinny;
+          font-weight: 300;
+          font-size: 12px;
+          padding-right: 20px;
+          letter-spacing: 1.5px;
+          background: white;
+          color: $near-black;
+          transition: color 0.5s;
+          box-sizing: boorder-box;
+          &:hover {
+            color: $eventbrite;
+          }
+          & i {
+            padding-right: 3px;
+            color: $eventbrite;
+          }
         }
       }
     }
