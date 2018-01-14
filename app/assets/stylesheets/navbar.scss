@@ -51,7 +51,7 @@
 .meta-container {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 0;
   min-height: 100vh;
 }
 
@@ -90,13 +90,8 @@ body {
   &-container {
     background-color: rgb(40, 44, 53);
     border-top: 4px solid rgb(102, 106, 115);
-    display: flex;
     z-index: 100;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
+    display: block;
 
   }
   &-icon {
