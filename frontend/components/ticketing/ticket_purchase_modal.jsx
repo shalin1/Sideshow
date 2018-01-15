@@ -61,7 +61,7 @@ class TicketPurchaseModal extends React.Component {
               <div className="row-container">
 
                 <div className="tickets-modal-text-ticket-price">
-                  ${this.props.event.ticket_price}
+                  ${(this.props.event.ticket_price).toFixed()}
                 </div>
 
                 <div className="tickets-modal-text-ticket-fee">

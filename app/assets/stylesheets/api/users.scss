@@ -15,6 +15,7 @@
       background-color: white;
       &-container {
         width: 100vw;
+        box-sizing: border-box;
         background: red;
         padding: 10px;
         background: $off-white;
@@ -135,12 +136,12 @@
       }
     }
     &-container {
-      margin: 60px 0;
       width: 100vw;
       background: white;
     }
     &-header {
-      width: 100%;
+      width: 100vw;
+      box-sizing: border-box;
       height: 119px;
       color: $near-black;
       font-family: $title-font-stack;
