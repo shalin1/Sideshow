@@ -1,0 +1,2 @@
+class CategoryMembership < ApplicationRecord
+end
