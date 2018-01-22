@@ -22,6 +22,10 @@ class EventForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.props.resetErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
@@ -73,19 +77,15 @@ class EventForm extends React.Component {
     if (this.props.errors !== undefined) {
       return(
         <ul className="form-errors">
-          {
-            this.props.errors[field].map((error, i) => (
-              <li key={`error-${i}`} className="form-error-message">
-                {error}
-              </li>
-            ))
-          }
+          {this.props.errors[field].map((error, i) => (
+            <li key={`error-${i}`} className="form-error-message">
+              {error}
+            </li>
+          ))}
         </ul>
       );
     } else {
-      return(
-        <h1 className="form-errors">errors not loaded</h1>
-      );
+      return(<h1 className="form-errors">errors not loaded</h1>);
     }
   }
 
