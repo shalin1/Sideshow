@@ -13,6 +13,7 @@
       justify-content: flex-start;
       align-items: center;
       background-color: white;
+      min-height: calc(100vh - 256px);
       &-container {
         width: 100vw;
         box-sizing: border-box;
@@ -40,6 +41,9 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+        &:hover {
+          box-shadow: 1px 1px 0 0 rbga(0,0,0,.34)
+        }
       }
       &-image {
         width: 200px;
@@ -87,7 +91,7 @@
           background: white;
           opacity: 0.92;
           @include font-event-index-item-price;
-          margin-top: 10px;
+          margin: 5px 0;
         }
         &-code {
           opacity: 0.78;

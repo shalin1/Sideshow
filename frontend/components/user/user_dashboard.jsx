@@ -88,7 +88,7 @@ class UserDashboard extends React.Component {
       return (
         <div className="user-dashboard-container">
           <div className="user-dashboard-header flex-center">
-            {this.props.currentUser.first_name} {this.props.currentUser.first_name}'s profile
+            {this.props.currentUser.first_name}'s profile
           </div>
           <section className="user-dashboard-content">
             <nav className="user-dashboard-links">
