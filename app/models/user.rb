@@ -15,7 +15,17 @@ class User < ApplicationRecord
   foreign_key: :ticket_holder_id,
   class_name: 'Ticket'
 
-  has_many :events_attending, through: :tickets, source: :event
+  has_many :bookmarks,
+  foreign_key: :user_id,
+  class_name: 'Bookmark'
+
+  has_many :bookmarked_events,
+  through: :bookmarks,
+  source: :event
+
+  has_many :events_attending,
+  through: :tickets,
+  source: :event
 
   attr_reader :password
 

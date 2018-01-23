@@ -47,13 +47,13 @@ class DashboardTicketShow extends React.Component {
             <div className="user-dashboard-ticket-text-price">
               You spent ${orderValue} for {ticket.ticket_quantity} {pluralizedTickets} on {ticketCreateDate}
             </div>
+
             <div className="user-dashboard-ownevents-item-actions">
-              <span>Order #{ticket.code}</span>
               <Link to={`/events/${event.id}`}>
                 <i className="fa fa-eye" aria-hidden="true"> </i>
                 View Event
               </Link>
-              <button onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i> Cancel Order</button>
+              <button className="user-dashboard-ticket-text-delete" onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i> Cancel Order</button>
 
             </div>
           </section>
