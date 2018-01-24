@@ -28,11 +28,13 @@ class DashboardTicketShow extends React.Component {
     return (
       <article className="user-dashboard-ticket-row">
         <div className="user-dashboard-ticket-container">
-          <section
-            className="user-dashboard-ticket-image"
-            style={eventImage}
-          >
-          </section>
+          <Link to={`/events/${event.id}`}>
+            <section
+              className="user-dashboard-ticket-image"
+              style={eventImage}
+            />
+
+          </Link>
           <section className="user-dashboard-ticket-text-container">
             <div>
               <div className="user-dashboard-ticket-text-date">
@@ -45,8 +47,13 @@ class DashboardTicketShow extends React.Component {
             <div className="user-dashboard-ticket-text-price">
               You spent ${orderValue} for {ticket.ticket_quantity} {pluralizedTickets} on {ticketCreateDate}
             </div>
-            <div className="user-dashboard-ticket-text-code">
-              Order #{ticket.code} | <button className="user-dashboard-ticket-text-delete" onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i> cancel order</button>
+
+            <div className="user-dashboard-ownevents-item-actions">
+              <Link to={`/events/${event.id}`}>
+                <i className="fa fa-eye" aria-hidden="true"> </i>
+                View Event
+              </Link>
+              <button className="user-dashboard-ticket-text-delete" onClick={this.handleDelete}><i className="fa fa-times" aria-hidden="true"></i> Cancel Order</button>
 
             </div>
           </section>

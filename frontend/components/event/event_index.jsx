@@ -7,6 +7,7 @@ class EventIndex extends React.Component {
   }
 
   render () {
+    
     let event_index_items;
     if (!this.props.events) {
       event_index_items = <h1>loading....</h1>;
@@ -15,6 +16,9 @@ class EventIndex extends React.Component {
         <EventIndexItem
           event={event}
           key={event.id}
+          currentUser={this.props.currentUser}
+          removeBookmark={this.props.removeBookmark}
+          addBookmark={this.props.addBookmark}
         />
     ));
     }

@@ -15,7 +15,15 @@ class EventShow extends React.Component {
   }
 
   changeBookmark() {
-    this.setState({bookmarked: !this.state.bookmarked});
+    let currentUser = this.props.currentUser;
+    let eventId = this.props.event.id
+    if (!currentUser) {
+      return null
+    } else if (currentUser.bookmarked_event_ids.includes(eventId)) {
+      return e => this.props.removeBookmark(eventId)
+    } else {
+      return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
+    }
   }
 
 
@@ -62,12 +70,21 @@ class EventShow extends React.Component {
       const timeEnd = momentEnd.format("LT");
       const startMonth = momentStart.format("MMM");
       const startDay = momentStart.format("D");
-      let bookmarkIcon = this.state.bookmarked ? <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" /> : <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />;
-
+      let currentUser = this.props.currentUser;
+      let bookmarkIcon;
+      if (!currentUser) {
+      } else if (currentUser.bookmarked_event_ids.indexOf(this.props.event.id) < 0) {
+        bookmarkIcon = (<button className="event-show-bookmark" onClick={this.changeBookmark()}>
+          <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
+        </button>)
+      } else {
+        bookmarkIcon = (<button className="event-show-bookmark" onClick={this.changeBookmark()}>
+          <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" />
+        </button>)
+      }
 
         return(
         <div className="event-show-container-marginfix">
-
           <div
             className="event-show-background"
             style={eventImage}

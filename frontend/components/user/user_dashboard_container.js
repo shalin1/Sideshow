@@ -3,6 +3,8 @@ import UserDashboard from './user_dashboard';
 import { fetchEvent, fetchEvents, userEvents, deleteEvent } from '../../actions/event_actions';
 import { fetchTickets, deleteTicket } from '../../actions/ticket_actions';
 import { pageIsLoading, pageFinishedLoading } from '../../actions/loading_toggle_actions';
+import { addBookmark, removeBookmark } from '../../actions/session_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   let content, pageType;
@@ -30,6 +32,16 @@ const mapStateToProps = (state, ownProps) => {
         }));
       }
       break;
+    case '/my_bookmarks':
+      pageType = "userBookmarks";
+      if (state.ui.loading) {
+        content = "loading";
+      } else {
+        content = currentUser.bookmarked_event_ids.map(eventId => (
+          events[eventId]
+        ));
+      }
+      break;
     default:
   }
 
@@ -47,6 +59,8 @@ const mapDispatchToProps = dispatch => ({
   fetchEvent: id => dispatch(fetchEvent(id)),
   fetchEvents: () => dispatch(fetchEvents()),
   fetchTickets: () => dispatch(fetchTickets()),
+  addBookmark: bookmark => dispatch(addBookmark(bookmark)),
+  removeBookmark: eventId => dispatch(removeBookmark(eventId)),
   pageIsLoading: () => dispatch(pageIsLoading()),
   pageFinishedLoading: () => dispatch(pageFinishedLoading()),
 });

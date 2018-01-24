@@ -6,9 +6,6 @@ class EventIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
-    this.state = {
-      bookmarked: false
-    };
     this.changeBookmark = this.changeBookmark.bind(this);
   }
 
@@ -18,10 +15,21 @@ class EventIndexItem extends React.Component {
   }
 
   changeBookmark() {
-    this.setState({bookmarked: !this.state.bookmarked});
+    let currentUser = this.props.currentUser;
+    let eventId = this.props.event.id
+    if (!currentUser) {
+      return null
+    } else if (currentUser.bookmarked_event_ids.includes(eventId)) {
+      debugger
+      return e => this.props.removeBookmark(eventId)
+    } else {
+      return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
+    }
   }
 
   render() {
+    const currentUser = this.props.currentUser;
+
     const {
       event_index_image_url,
       ticket_price,
@@ -29,13 +37,25 @@ class EventIndexItem extends React.Component {
       event_start,
       venue_name
     } = this.props.event;
+
     const eventImage = {
       backgroundImage: 'url(' + event_index_image_url + ')',
     };
     const momentStart = moment(event_start);
     const eventStart = momentStart.format("ddd, MMM D h:mm A");
 
-    let bookmarkIcon = this.state.bookmarked ? <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" /> : <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />;
+    let bookmarkIcon;
+    if (!currentUser) {
+    } else if (currentUser.bookmarked_event_ids.indexOf(this.props.event.id) < 0) {
+      bookmarkIcon = (<button className="event-index-item-bookmark" onClick={this.changeBookmark()}>
+        <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
+      </button>)
+    } else {
+      bookmarkIcon = (<button className="event-index-item-bookmark" onClick={this.changeBookmark()}>
+        <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" />
+      </button>)
+    }
+
 
     return (
       <article
@@ -71,9 +91,7 @@ class EventIndexItem extends React.Component {
           <span className="event-index-item-categories">
             #Underground #Party
           </span>
-          <button className="event-index-item-bookmark" onClick={this.changeBookmark}>
-            {bookmarkIcon}
-          </button>
+          {bookmarkIcon}
         </section>
       </article>
     );
