@@ -15,20 +15,18 @@ class EventIndexItem extends React.Component {
   }
 
   changeBookmark() {
-    const currentUser = this.props.currentUser;
-
+    let currentUser = this.props.currentUser;
+    let eventId = this.props.event.id
     if (!currentUser) {
       return null
-    } else if (currentUser.bookmarked_event_ids.includes(this.props.event.id)) {
-
-      return e => this.props.removeBookmark(this.props.event.id)
+    } else if (currentUser.bookmarked_event_ids.includes(eventId)) {
+      return e => this.props.removeBookmark(eventId)
     } else {
-      return e => this.props.addBookmark({ event_id: this.props.event.id, user_id: this.props.currentUser.id});
+      return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
     }
   }
 
   render() {
-
     const currentUser = this.props.currentUser;
 
     const {

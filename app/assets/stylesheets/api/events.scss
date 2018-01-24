@@ -212,11 +212,12 @@
     &-background {
       position: absolute;
       top: 60px;
-      width: calc(100vw - 15px);
+      transform: scale(1.2);
+      width: 100vw;
       height: 540px;
       z-index: -200;
       background-size: 120%;
-      background-position: top center;
+      background-position: center;
       filter: blur(15px) brightness(1.1) saturate(0.9);
       &-boundary {
         display: block;
@@ -240,6 +241,7 @@
       z-index: 10;
       border-radius: 5px;
       &-marginfix {
+        overflow: hidden;
       }
     }
     @media only screen and (min-width: 1080px) {
@@ -326,9 +328,9 @@
         }
       }
       &-bookmark {
-        transform: scale(.75);
+        transform: scale(.85);
         -webkit-text-stroke: 1px white;
-        padding: 0 30px 0 20px;
+        padding: 0 40px 0 20px;
         &-container {
           height: 100%;
         }
