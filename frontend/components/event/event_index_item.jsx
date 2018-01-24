@@ -20,6 +20,7 @@ class EventIndexItem extends React.Component {
     if (!currentUser) {
       return null
     } else if (currentUser.bookmarked_event_ids.includes(eventId)) {
+      debugger
       return e => this.props.removeBookmark(eventId)
     } else {
       return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});

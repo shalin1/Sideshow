@@ -7,6 +7,13 @@
 
 .user {
   &-dashboard {
+    &-bookmarks-container {
+      width: 70%;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      padding-top: 20px;
+    }
     &-content {
       display: flex;
       flex-direction: column;
@@ -99,7 +106,7 @@
           @include font-event-index-item-price;
           margin-top: 2px;
           font-size: 10px;
-        
+
         }
       }
       &-action {

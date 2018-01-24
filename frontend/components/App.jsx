@@ -21,7 +21,6 @@ const App = () => (
     <ProtectedRoute exact path="/events/:id/edit" component={EventForm} />
     <ProtectedRoute exact path="/my_events" component={UserDashboard} />
     <ProtectedRoute exact path="/my_tickets" component={UserDashboard} />
-    <ProtectedRoute exact path="/my_dashboard" component={UserDashboard} />
     <ProtectedRoute exact path="/my_bookmarks" component={UserDashboard} />
     <Route exact path="/events/:id" component={EventShow} />
 

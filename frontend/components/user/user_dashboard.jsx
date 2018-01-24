@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import DashboardEventShow from './user_event_item';
 import DashboardTicketShow from './user_ticket_item';
+import EventIndexItem from '../event/event_index_item';
 
 class UserDashboard extends React.Component {
   constructor(props) {
@@ -27,8 +28,10 @@ class UserDashboard extends React.Component {
       );
     } else {
       let dashboardContent;
+      let contentContainerClass;
       switch (this.props.pageType) {
         case "userEvents":
+        contentContainerClass = 'user-dashboard-content-container'
           if (Object.keys(this.props.content).length === 0) {
             dashboardContent =
             <div className="user-dashboard-render-error">
@@ -46,6 +49,8 @@ class UserDashboard extends React.Component {
           }
           break;
         case "userTickets":
+        contentContainerClass = 'user-dashboard-content-container'
+
           if (Object.keys(this.props.content).length === 0) {
             dashboardContent =
             <div className="user-dashboard-render-error">
@@ -53,7 +58,8 @@ class UserDashboard extends React.Component {
               <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
             </div>;
           } else {
-            dashboardContent = this.props.content.map( registration => (
+            dashboardContent =
+              this.props.content.map( registration => (
               <DashboardTicketShow
                 ticket={registration.ticket}
                 key={registration.ticket.id}
@@ -61,10 +67,12 @@ class UserDashboard extends React.Component {
                 deleteTicket={this.props.deleteTicket}
                 fetchTickets={this.props.fetchTickets}
               />
-            ));
+              ));
           }
           break;
         case "userBookmarks":
+        contentContainerClass = 'user-dashboard-bookmarks-container'
+
           if (Object.keys(this.props.content).length === 0) {
             dashboardContent =
             <div className="user-dashboard-render-error">
@@ -72,13 +80,17 @@ class UserDashboard extends React.Component {
               <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
             </div>;
           } else {
-            dashboardContent = this.props.content.map( ticket => (
-              <DashboardTicketShow
-                ticket={ticket}
-                key={ticket.id}
-                deleteTicket={this.props.deleteTicket}
+            debugger
+            dashboardContent =
+              this.props.content.map( event => (
+              <EventIndexItem
+                event={event}
+                key={event.id}
+                currentUser={this.props.currentUser}
+                removeBookmark={this.props.removeBookmark}
+                addBookmark={this.props.addBookmark}
               />
-            ));
+              ));
           }
           break;
         default:
@@ -103,9 +115,14 @@ class UserDashboard extends React.Component {
                     Organized Events
                   </div>
                 </NavLink>
+                <NavLink activeClassName="user-dashboard-link-selected"to="/my_bookmarks">
+                  <div className="flex-center user-dashboard-link">
+                    Saved Events
+                  </div>
+                </NavLink>
               </section>
             </nav>
-            <article className="user-dashboard-content-container">
+            <article className={contentContainerClass}>
               {dashboardContent}
             </article>
           </section>

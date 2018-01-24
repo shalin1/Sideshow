@@ -14,7 +14,6 @@ span, article, footer, button, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: off-white;
-  overflow: hidden;
   &:focus{
     outline: 0;
   }
@@ -29,6 +28,7 @@ body {
   color: black;
   background-color: #F5F5F5;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 ul {

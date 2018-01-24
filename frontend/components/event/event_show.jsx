@@ -85,7 +85,6 @@ class EventShow extends React.Component {
 
         return(
         <div className="event-show-container-marginfix">
-
           <div
             className="event-show-background"
             style={eventImage}
