@@ -37,7 +37,6 @@ class TicketPurchaseModal extends React.Component {
 
 
   render() {
-    debugger
     return (
       <div className="tickets-modal-overlay">
         <div className="tickets-modal-container">

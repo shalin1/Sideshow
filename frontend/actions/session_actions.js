@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/session_api_util';
-import * as UserAPIUtil from '../util/bookmark_api_util';
+import * as bookmarkAPIUtil from '../util/bookmark_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RECEIVE_VALID_EMAIL = 'RECEIVE_VALID_EMAIL';
@@ -62,13 +62,13 @@ export const demoLogin = (demoUser) => dispatch => (
 );
 
 export const addBookmark = bookmark => dispatch => (
-    BookmarkAPIUtil.addBookmark(bookmark)
+    bookmarkAPIUtil.addBookmark(bookmark)
         .then(user => dispatch(receiveCurrentUser(user)),
-        errors => dispatch(receiveUserErrors(errors.responseJSON)))
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 )
 
 export const removeBookmark = eventId => dispatch => (
-    BookmarkAPIUtil.removeBookmark(eventId)
+    bookmarkAPIUtil.removeBookmark(eventId)
         .then(user => dispatch(receiveCurrentUser(user)),
-        errors => dispatch(receiveUserErrors(errors.responseJSON)))
+        errors => dispatch(receiveErrors(errors.responseJSON)))
 )
