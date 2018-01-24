@@ -40,5 +40,12 @@ class Event < ApplicationRecord
   through: :bookmarks,
   source: :user
 
+  has_many :category_memberships,
+  foreign_key: :event_id,
+  class_name: 'CategoryMembership'
+
+  has_many :categories,
+  through: :category_memberships,
+  source: :category
 
 end
