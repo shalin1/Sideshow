@@ -80,7 +80,6 @@ class UserDashboard extends React.Component {
               <p>Maybe you'd like to <Link to="/">buy some now?</Link></p>
             </div>;
           } else {
-            debugger
             dashboardContent =
               this.props.content.map( event => (
               <EventIndexItem

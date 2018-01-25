@@ -14,14 +14,14 @@ class CategoryIndex extends React.Component {
           key={category.id}
         />
       ));
-    
+
       return (
         <section className="category-container">
           <div className="category-header">
             Browse by Top Categories
           </div>
 
-          <section>
+          <section className="category-index-container">
             {category_index_items}
           </section>
         </section>

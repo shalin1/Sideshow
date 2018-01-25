@@ -24,10 +24,11 @@ class CategoryIndexItem extends React.Component {
     };
 
     return (
-      <article className="category-index-item-container" onClick={this.handleClick}>
+      <article className="category-index-item" onClick={this.handleClick}>
         <div className="category-index-item-background" style={categoryImage}>
-          {name}
-          {description}
+          <div className="category-index-item-name">{name}</div>
+          <br />
+          <div className="cateogry-index-item-description">{description}</div>
         </div>
       </article>
     );

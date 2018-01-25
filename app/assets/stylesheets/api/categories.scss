@@ -1,0 +1,43 @@
+@import 'fonts';
+
+.category{
+  &-container {
+    height: 100vh;
+    width: 800px;
+  }
+  &-header {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-family: $title-font-stack;
+    font-size: 20px;
+    padding: 20px;
+  }
+  &-index {
+    &-container {
+      display: grid;
+      width: 96%;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+    &-item {
+      width: 300px;
+      height: 300px;
+      color: white;
+      font-family: $title-font-stack;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      &-background {
+        height: 300px;
+      }
+      &-name {
+        font-size: 30px;
+      }
+      &-description {
+        font-size: 15px;
+      }
+    }
+  }
+}
