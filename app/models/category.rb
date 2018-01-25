@@ -1,5 +1,6 @@
 class Category < ApplicationRecord
 
+
   has_many :category_memberships,
   foreign_key: :category_id,
   class_name: 'CategoryMembership'
@@ -15,6 +16,11 @@ class Category < ApplicationRecord
       medium: "720x720",
       small: "300x300"
     }
+  )
+
+  validates_attachment_content_type(
+    :category_image,
+    content_type: /\Aimage\/.*\Z/
   )
 
 end

@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 
 const defaultState = {};
 
-const categoriesReducer = (oldstate = defaultState, action) => {
+const categoriesReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_CATEGORIES:
