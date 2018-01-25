@@ -7,6 +7,7 @@ import FooterContainer from './nav/footer';
 import EventIndex from './event/event_index_container';
 import EventForm from './event/event_form_container';
 import EventShow from './event/event_show_container';
+import CategoryIndex from './category/category_index_container';
 import UserDashboard from './user/user_dashboard_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
@@ -14,6 +15,7 @@ const App = () => (
   <div className="meta-container">
     <NavBarContainer />
     <Route exact path="/" component={EventIndex} />
+    <Route exact path="/categories" component={CategoryIndex} />
     <AuthRoute exact path="/signin" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/login" component={SessionFormContainer} />

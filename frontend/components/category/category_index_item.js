@@ -15,17 +15,19 @@ class CategoryIndexItem extends React.Component {
   render() {
     const {
       name,
-      category_image
+      description,
+      category_image_url
     } = this.props.category;
 
     const categoryImage = {
-      backgroundImage: 'url(' + category_image_url')'
+      backgroundImage: `url(${category_image_url})`
     };
 
     return (
-      <article className="category-index-item-container" onclick={this.handleClick}>
-        <div className="category-index-item-background" style={eventImage}>
+      <article className="category-index-item-container" onClick={this.handleClick}>
+        <div className="category-index-item-background" style={categoryImage}>
           {name}
+          {description}
         </div>
       </article>
     );

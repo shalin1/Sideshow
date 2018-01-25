@@ -8,24 +8,32 @@ class CategoryIndex extends React.Component {
 
   render() {
     if (this.props.categories) {
-      const category_index_items = this.props.categories.map( event => (
+      const category_index_items = this.props.categories.map( category => (
         <CategoryIndexItem
           category={category}
           key={category.id}
         />
       ));
-    }
+    
+      return (
+        <section className="category-container">
+          <div className="category-header">
+            Browse by Top Categories
+          </div>
 
-    return (
-      <section className="category-container">
-        <div className="category-header">
-          Browse by Top Categories
-        </div>
-
-        <section>
-          {category_index_items}
+          <section>
+            {category_index_items}
+          </section>
         </section>
-      </section>
-    )
+      )
+    } else {
+      return(
+        <div className="loading">
+          loading...
+        </div>
+      );
+    }
   }
 }
+
+export default CategoryIndex;

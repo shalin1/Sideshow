@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchCategories: () => dispatch(fetchCategories()_)
+  fetchCategories: () => dispatch(fetchCategories())
 })
 
 export default connect (
