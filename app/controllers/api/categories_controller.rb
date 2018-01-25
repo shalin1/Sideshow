@@ -31,7 +31,7 @@ class Api::CategoriesController < ApplicationController
         render json: @event.errors.messages, status: 422
       end
     end
-    
+
     def destroy
       @category = Category.find(category_params[:id])
       if @category.destroy
@@ -40,8 +40,6 @@ class Api::CategoriesController < ApplicationController
         render json: @category.errors.full_messages, status: 422
       end
     end
-
-    def
 
     private
 
