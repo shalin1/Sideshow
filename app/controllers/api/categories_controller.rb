@@ -6,6 +6,7 @@ class Api::CategoriesController < ApplicationController
 
     def show
       @category = Category.find(params[:id])
+      @events = Event.where(id: @category.pluck(:event_id))
       if @category
         render :show
       else

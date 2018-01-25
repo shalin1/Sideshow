@@ -6,6 +6,7 @@ export const fetchCategories = () => (
 );
 
 export const fetchCategory = () => {
+  debugger
   return (
     $.ajax({
       method: 'GET',
