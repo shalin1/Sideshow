@@ -6,11 +6,11 @@ class Api::CategoriesController < ApplicationController
 
     def show
       @category = Category.find(params[:id])
-      @events = Event.where(id: @category.pluck(:event_id))
-      if @category
+      @events = Category.find(params[:id]).events
+      if @events
         render :show
       else
-        render json: ['Could not find category'], status: 404
+        render json: ["Category not found"], status: 404
       end
     end
 

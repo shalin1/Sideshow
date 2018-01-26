@@ -5,12 +5,11 @@ export const fetchCategories = () => (
   })
 );
 
-export const fetchCategory = () => {
-  debugger
+export const fetchCategory = categoryId => {
   return (
     $.ajax({
       method: 'GET',
-      url: `api/categories/${id}`
+      url: `api/categories/${categoryId}`
     })
   );
 }
