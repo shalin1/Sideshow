@@ -16,8 +16,8 @@ const App = () => (
   <div className="meta-container">
     <NavBarContainer />
     <Route exact path="/" component={EventIndex} />
-    <Route exact path="/browse" component={CategoryIndex} />
-    <Route exact path="/browse/:id" component={CategoryShow} />
+    <Route exact path="/categories" component={CategoryIndex} />
+    <Route exact path="/categories/:id" component={CategoryShow} />
     <AuthRoute exact path="/signin" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/login" component={SessionFormContainer} />

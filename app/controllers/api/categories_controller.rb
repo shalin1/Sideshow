@@ -6,8 +6,7 @@ class Api::CategoriesController < ApplicationController
 
     def show
       @category = Category.find(params[:id])
-      @events = Category.find(params[:id]).events
-      if @events
+      if @category
         render :show
       else
         render json: ["Category not found"], status: 404

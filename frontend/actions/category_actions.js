@@ -1,7 +1,7 @@
 import * as APIUtil from '../util/category_api_util';
 
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
-export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
+export const RECEIVE_CATEGORY = 'RECEIVE_CATEGORY';
 export const RECEIVE_CATEGORY_ERRORS = 'RECEIVE_CATEGORY_ERRORS';
 import { Route } from 'react-router-dom';
 
@@ -12,10 +12,10 @@ const receiveCategories = categories => {
   };
 };
 
-const receiveCategoryEvents = events => {
+const receiveCategory = category => {
   return {
-    type: RECEIVE_EVENTS,
-    events
+    type: RECEIVE_CATEGORY,
+    category
   };
 };
 
@@ -26,7 +26,7 @@ export const fetchCategories = () => dispatch => (
 );
 
 export const fetchCategory = id => dispatch => (
-  APIUtil.fetchCategory(id).then( events => (
-    dispatch(receiveCategoryEvents(events))
+  APIUtil.fetchCategory(id).then( category => (
+    dispatch(receiveCategory(category))
   ))
 );
