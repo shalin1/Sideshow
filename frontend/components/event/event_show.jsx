@@ -56,7 +56,10 @@ class EventShow extends React.Component {
     if (this.props.event !== undefined) {
 
       const { title, ticket_price, event_start, event_end, description, venue_name,
-      venue_address, event_show_image_url } = this.props.event;
+      venue_address, event_show_image_url  } = this.props.event;
+
+      const category_links = this.props.event.categories.map(category => <Link to='/browse/' key={category.id}>{category.name}</Link>)
+      debugger
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
@@ -74,13 +77,13 @@ class EventShow extends React.Component {
       let bookmarkIcon;
       if (!currentUser) {
       } else if (currentUser.bookmarked_event_ids.indexOf(this.props.event.id) < 0) {
-        bookmarkIcon = (<button className="event-show-bookmark" onClick={this.changeBookmark()}>
+        bookmarkIcon = (
           <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
-        </button>)
+        )
       } else {
-        bookmarkIcon = (<button className="event-show-bookmark" onClick={this.changeBookmark()}>
+        bookmarkIcon = (
           <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" />
-        </button>)
+        )
       }
 
         return(
@@ -134,39 +137,44 @@ class EventShow extends React.Component {
                 <h3 className="label-primary">Description</h3>
                 <br/>
                 {description}
-              </article>
-              <div className="event-show-body-aside">
-                <aside className="event-show-body-aside-item">
-                  <h3 className="label-primary">Date and Time</h3>
-                  <br/>
-                  {startDateFull}
-                  <br/>
-                  {timeStart} - {timeEnd}
-                </aside>
                 <br/>
-                <aside className="event-show-body-aside-item">
-                  <h3 className="label-primary">Location</h3>
+                <div>
+                  <label className="label-primary">Tags</label>
+                  {category_links}
+                </div>
+                </article>
+                <div className="event-show-body-aside">
+                  <aside className="event-show-body-aside-item">
+                    <h3 className="label-primary">Date and Time</h3>
+                    <br/>
+                    {startDateFull}
+                    <br/>
+                    {timeStart} - {timeEnd}
+                  </aside>
                   <br/>
-                  {venue_name}
-                  <br/>
-                  {venue_address}
-                </aside>
-              </div>
-            </section>
+                  <aside className="event-show-body-aside-item">
+                    <h3 className="label-primary">Location</h3>
+                    <br/>
+                    {venue_name}
+                    <br/>
+                    {venue_address}
+                  </aside>
+                </div>
+              </section>
 
-          </article>
+            </article>
 
-          {ticketModal}
-        </div>
-      );
-    } else {
-      return(
-        <h1>loading....</h1>
-      );
-    }
-  }
-}
+            {ticketModal}
+          </div>
+          );
+          } else {
+            return(
+              <h1>loading....</h1>
+            );
+          }
+          }
+          }
 
 
 
-export default EventShow;
+          export default EventShow;

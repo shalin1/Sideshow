@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
 
   def index
     events = Event.all
-    debugger
+    
     if params[:categories]
       events = events.where(categories: params[:categories])
     end
