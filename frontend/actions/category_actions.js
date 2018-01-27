@@ -6,6 +6,7 @@ export const RECEIVE_CATEGORY_ERRORS = 'RECEIVE_CATEGORY_ERRORS';
 import { Route } from 'react-router-dom';
 
 const receiveCategories = categories => {
+
   return {
     type: RECEIVE_CATEGORIES,
     categories

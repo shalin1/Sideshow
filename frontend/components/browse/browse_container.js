@@ -1,19 +1,22 @@
 import { connect } from 'react-redux';
 
-import EventIndex from './event_index';
-import { fetchEvents } from '../../actions/event_actoins';
+import Browse from './browse';
+import { fetchEvents } from '../../actions/event_actions';
+import { fetchCategories } from '../../actions/category_actions'
 import { addBookMark, removeBookmark } from '../../actions/session_actions'
 
-cont mapStateToProps = (state, { match }) => {
+const mapStateToProps = (state, { match }) => {
   const categoryId = parseInt(match.params.id);
   return ({
     events: Object.values(state.entities.events),
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    categories: Object.values(state.entities.categories)
   });
 };
 
 const mapDispatchToProps = dispatch => ({
   fetchEvents: filter => dispatch(fetchEvents(filter)),
+  fetchCategories: () => dispatch(fetchCategories()),
   addBookmark: bookmark => dispatch(addBookmark(bookmark)),
   removeBookmark: eventId => dispatch(removeBookmark(eventId))
 });
@@ -21,4 +24,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(EventIndex);
+)(Browse);
