@@ -6,7 +6,6 @@ import moment from 'moment';
 class CategoryShow extends React.Component {
   constructor(props) {
     super(props);
-    const categoryId = this.props.match.params.id
   }
 
   componentWillMount() {
@@ -18,15 +17,16 @@ class CategoryShow extends React.Component {
   }
 
   render() {
-    if (this.props.loading) {
+    if (this.props.isLoading) {
       console.log('loading...');
       return (
-        <h1>loading....</h1>
+        <li>loading...</li>
       );
     } else {
-      let events = this.props.categories.categoryId.events;
-      console.log (`here's ${events}`)
-      return(<h1>foo</h1>)
+      categoryEvents = this.props.categories[this.props.match.params.id].events.map( event => (
+        <li>{categoryEvents.name}</li>
+      ))
+      return(<ul>{categoryEvents}</ul>)
     }
 
   }

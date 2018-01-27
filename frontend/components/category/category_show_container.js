@@ -8,9 +8,11 @@ import CategoryShow from './category_show';
 const mapStateToProps = (state, { match }) => {
   const categories = Object.values(state.entities.categories);
   const currentUser = state.session.currentUser;
+  const isLoading = state.ui.loading;
   return {
     categories,
     currentUser,
+    isLoading
   }
 };
 

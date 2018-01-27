@@ -36,14 +36,14 @@ const removeEvent = event => {
   };
 };
 
-export const fetchEvents = () => dispatch => (
-  APIUtil.fetchEvents().then( events => (
+export const fetchEvents = (filters) => dispatch => (
+  APIUtil.fetchEvents(filters).then(events => (
     dispatch(receiveEvents(events))
   ))
 );
 
 export const fetchEvent = id => dispatch => (
-  APIUtil.fetchEvent(id).then( event => (
+  APIUtil.fetchEvent(id).then(event => (
     dispatch(receiveEvent(event)))
   )
 );

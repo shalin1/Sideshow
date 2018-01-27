@@ -1,7 +1,12 @@
 class Api::EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    events = Event.all
+    debugger
+    if params[:categories]
+      events = events.where(categories: params[:categories])
+    end
+    @events = events.includes(:categories)
   end
 
   def currentUserEvents

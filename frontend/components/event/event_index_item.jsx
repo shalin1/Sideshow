@@ -34,7 +34,8 @@ class EventIndexItem extends React.Component {
       ticket_price,
       title,
       event_start,
-      venue_name
+      venue_name,
+      categories
     } = this.props.event;
 
     const eventImage = {
@@ -88,7 +89,7 @@ class EventIndexItem extends React.Component {
 
         <section className="event-index-item-footer">
           <span className="event-index-item-categories">
-            #Underground #Party
+            {categories}
           </span>
           {bookmarkIcon}
         </section>

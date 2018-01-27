@@ -6,9 +6,11 @@ import { addBookmark, removeBookmark } from '../../actions/session_actions'
 import EventShow from './event_show';
 
 const mapStateToProps = (state, { match }) => {
+  const eventId = parseInt(match.params.id);
+  const event = state.entities.events[eventId];
   return {
-    category,
-    events,
+    eventId,
+    event,
     errors: state.errors.event,
     currentUser: state.session.currentUser,
     ticketingModalActive: state.ui.ticketingModalActive
