@@ -35,9 +35,10 @@ class EventIndexItem extends React.Component {
       title,
       event_start,
       venue_name,
-      categories
     } = this.props.event;
-
+    const categories = this.props.event.categories.map( category => (
+      `#${category} `
+    ))
     const eventImage = {
       backgroundImage: 'url(' + event_index_image_url + ')',
     };

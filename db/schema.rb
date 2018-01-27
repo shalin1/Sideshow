@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180125171128) do
     t.string "description"
   end
 
+
+
   create_table "category_memberships", force: :cascade do |t|
     t.integer "event_id"
     t.integer "category_id"
