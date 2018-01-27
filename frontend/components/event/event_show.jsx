@@ -58,8 +58,13 @@ class EventShow extends React.Component {
       const { title, ticket_price, event_start, event_end, description, venue_name,
       venue_address, event_show_image_url  } = this.props.event;
 
-      const category_links = this.props.event.categories.map(category => <Link to='/browse/' key={category.id}>{category.name}</Link>)
-      debugger
+      const category_links = this.props.event.categories.map( category =>  (
+        <Link to='browse/' id={category.id} key={category.id}>
+          {category.name}
+        </Link>
+      ));
+    debugger
+
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
