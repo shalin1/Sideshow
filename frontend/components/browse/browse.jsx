@@ -48,12 +48,12 @@ class Browse extends React.Component {
     return(
     <div className="browse-container">
       <section>
+        {browseFilters}
+      </section>
+      <section className="browse-event-list">
         <h1 className="browse-headline">
           {category} events in Brooklyn, NY
         </h1>
-            {browseFilters}
-          </section>
-      <section className="browse-event-list">
         {filteredEvents}
       </section>
     </div>

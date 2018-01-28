@@ -5,14 +5,26 @@
   &-container {
     display: flex;
     flex-direction: row;
+    margin-left: 40px;
     max-width: 1080px;
+    min-height: calc(100vh - 135px);
+  }
+  &-headline {
+    font-family: $title-font-stack;
+    font-size: 30px;
+    margin: 20px
   }
   &-filter{
     &-container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
       margin: 20px;
       padding: 20px;
-      width: 240px  ;
+      width: 20vw;
       background: white;
+      max-width: 250px;
       & li {
         padding: 10px;
         font-family: $skinny;
@@ -33,7 +45,8 @@
   }
   &-event{
     &-list {
-
+      display: flex;
+      flex-direction: column;
     }
   }
   &-item {
@@ -79,9 +92,10 @@
     }
     &-info {
       margin: 10px;
-      padding: 0 10px;
-      height: 80px;
-      box-sizing: border-box;
+    padding: 0 10px;
+    height: 80px;
+    width: calc(52vw - 200px);
+    box-sizing: border-box;
     }
     &-price {
       width: 240px;
@@ -91,7 +105,7 @@
       font-family: $skinny;
       align-items: baseline;
       justify-content: flex-start;
-      background: $lightest-grey;
+      background: white;
     }
     &-grouping {
       display: flex;

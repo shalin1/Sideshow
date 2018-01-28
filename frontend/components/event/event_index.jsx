@@ -1,5 +1,6 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
+import CategoryIndex from '../category/category_index_container';
 
 class EventIndex extends React.Component {
   componentWillMount() {
@@ -38,7 +39,9 @@ class EventIndex extends React.Component {
           <section className="event-index-grid">
             {event_index_items}
           </section>
-        </section>
+          
+            <CategoryIndex/>
+          </section>
       </section>
     );
   }

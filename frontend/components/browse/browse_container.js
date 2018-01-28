@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Browse from './browse';
 import { fetchEvents, fetchCategory } from '../../actions/event_actions';
 import { fetchCategories } from '../../actions/category_actions'
-import { addBookMark, removeBookmark } from '../../actions/session_actions'
+import { addBookmark, removeBookmark } from '../../actions/session_actions'
 
 const mapStateToProps = (state, { match }) => {
   const categoryId = parseInt(match.params.id);

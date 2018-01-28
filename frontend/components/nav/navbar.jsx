@@ -11,6 +11,11 @@ export default ({currentUser, logout}) => {
         </span>
       </Link>
       <nav className="nav-right">
+        <Link to="/browse">
+          <div className="nav-link-user">
+            Browse
+          </div>
+        </Link>
         <UserNavContainer
           currentUser={currentUser}
           logout={logout}

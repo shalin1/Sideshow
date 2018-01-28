@@ -27,7 +27,9 @@ class BrowseFilters extends React.Component {
             {category.name}
           </li>
         </button>
-          ))
+      ))
+      categoryLinks.unshift(<li><Link to='/browse'>All Categories</Link></li>)
+
           }
           {`images/${this.props.image}`}
     return(
