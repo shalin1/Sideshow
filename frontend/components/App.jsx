@@ -18,7 +18,7 @@ const App = () => (
     <NavBarContainer />
     <Route exact path="/" component={EventIndex} />
     <Route exact path="/browse" component={BrowseIndex} />
-    <Route exact path="/browse/:id" component={CategoryShow} />
+    <Route exact path="/browse/:name" component={BrowseIndex} />
     <Route exact path="/categories" component={CategoryIndex} />
 
     <AuthRoute exact path="/signin" component={SessionFormContainer} />

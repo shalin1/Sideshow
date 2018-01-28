@@ -1,9 +1,18 @@
 export const fetchEvents = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/events'
+    url: 'api/events/',
   })
 );
+
+export const fetchCategory = name => {
+  return (
+    $.ajax({
+      method: 'GET',
+      url: `api/categories/${name}`
+    })
+  );
+}
 
 export const fetchEvent = id => (
   $.ajax({

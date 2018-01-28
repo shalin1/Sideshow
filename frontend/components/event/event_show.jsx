@@ -63,7 +63,7 @@ class EventShow extends React.Component {
           {category.name}
         </Link>
       ));
-    debugger
+    
 
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',

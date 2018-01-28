@@ -5,11 +5,17 @@ import BrowseFilters from './browse_filters';
 
 class Browse extends React.Component {
   componentWillMount(){
-    this.props.fetchEvents();
+
+    if (this.props.match.params.name) {
+      this.props.fetchCategory(this.props.match.params.name);
+    } else {
+      this.props.fetchEvents();
+    }
     this.props.fetchCategories();
   }
 
   render() {
+
     let filteredEvents;
     if (!this.props.events) {
       filteredEvents = <h1 className='filteredEvents'>loading...</h1>
@@ -24,20 +30,29 @@ class Browse extends React.Component {
         />
       ));
     }
-
+    let category = 'All'
     let browseFilters;
     if(!this.props.categories) {
       browseFilters = <h1>loading...</h1>
     } else {
-      browseFilters = <BrowseFilters categories={this.props.categories} />;
-    }
+      browseFilters = <BrowseFilters
+        categories={this.props.categories}
+        fetchCategory={this.fetchCategory}/>;
+      }
+      if (this.props.match.params.name) {
+        
+        category = this.props.match.params.name
+    };
 
 
     return(
     <div className="browse-container">
       <section>
-        {browseFilters}
-      </section>
+        <h1 className="browse-headline">
+          {category} events in Brooklyn, NY
+        </h1>
+            {browseFilters}
+          </section>
       <section className="browse-event-list">
         {filteredEvents}
       </section>

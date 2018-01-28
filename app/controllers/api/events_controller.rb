@@ -2,10 +2,6 @@ class Api::EventsController < ApplicationController
 
   def index
     events = Event.all
-    
-    if params[:categories]
-      events = events.where(categories: params[:categories])
-    end
     @events = events.includes(:categories)
   end
 
@@ -54,7 +50,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-  params.require(:event).permit(:id, :event_start, :event_end, :title, :description,
+  params.require(:event).permit(:id, :category, :event_start, :event_end, :title, :description,
     :venue_name, :venue_address, :ticket_price, :tickets_available,
     :organizer_id, :hero_image)
   end

@@ -8,7 +8,6 @@ export const REMOVE_EVENT = "REMOVE_EVENT";
 import { Route } from 'react-router-dom';
 
 const receiveEvents = events => {
-
   return {
     type: RECEIVE_EVENTS,
     events
@@ -36,12 +35,20 @@ const removeEvent = event => {
   };
 };
 
-export const fetchEvents = (filters) => dispatch => (
-  APIUtil.fetchEvents(filters).then(events => (
+export const fetchEvents = () => dispatch => (
+  APIUtil.fetchEvents().then(events => (
     dispatch(receiveEvents(events))
   ))
 );
 
+export const fetchCategory = name => dispatch => {
+
+  return (
+  APIUtil.fetchCategory(name).then( events => (
+    dispatch(receiveEvents(events))
+  ))
+);
+}
 export const fetchEvent = id => dispatch => (
   APIUtil.fetchEvent(id).then(event => (
     dispatch(receiveEvent(event)))

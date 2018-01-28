@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Browse from './browse';
-import { fetchEvents } from '../../actions/event_actions';
+import { fetchEvents, fetchCategory } from '../../actions/event_actions';
 import { fetchCategories } from '../../actions/category_actions'
 import { addBookMark, removeBookmark } from '../../actions/session_actions'
 
@@ -15,8 +15,9 @@ const mapStateToProps = (state, { match }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchEvents: filter => dispatch(fetchEvents(filter)),
+  fetchEvents: category => dispatch(fetchEvents(category)),
   fetchCategories: () => dispatch(fetchCategories()),
+  fetchCategory: (name) => dispatch(fetchCategory(name)),
   addBookmark: bookmark => dispatch(addBookmark(bookmark)),
   removeBookmark: eventId => dispatch(removeBookmark(eventId))
 });
