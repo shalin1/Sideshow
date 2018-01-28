@@ -5,7 +5,6 @@ import BrowseFilters from './browse_filters';
 
 class Browse extends React.Component {
   componentWillMount(){
-
     if (this.props.match.params.name) {
       this.props.fetchCategory(this.props.match.params.name);
     } else {
@@ -37,10 +36,11 @@ class Browse extends React.Component {
     } else {
       browseFilters = <BrowseFilters
         categories={this.props.categories}
-        fetchCategory={this.fetchCategory}/>;
+        fetchCategory={this.props.fetchCategory}
+        history={this.props.history}/>;
       }
       if (this.props.match.params.name) {
-        
+
         category = this.props.match.params.name
     };
 
@@ -61,4 +61,4 @@ class Browse extends React.Component {
   }
 }
 
-export default Browse;
+export default withRouter(Browse);

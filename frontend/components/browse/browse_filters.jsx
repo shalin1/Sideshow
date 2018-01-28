@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+
 class BrowseFilters extends React.Component {
   constructor(props) {
     super(props);
@@ -9,9 +10,9 @@ class BrowseFilters extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    console.log('click detected')
-
+  handleClick(categoryName) {
+    this.props.fetchCategory(categoryName);
+    this.props.history.push(`/browse/${categoryName}`)
   }
 
   render() {
@@ -19,12 +20,13 @@ class BrowseFilters extends React.Component {
     if (!this.props.categories) {
       return(<h1>loading...</h1>)
     } else {
+
       categoryLinks = this.props.categories.map( category => (
-        <Link to={`/browse/${category.name}`} key={category.id}>
+        <button onClick={(e) => this.handleClick(category.name, e)} key={category.name}>
           <li>
             {category.name}
           </li>
-        </Link>
+        </button>
           ))
           }
           {`images/${this.props.image}`}
