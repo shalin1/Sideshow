@@ -7,9 +7,6 @@ import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 class EventShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      bookmarked: false
-    };
     this.handleTicketing = this.handleTicketing.bind(this);
     this.changeBookmark = this.changeBookmark.bind(this);
   }
@@ -20,9 +17,10 @@ class EventShow extends React.Component {
     if (!currentUser) {
       return null
     } else if (currentUser.bookmarked_event_ids.includes(eventId)) {
-      return e => this.props.removeBookmark(eventId)
+
+      this.props.removeBookmark(eventId)
     } else {
-      return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
+      this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
     }
   }
 
@@ -63,7 +61,7 @@ class EventShow extends React.Component {
           {category.name}
         </Link>
       ));
-    
+
 
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',

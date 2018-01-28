@@ -26,7 +26,6 @@ export default ({currentUser, logout}) => {
             Create Event
           </div>
         </Link>
-
       </nav>
     </header>
   );
