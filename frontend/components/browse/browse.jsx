@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
-import EventBrowseItem from './browse_item';
-import BrowseFilters from './browse_filter';
+import BrowseItem from './browse_item';
+import BrowseFilters from './browse_filters';
 
 class Browse extends React.Component {
   componentWillMount(){
@@ -15,7 +15,7 @@ class Browse extends React.Component {
       filteredEvents = <h1 className='filteredEvents'>loading...</h1>
     } else {
       filteredEvents = this.props.events.map( event => (
-        <EventBrowseItem
+        <BrowseItem
           event={event}
           key={event.id}
           currentUser={this.props.currentUser}
@@ -35,17 +35,15 @@ class Browse extends React.Component {
 
     return(
     <div className="browse-container">
-      <section className='browse-filter-container'>
+      <section>
         {browseFilters}
       </section>
-      <section className="event-browse-grid">
+      <section className="browse-event-list">
         {filteredEvents}
       </section>
     </div>
     );
-
   }
-
 }
 
 export default Browse;

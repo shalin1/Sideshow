@@ -20,16 +20,21 @@ class BrowseFilters extends React.Component {
       return(<h1>loading...</h1>)
     } else {
       categoryLinks = this.props.categories.map( category => (
-        <Link to='browse' id={category.id}>
+        <Link to={`browse/${category.name.toLowerCase()}`} key={category.id}>
           <li>
-            #{category.name}
+          {category.name}
           </li>
-        </Link>
-      ))
-    }
-
+          </Link>
+          ))
+          }
+          {`images/${this.props.image}`}
     return(
-      <ul className='categoryLinksContainer'>
+      <ul className='browse-filter-container'>
+        <li>
+          <h1 className='browse-filter-header'>
+            CATEGORIES
+          </h1>
+        </li>
         {categoryLinks}
       </ul>
     )

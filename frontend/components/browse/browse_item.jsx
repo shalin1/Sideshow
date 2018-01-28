@@ -30,69 +30,66 @@ class BrowseItem extends React.Component {
     const currentUser = this.props.currentUser;
 
     const {
+      id,
       event_index_image_url,
       ticket_price,
       title,
-      event_start,
       venue_name,
+      event_start,
     } = this.props.event;
+    const event_start_formatted = moment(event_start).format('ddd, MMM D h:mm A')
+
+    const eventImage = {backgroundImage: 'url(' + event_index_image_url + ')'};
+
     const categories = this.props.event.categories.map( category => (
-      <Link to='browse' key={category.id}>#{category.name} </Link>
+      <Link to='browse' key={category.id} className='browse-item-category'>#{category.name}  </Link>
     ))
-    const eventImage = {
-      backgroundImage: 'url(' + event_index_image_url + ')',
-    };
-    const momentStart = moment(event_start);
-    const eventStart = momentStart.format("ddd, MMM D h:mm A");
 
     let bookmarkIcon;
     if (!currentUser) {
     } else if (currentUser.bookmarked_event_ids.indexOf(this.props.event.id) < 0) {
-      bookmarkIcon = (<button className="event-index-item-bookmark" onClick={this.changeBookmark()}>
+      bookmarkIcon = (<button className="browse-item-bookmark" onClick={this.changeBookmark()}>
         <i className="fa fa-bookmark-o fa-2x" aria-hidden="true" />
       </button>)
     } else {
-      bookmarkIcon = (<button className="event-index-item-bookmark" onClick={this.changeBookmark()}>
+      bookmarkIcon = (<button className="browse-item-bookmark" onClick={this.changeBookmark()}>
         <i className="fa fa-bookmark fa-2x bluefill" aria-hidden="true" />
       </button>)
     }
 
     return (
-      <article
-        className="event-index-item"
-      >
-        <section
-          className="event-index-item-header"
-          style={eventImage}
-          onClick={this.handleClick}
-        >
-          <div className="event-index-item-price">
-            ${Math.round(ticket_price)}</div>
-        </section>
-
-        <section
-          className="event-index-item-body"
-          onClick={this.handleClick}
-        >
-          <div>
-            <div className="event-index-item-date">
-              {eventStart}
+      <article className="browse-item-container">
+        <Link to={`/events/${id}`}>
+          <div className='browse-item-toprow'>
+            <div
+              className="browse-item-image"
+              style={eventImage}
+            >
             </div>
-            <div className="event-index-item-title">
-              {title}
+            <section className="browse-item-info">
+              <div className="user-dashboard-ticket-text-date">
+                {event_start_formatted}
+              </div>
+              <div className="user-dashboard-ticket-text-title">
+                {title}
+              </div>
+              <div className="user-dashboard-ticket-text-date">
+                {venue_name}
+              </div>
+            </section>
+          </div>
+        </Link>
+        <section className='browse-item-bottomrow'>
+          <div className='browse-item-grouping'>
+            <div className="browse-item-price">
+              ${Math.round(ticket_price)}
+            </div>
+            <div className='browse-item-categories'>
+              {categories}
             </div>
           </div>
-          <div className="event-index-item-venue">
-            {venue_name}
-          </div>
-        </section>
-
-        <section className="event-index-item-footer">
-          <span className="event-index-item-categories">
-            {categories}
-          </span>
           {bookmarkIcon}
-        </section>
+          </section>
       </article>
     );
   }
