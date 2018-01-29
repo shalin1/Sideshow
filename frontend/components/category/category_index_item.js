@@ -26,7 +26,7 @@ class CategoryIndexItem extends React.Component {
 
     return (
       <div className="category-index-item" onClick={this.handleClick}>
-        <div className="category-index-item-background zooming" style={categoryImage}>
+        <div className="category-index-item-background" style={categoryImage}>
           <span className="category-index-item-name">{name}</span>
           <br />
           <span className="category-index-item-description">{description}</span>

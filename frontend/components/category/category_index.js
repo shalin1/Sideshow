@@ -14,7 +14,6 @@ class CategoryIndex extends React.Component {
           key={category.id}
         />
       ));
-
       return (
         <section className="category-container">
           <div className="category-header">
@@ -22,6 +21,7 @@ class CategoryIndex extends React.Component {
           </div>
 
           <section className="category-index-container">
+
             {category_index_items}
           </section>
         </section>
