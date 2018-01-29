@@ -27,6 +27,7 @@ class Browse extends React.Component {
           currentUser={this.props.currentUser}
           removeBookmark={this.props.removeBookmark}
           addBookmark={this.props.addBookmark}
+          fetchCategory={this.props.fetchCategory}
         />
       ));
     }

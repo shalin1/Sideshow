@@ -14,12 +14,10 @@ class CategoryLink extends React.Component {
 
   render() {
     const category = this.props.category;
-
+    
     return(
       <button onClick={(e) => this.handleClick(category.name, e)} key={category.id}>
-        <li key={category.id}>
-          {category.name}
-        </li>
+        {category.name}
       </button>
     );
   }

@@ -2,17 +2,12 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
 import lodash from 'lodash';
+import CategoryLink from '../category/category_link';
 
 class BrowseItem extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.changeBookmark = this.changeBookmark.bind(this);
-  }
-
-  handleClick() {
-    const eventId = this.props.event.id;
-    this.props.history.push(`/events/${eventId}`);
   }
 
   changeBookmark() {
@@ -43,7 +38,11 @@ class BrowseItem extends React.Component {
     const eventImage = {backgroundImage: 'url(' + event_index_image_url + ')'};
 
     const categories = this.props.event.categories.map( category => (
-      <Link to={`/browse/${_.lowerCase(category.name)}`} key={category.id} className='browse-item-category'>#{category.name}  </Link>
+          <span>#<CategoryLink
+            category={category}
+            fetchCategory={this.props.fetchCategory}
+            history={this.props.history}
+                 /></span>
     ))
 
     let bookmarkIcon;
