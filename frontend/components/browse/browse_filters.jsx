@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import lodash from 'lodash';
+import CategoryLink from '../category/category_link';
 
 class BrowseFilters extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class BrowseFilters extends React.Component {
 
   handleClick(categoryName) {
     this.props.fetchCategory(categoryName);
-    this.props.history.push(`/browse/${categoryName}`)
+    this.props.history.push(`/browse/${_.lowerCase(categoryName)}`)
   }
 
   render() {
@@ -22,11 +24,11 @@ class BrowseFilters extends React.Component {
     } else {
 
       categoryLinks = this.props.categories.map( category => (
-        <button onClick={(e) => this.handleClick(category.name, e)} key={category.id}>
-          <li key={category.id}>
-            {category.name}
-          </li>
-        </button>
+        <CategoryLink
+          category={category}
+          fetchCategory={this.props.fetchCategory}
+          history={this.props.history}
+        />
       ))
       categoryLinks.unshift(<li><Link to='/browse'>All Categories</Link></li>)
 
