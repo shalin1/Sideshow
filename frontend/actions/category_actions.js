@@ -30,3 +30,12 @@ export const fetchCategory = id => dispatch => (
     dispatch(receiveCategory(category))
   ))
 );
+
+
+export const createCategoryMembership = categoryMemberhip => dispatch => (
+  APIUtil.createCategoryMembership(categoryMemberhip).then(categoryMembership => {
+    dispatch(receiveCategoryMembership(categoryMembership));
+  }, err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);

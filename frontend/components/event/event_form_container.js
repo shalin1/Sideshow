@@ -15,7 +15,6 @@ const mapStateToProps = (state, ownProps) => {
       venue_name: "",
       venue_address: "",
       ticket_price: "",
-      categories: [],
       tickets_available: 100,
       event_start: Date.now(),
       event_end: Date.now(),
@@ -23,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
       imageFile: null,
       imageUrl: "",
       published: false,
+      categories: ['', ''],
       event_show_image_url: 'https://s3.amazonaws.com/sideshow-development/Screen+Shot+2018-01-10+at+7.20.36+PM.png'
     };
   } else {
@@ -41,6 +41,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   const action = (ownProps.match.path === "/create") ? createEvent : updateEvent;
   return ({
     fetchEvent: eventId => dispatch(fetchEvent(eventId)),
+    fetchCategories: () => dispatch(fetchCategories()),
     resetErrors: () => dispatch(resetErrors()),
     action: event => dispatch(action(event)),
   });

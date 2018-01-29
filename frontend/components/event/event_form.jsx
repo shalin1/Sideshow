@@ -4,6 +4,7 @@ import { Link, withRouter, Redirect } from 'react-router-dom';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import Flatpickr from 'react-flatpickr';
+import Select from 'react-select';
 
 class EventForm extends React.Component {
   constructor(props) {
@@ -26,10 +27,13 @@ class EventForm extends React.Component {
     this.props.resetErrors();
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
+
     formData.append("event[event_start]", this.state.event_start);
+    formData.append("event[categories]", this.state.categories);
     formData.append("event[event_end]", this.state.event_end);
     formData.append("event[title]", this.state.title);
     formData.append("event[description]", this.state.description);
@@ -53,7 +57,7 @@ class EventForm extends React.Component {
 
   update(attribute) {
     return (e) => {
-      this.setState({[attribute]: e.target.value});
+      this.setState({[attribute]: e.currentTarget.value});
     };
   }
 
@@ -71,6 +75,8 @@ class EventForm extends React.Component {
       }
     };
   }
+
+
 
 
   renderErrors(field) {
@@ -103,7 +109,11 @@ class EventForm extends React.Component {
           uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
         }
 
-        
+
+        let categories = this.state.categories.map( category => {
+          return (category.name)
+        });
+
 
       return (
         <section className="event-form-container">
@@ -249,12 +259,23 @@ class EventForm extends React.Component {
             <label className="event-form-label">
               Event Category
             </label>
-            <select value={this.state.category} onChange={this.handleChange}>
-              <option value="speakeasy">Speakeasy</option>
-              <option value="circus">Circus</option>
-              <option value="coconut">Coconut</option>
-              <option value="mango">Mango</option>
-            </select>
+            <CategoryForm
+              formType={this.props.formType}
+              setCategory={this.setCategory}
+              categories={this.state.categories}
+            />
+            <Select
+              name='category'
+              value={categories}
+              onChange={this.update('categories')}
+              multiple={true}
+              options={[
+                { name: 'Fire', label: 'Fire' },
+                { name: 'Circus', label: 'Circus' },
+                { name: 'Speakeasy', label: 'Speakeasy' },
+                { name: 'Festival', label: 'Festival' }
+              ]}
+            />
 
           </form>
           <div className="event-form-button-container">

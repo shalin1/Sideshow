@@ -42,3 +42,13 @@ export const removeCategory = eventId => {
     })
   );
 }
+
+export const createCategoryMembership = categoryMembership => {
+  return(
+    $.ajax({
+      method: 'POST',
+      url: 'api/category_memberships/',
+      data: { categoryMembership }
+    })
+  )
+}

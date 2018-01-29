@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :events, except: [:new, :edit]
     resources :categories, except: [:new, :edit]
+    resources :category_memberships, only: [:create, :destroy ]
     resources :tickets, only: [:create, :destroy, :show, :index]
     resources :bookmarks, only: [:create, :destroy]
   end
