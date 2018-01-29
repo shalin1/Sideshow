@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import lodash from 'lodash';
 
 class CategoryIndexItem extends React.Component {
   constructor(props) {
@@ -8,8 +9,8 @@ class CategoryIndexItem extends React.Component {
   }
 
   handleClick() {
-    const categoryId = this.props.category.id;
-    this.props.history.push(`/categories/${categoryId}`);
+    const categoryName = this.props.category.name;
+    this.props.history.push(`/browse/${_.lowerCase(categoryName)}`);
   }
 
   render() {
@@ -24,13 +25,13 @@ class CategoryIndexItem extends React.Component {
     };
 
     return (
-      <article className="category-index-item" onClick={this.handleClick}>
-        <div className="category-index-item-background" style={categoryImage}>
-          <div className="category-index-item-name">{name}</div>
+      <div className="category-index-item" onClick={this.handleClick}>
+        <div className="category-index-item-background zooming" style={categoryImage}>
+          <span className="category-index-item-name">{name}</span>
           <br />
-          <div className="cateogry-index-item-description">{description}</div>
+          <span className="category-index-item-description">{description}</span>
         </div>
-      </article>
+      </div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import BrowseItem from './browse_item';
 import BrowseFilters from './browse_filters';
+import lodash from 'lodash';
 
 class Browse extends React.Component {
   componentWillMount(){
@@ -41,7 +42,7 @@ class Browse extends React.Component {
       }
       if (this.props.match.params.name) {
 
-        category = this.props.match.params.name
+        category = _.capitalize(this.props.match.params.name);
     };
 
 

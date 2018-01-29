@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import moment from 'moment';
 import Modal from 'react-modal';
+import Lodash from 'lodash';
 import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 
 class EventShow extends React.Component {
@@ -56,8 +57,8 @@ class EventShow extends React.Component {
       const { title, ticket_price, event_start, event_end, description, venue_name,
       venue_address, event_show_image_url  } = this.props.event;
 
-      const category_links = this.props.event.categories.map( category =>  (
-        <Link to='browse/' id={category.id} key={category.id}>
+      const categories = this.props.event.categories.map( category =>  (
+        <Link to={`/browse/${_.lowerCase(category.name)}`}  key={category.id}>
           {category.name}
         </Link>
       ));
@@ -143,7 +144,7 @@ class EventShow extends React.Component {
                 <br/>
                 <div>
                   <label className="label-primary">Tags</label>
-                  {category_links}
+                  {categories}
                 </div>
                 </article>
                 <div className="event-show-body-aside">

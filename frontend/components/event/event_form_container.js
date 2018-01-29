@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
       venue_name: "",
       venue_address: "",
       ticket_price: "",
+      categories: [],
       tickets_available: 100,
       event_start: Date.now(),
       event_end: Date.now(),

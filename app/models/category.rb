@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
   validates :name, :description, presence: true
 
+
   has_many :category_memberships,
   foreign_key: :category_id,
   class_name: 'CategoryMembership'

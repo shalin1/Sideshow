@@ -95,6 +95,7 @@ class EventForm extends React.Component {
         <div className="loading">loading...</div>
       );
     } else {
+
       let uploadedImage;
         if (this.state.imageUrl) {
           uploadedImage = {backgroundImage: 'url(' + this.state.imageUrl + ')'};
@@ -102,6 +103,7 @@ class EventForm extends React.Component {
           uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
         }
 
+        
 
       return (
         <section className="event-form-container">
@@ -241,6 +243,18 @@ class EventForm extends React.Component {
             </label>
             <textarea className="event-form-rich-text" value={this.state.description} onChange={this.update('description')} />
             {this.renderErrors("description")}
+
+            <br/>
+
+            <label className="event-form-label">
+              Event Category
+            </label>
+            <select value={this.state.category} onChange={this.handleChange}>
+              <option value="speakeasy">Speakeasy</option>
+              <option value="circus">Circus</option>
+              <option value="coconut">Coconut</option>
+              <option value="mango">Mango</option>
+            </select>
 
           </form>
           <div className="event-form-button-container">

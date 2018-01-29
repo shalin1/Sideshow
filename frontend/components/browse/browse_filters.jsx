@@ -22,8 +22,8 @@ class BrowseFilters extends React.Component {
     } else {
 
       categoryLinks = this.props.categories.map( category => (
-        <button onClick={(e) => this.handleClick(category.name, e)} key={category.name}>
-          <li>
+        <button onClick={(e) => this.handleClick(category.name, e)} key={category.id}>
+          <li key={category.id}>
             {category.name}
           </li>
         </button>

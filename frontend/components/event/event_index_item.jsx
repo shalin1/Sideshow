@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
+import lodash from 'lodash'
 
 class EventIndexItem extends React.Component {
   constructor(props) {
@@ -37,7 +38,7 @@ class EventIndexItem extends React.Component {
       venue_name,
     } = this.props.event;
     const categories = this.props.event.categories.map( category => (
-      <Link to={`browse/${category.name}`} key={category.id}>#{category.name} </Link>
+      <Link to={`browse/${_.lowerCase(category.name)}`} key={category.id}>#{category.name} </Link>
     ))
     const eventImage = {
       backgroundImage: 'url(' + event_index_image_url + ')',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import moment from 'moment';
+import lodash from 'lodash';
 
 class BrowseItem extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class BrowseItem extends React.Component {
     const eventImage = {backgroundImage: 'url(' + event_index_image_url + ')'};
 
     const categories = this.props.event.categories.map( category => (
-      <Link to='browse' key={category.id} className='browse-item-category'>#{category.name}  </Link>
+      <Link to={`/browse/${_.lowerCase(category.name)}`} key={category.id} className='browse-item-category'>#{category.name}  </Link>
     ))
 
     let bookmarkIcon;

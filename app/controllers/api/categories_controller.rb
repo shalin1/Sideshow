@@ -6,7 +6,7 @@ class Api::CategoriesController < ApplicationController
 
     def show
 
-      @events = Category.find_by(name: params[:id]).events
+      @events = Category.find_by(name: params[:id].titleize).events
       if @events
         render "/api/events/index"
       else
