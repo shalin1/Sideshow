@@ -36,7 +36,7 @@ class BrowseItem extends React.Component {
     const event_start_formatted = moment(event_start).format('ddd, MMM D h:mm A')
 
     const eventImage = {backgroundImage: 'url(' + event_index_image_url + ')'};
-    
+
     const categories = this.props.event.categories.map( category => (
           <span>#<CategoryLink
             category={category}
@@ -89,7 +89,7 @@ class BrowseItem extends React.Component {
             </div>
           </div>
           {bookmarkIcon}
-          </section>
+        </section>
       </article>
     );
   }

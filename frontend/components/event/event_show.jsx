@@ -4,6 +4,7 @@ import moment from 'moment';
 import Modal from 'react-modal';
 import Lodash from 'lodash';
 import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
+import CategoryLink from '../category/category_link'
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -58,17 +59,17 @@ class EventShow extends React.Component {
       venue_address, event_show_image_url  } = this.props.event;
 
       const categories = this.props.event.categories.map( category =>  (
-        <Link to={`/browse/${_.lowerCase(category.name)}`}  key={category.id}>
-          {category.name}
-        </Link>
+        <span>#<CategoryLink
+          category={category}
+          history={this.props.history}
+          fetchCategory={this.props.fetchCategory}
+               /></span>
       ));
-
 
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
       const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event}/> : null;
-
       const formattedPrice = Number(this.props.event.ticket_price).toFixed(2);
       const momentStart = moment(event_start).parseZone();
       const momentEnd = moment(event_end).parseZone();
@@ -142,8 +143,8 @@ class EventShow extends React.Component {
                 <br/>
                 {description}
                 <br/>
-                <div>
-                  <label className="label-primary">Tags</label>
+                <label className=" event-show-category-label">Tags</label>
+                <div className="event-show-category">
                   {categories}
                 </div>
                 </article>

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchEvent, fetchEvents } from '../../actions/event_actions';
 import { showTicketingModal, hideTicketingModal} from '../../actions/modal_actions';
 import { addBookmark, removeBookmark } from '../../actions/session_actions'
+import { fetchCategory } from '../../actions/category_actions'
 import EventShow from './event_show';
 
 const mapStateToProps = (state, { match }) => {
@@ -22,7 +23,8 @@ const mapDispatchToProps = dispatch => ({
   fetchEvents: () => dispatch(fetchEvents()),
   showTicketingModal: () => dispatch(showTicketingModal()),
   addBookmark: bookmark => dispatch(addBookmark(bookmark)),
-  removeBookmark: eventId => dispatch(removeBookmark(eventId))
+  removeBookmark: eventId => dispatch(removeBookmark(eventId)),
+  fetchCategory: id => dispatch(fetchCategory(id))
 });
 
 export default connect (

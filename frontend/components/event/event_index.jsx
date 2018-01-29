@@ -20,6 +20,7 @@ class EventIndex extends React.Component {
           currentUser={this.props.currentUser}
           removeBookmark={this.props.removeBookmark}
           addBookmark={this.props.addBookmark}
+          fetchCategory={this.props.fetchCategory}
         />
       ));
     }
@@ -39,7 +40,7 @@ class EventIndex extends React.Component {
           <section className="event-index-grid">
             {event_index_items}
           </section>
-          
+
             <CategoryIndex/>
           </section>
       </section>

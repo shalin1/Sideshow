@@ -251,6 +251,25 @@
       &-container {
         margin: 40px auto;
       }
+      &-category{
+
+        & * {
+          font-size: 16px;
+          color: black;
+          padding: 10px 10px 10px 0;
+          transition: 0.5s ease;
+          &:hover{
+            color: $peppy-blue;
+          }
+        }
+        &-label {
+          padding: 20px 0;
+          margin-top: 20px;
+          font-size: 20px;
+          color: black;
+          display: block
+        }
+      }
     }
     &-hero {
       display: flex;
