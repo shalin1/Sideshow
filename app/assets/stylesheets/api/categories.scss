@@ -22,9 +22,10 @@
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     }
     &-item {
-      width: 300px;
-      height: 300px;
+      width: 320px;
+      height: 240px;
       color: white;
+      border-radius: 5px;
       font-family: $title-font-stack;
       display: flex;
       flex-direction: column;
@@ -32,24 +33,30 @@
       align-items: center;
       overflow: hidden;
       &-description {
-        font-family: $body-font-stack;
-        font-size: 11px;
+        font-family: $skinny;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 14px;
+        opacity: 0;
+        margin-top: 0px;
       }
       &-name {
-        font-family: $skinny;
-        font-size: 24px;
+        font-family: $body-font-stack;
+        font-weight: 400;
+        font-size: 34px;
         opacity: 1;
+        margin-top: 50px
       }
       &:hover span {
         opacity: 1;
-        text-align: center;
-        text-shadow: 2px 2px 6px rgba(50, 50, 50, 0.76);
+        margin-top: -20px;
       }
       & span {
+        text-align: center;
+        text-shadow: 2px 2px 6px rgba(50, 50, 50, 0.76);
         padding: 0 50px;
-        opacity: 0;
         color: white; /* Good thing we set a fallback color! */
-        transition: 1.2s ease;
+        transition: 0.5s ease-in-out;
       }
       &-background {
         display: flex;
@@ -64,7 +71,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        transition: all .5s ease;
+        transition: all 0.5s ease-in-out;
         padding: 20%;
         &:hover {
             cursor: pointer;
