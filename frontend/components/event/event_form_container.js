@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
       imageFile: null,
       imageUrl: "",
       published: false,
-      categories: ['', ''],
+      categoryIds: [],
       event_show_image_url: 'https://s3.amazonaws.com/sideshow-development/Screen+Shot+2018-01-10+at+7.20.36+PM.png'
     };
   } else {
@@ -44,6 +44,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchCategories: () => dispatch(fetchCategories()),
     resetErrors: () => dispatch(resetErrors()),
     action: event => dispatch(action(event)),
+    createCategoryMembership0: membership => dispatch(createCategoryMembership(membership)),
   });
 };
 

@@ -48,4 +48,7 @@ class Event < ApplicationRecord
   through: :category_memberships,
   source: :category
 
+  accepts_nested_attributes_for :categories,
+  :allow_destroy => true
+
 end

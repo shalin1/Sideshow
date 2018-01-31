@@ -14,6 +14,7 @@ class EventForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.update = this.update.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
   }
 
   componentWillMount() {
@@ -31,9 +32,9 @@ class EventForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let formData = new FormData();
-
+    debugger
     formData.append("event[event_start]", this.state.event_start);
-    formData.append("event[categories]", this.state.categories);
+    formData.append("event[categoryIds]", this.state.categoryIds);
     formData.append("event[event_end]", this.state.event_end);
     formData.append("event[title]", this.state.title);
     formData.append("event[description]", this.state.description);
@@ -50,10 +51,10 @@ class EventForm extends React.Component {
     }
     this.props.resetErrors();
     this.props.action(formData).then(
-      (event) => this.props.history.push(`/events/${event.id}`)
+      (event) => { this.props.createCategoryMemberships(event.id, this.state.categoryIds) }
+      ).then((event) => this.props.history.push(`/events/${event.id}`)
     );
   }
-
 
   update(attribute) {
     return (e) => {
@@ -76,8 +77,11 @@ class EventForm extends React.Component {
     };
   }
 
-
-
+  handleSelectChange (value) {
+		console.log('You\'ve selected:', value);
+    debugger
+		this.setState({['categoryIds']: value  });
+	}
 
   renderErrors(field) {
     if (this.props.errors !== undefined) {
@@ -108,13 +112,6 @@ class EventForm extends React.Component {
         } else {
           uploadedImage = {backgroundImage: 'url(' + this.state.event_show_image_url + ')'};
         }
-
-
-        let categories = this.state.categories;
-        let categoryNames = this.state.categories.map( category => {
-          return (category.name);
-        });
-
 
       return (
         <section className="event-form-container">
@@ -260,29 +257,25 @@ class EventForm extends React.Component {
             <label className="event-form-label">
               Event Category
             </label>
-            <Select
-              name='category'
-              value={categories}
-              onChange={this.update('categories')}
-              multiple={true}
+            <Select multi  placeholder="Select event categories..."
+              value={this.state.categoryIds}
+              onChange={this.handleSelectChange}
               options={[
-                { name: 'Fire', label: 'Fire' },
-                { name: 'Circus', label: 'Circus' },
-                { name: 'Speakeasy', label: 'Speakeasy' },
-                { name: 'Festival', label: 'Festival' }
+                { label: 'Circus', value: 1},
+                { label: 'Sideshow', value: 2}
               ]}
-            />
+            / >
 
-          </form>
-          <div className="event-form-button-container">
-            <h1 className="event-form-button-caption">
-              Nice job! You're almost done.
-            </h1>
-            <div className="event-form-button-container-flex">
+            </form>
+            <div className="event-form-button-container">
+              <h1 className="event-form-button-caption">
+                Nice job! You're almost done.
+              </h1>
+              <div className="event-form-button-container-flex">
 
-              <button
-                onClick={this.handleSubmit}
-                className="event-form-button-emphasis"
+                <button
+                  onClick={this.handleSubmit}
+                  className="event-form-button-emphasis"
               >
                 Make Your Event Live
               </button>
