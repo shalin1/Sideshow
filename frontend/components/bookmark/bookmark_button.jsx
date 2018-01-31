@@ -4,10 +4,10 @@ import lodash from 'lodash';
 class BookmarkButton extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.changeBookmark = this.changeBookmark.bind(this);
   }
 
-  changeBookmark() {
+  changeBookmark(currentUser, eventId) {
       if (currentUser.bookmarked_event_ids.includes(eventId)) {
         return e => this.props.removeBookmark(eventId)
       } else {
@@ -25,9 +25,9 @@ class BookmarkButton extends React.Component {
       return (<div></div>)
     }
     else {
-      debugger
+
       let bookmarkStyle = ""
-      if (currentUser.bookmarked_event_ids.indexOf({eventId}) >= 0) {
+      if (currentUser.bookmarked_event_ids.includes(eventId)) {
         bookmarkStyle = "fa fa-bookmark fa-2x bluefill"
       } else {
         bookmarkStyle = "fa fa-bookmark-o fa-2x"
