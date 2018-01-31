@@ -11,8 +11,8 @@ class Api::CategoryMembershipsController < ApplicationController
 
   def destroy
     @user = current_user
-    @user_event = @user.events.find(params[:event_id])
-    
+    @category_membership = current_user.category_memberships.find_by(event_id: params[:id])
+    render "api/users/show/" if @category_membership.destroy
   end
 
   private

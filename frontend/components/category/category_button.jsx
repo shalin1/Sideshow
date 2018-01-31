@@ -1,13 +1,13 @@
 import React from 'react'
 
-class BookmarkButton extends React.Component {
+class CategoryButton extends React.Component {
   constructor(props) {
     super(props);
-    this.toggleBookmark = this.toggleBookmark.bind(this);
+    this.toggleCategoryMembership = this.toggleCategoryMembership.bind(this);
   }
 
-  toggleBookmark(currentUser, eventId) {
-      if (currentUser.bookmarked_event_ids.includes(eventId)) {
+  toggleCategoryMembership(currentUser, event, category) {
+      if (event.categories.includes(category)) {
         return e => this.props.removeBookmark(eventId)
       } else {
         return e => this.props.addBookmark({ event_id: eventId, user_id: currentUser.id});
@@ -33,7 +33,7 @@ class BookmarkButton extends React.Component {
       }
 
     return(
-      <button className="event-index-item-bookmark" onClick={this.toggleBookmark(currentUser, eventId)}>
+      <button className="event-index-item-bookmark" onClick={this.toggleCategoryMembership(currentUser, eventId)}>
         <i className={bookmarkStyle} aria-hidden="true" />
       </button>
     )

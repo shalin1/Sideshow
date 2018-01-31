@@ -1,5 +1,5 @@
 import * as APIUtil from '../util/category_api_util';
-
+import * as membershipsAPIUtil from '../util/category_memberships_api_util';
 export const RECEIVE_CATEGORIES = 'RECEIVE_CATEGORIES';
 export const RECEIVE_CATEGORY = 'RECEIVE_CATEGORY';
 export const RECEIVE_CATEGORY_ERRORS = 'RECEIVE_CATEGORY_ERRORS';
@@ -33,9 +33,13 @@ export const fetchCategory = id => dispatch => (
 
 
 export const createCategoryMembership = categoryMemberhip => dispatch => (
-  APIUtil.createCategoryMembership(categoryMemberhip).then(categoryMembership => {
-    dispatch(receiveCategoryMembership(categoryMembership));
-  }, err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
+  APIUtil.createCategoryMembership(categoryMemberhip)
+  .then(categoryMembership =>  dispatch(fetchCategories(categoryMembership)),
+   errors => dispatch(receiveErrors(errors.responseJSON)))
+);
+
+export const removeCategoryMembership = eventId => dispatch => (
+  APIUtil.removeMembership(eventId)
+  .then(categoryMembership =>  dispatch(fetchCategories(categoryMembership)),
+   errors => dispatch(receiveErrors(errors.responseJSON)))
 );

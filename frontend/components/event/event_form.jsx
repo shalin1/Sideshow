@@ -110,8 +110,9 @@ class EventForm extends React.Component {
         }
 
 
-        let categories = this.state.categories.map( category => {
-          return (category.name)
+        let categories = this.state.categories;
+        let categoryNames = this.state.categories.map( category => {
+          return (category.name);
         });
 
 
@@ -259,11 +260,6 @@ class EventForm extends React.Component {
             <label className="event-form-label">
               Event Category
             </label>
-            <CategoryForm
-              formType={this.props.formType}
-              setCategory={this.setCategory}
-              categories={this.state.categories}
-            />
             <Select
               name='category'
               value={categories}
