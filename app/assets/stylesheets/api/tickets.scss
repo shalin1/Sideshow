@@ -98,7 +98,7 @@
           color: #666666;
         }
       }
-    } 
+    }
     &-overlay {
       position: fixed;
       top: 0;
@@ -196,4 +196,30 @@
     }
 
   }
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+.example-enter * {
+  top: -300px;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: 500ms ease-in;
+}
+.example-enter.example-enter-active * {
+  top: 150px;
+  transition: 500ms ease-in;
+}
+
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }

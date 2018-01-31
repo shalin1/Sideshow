@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import Lodash from 'lodash';
 import TicketPurchaseModal from '../ticketing/ticket_purchase_modal_container';
 import CategoryLink from '../category/category_link'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -69,7 +70,7 @@ class EventShow extends React.Component {
       const eventImage = {
         backgroundImage: 'url(' + event_show_image_url + ')',
       };
-      const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event}/> : null;
+      const ticketModal = (this.props.ticketingModalActive) ? <TicketPurchaseModal event={this.props.event} key={this.props.event.id}/> : null;
       const formattedPrice = Number(this.props.event.ticket_price).toFixed(2);
       const momentStart = moment(event_start).parseZone();
       const momentEnd = moment(event_end).parseZone();
@@ -147,29 +148,35 @@ class EventShow extends React.Component {
                 <div className="event-show-category">
                   {categories}
                 </div>
-                </article>
-                <div className="event-show-body-aside">
-                  <aside className="event-show-body-aside-item">
-                    <h3 className="label-primary">Date and Time</h3>
-                    <br/>
-                    {startDateFull}
-                    <br/>
-                    {timeStart} - {timeEnd}
-                  </aside>
+              </article>
+              <div className="event-show-body-aside">
+                <aside className="event-show-body-aside-item">
+                  <h3 className="label-primary">Date and Time</h3>
                   <br/>
-                  <aside className="event-show-body-aside-item">
-                    <h3 className="label-primary">Location</h3>
-                    <br/>
-                    {venue_name}
-                    <br/>
-                    {venue_address}
-                  </aside>
-                </div>
-              </section>
+                  {startDateFull}
+                  <br/>
+                  {timeStart} - {timeEnd}
+                </aside>
+                <br/>
+                <aside className="event-show-body-aside-item">
+                  <h3 className="label-primary">Location</h3>
+                  <br/>
+                  {venue_name}
+                  <br/>
+                  {venue_address}
+                </aside>
+              </div>
+            </section>
 
-            </article>
+          </article>
+          <CSSTransitionGroup
+            transitionName="example"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}>
 
             {ticketModal}
+          </CSSTransitionGroup>
+
           </div>
           );
           } else {
