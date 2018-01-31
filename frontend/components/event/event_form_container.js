@@ -27,7 +27,6 @@ const mapStateToProps = (state, ownProps) => {
     };
   } else {
     eventData = state.entities.events[ownProps.match.params.id];
-
     merge({}, eventData, {errors: state.errors.event});
     formType = "edit";
   }

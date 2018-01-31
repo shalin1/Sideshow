@@ -33,7 +33,7 @@
     transition: background-color 0.4s ease-out;
     font-size: 13px;
     &:hover {
-      background: $lightest-grey;
+      background-color: $lightest-grey;
     }
     &-user {
       display: flex;

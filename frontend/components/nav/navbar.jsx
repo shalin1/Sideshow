@@ -12,7 +12,7 @@ export default ({currentUser, logout}) => {
       </Link>
       <nav className="nav-right">
         <Link to="/browse">
-          <div className="nav-link-user">
+          <div className="nav-link">
             Browse
           </div>
         </Link>
@@ -22,7 +22,7 @@ export default ({currentUser, logout}) => {
         />
 
         <Link to="/create">
-          <div className="nav-link-user font-nav-link-emphasis">
+          <div className=" nav-link font-nav-link-emphasis">
             Create Event
           </div>
         </Link>
