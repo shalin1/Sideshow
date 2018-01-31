@@ -21,8 +21,9 @@ class Api::EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.new(event_params)
+    @event = current_user.events.new(event_params.except(:category_memberships))
     if @event.save
+      @event.category_ids = event_params[:category_memberships]
       render :show
     else
       render json: @event.errors.messages, status: 422
@@ -32,6 +33,7 @@ class Api::EventsController < ApplicationController
   def update
     @event = current_user.events.find(params[:id])
     if @event.update_attributes(event_params)
+      debugger
        @user = current_user
        render :show
     else
@@ -49,8 +51,7 @@ class Api::EventsController < ApplicationController
   private
 
   def event_params
-  params.require(:event).permit(:id, :categories, :event_start, :event_end, :title, :description,
-    :venue_name, :venue_address, :ticket_price, :tickets_available, :categories,
-    :organizer_id, :hero_image)
+  params.require(:event).permit(:id, :event_start, :event_end, :title, :description,
+    :venue_name, :venue_address, :ticket_price, :tickets_available, :organizer_id, :hero_image, :category_memberships)
   end
 end

@@ -31,12 +31,13 @@ class EventForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    let category_ids = [];
+    this.state.categoryIds.forEach( cat => category_ids.push(cat.value) )
     let formData = new FormData();
-    debugger
     formData.append("event[event_start]", this.state.event_start);
-    formData.append("event[categoryIds]", this.state.categoryIds);
     formData.append("event[event_end]", this.state.event_end);
     formData.append("event[title]", this.state.title);
+    formData.append("event[category_memberships]", category_ids);
     formData.append("event[description]", this.state.description);
     formData.append("event[venue_name]", this.state.venue_name);
     formData.append("event[venue_address]", this.state.venue_address);
@@ -50,9 +51,9 @@ class EventForm extends React.Component {
       formData.append("event[id]", this.state.id);
     }
     this.props.resetErrors();
-    this.props.action(formData).then(
-      (event) => { this.props.createCategoryMemberships(event.id, this.state.categoryIds) }
-      ).then((event) => this.props.history.push(`/events/${event.id}`)
+
+    this.props.action(formData)
+    .then((event) => this.props.history.push(`/events/${event.id}`)
     );
   }
 
@@ -79,7 +80,7 @@ class EventForm extends React.Component {
 
   handleSelectChange (value) {
 		console.log('You\'ve selected:', value);
-    debugger
+
 		this.setState({['categoryIds']: value  });
 	}
 
@@ -257,9 +258,10 @@ class EventForm extends React.Component {
             <label className="event-form-label">
               Event Category
             </label>
-            <Select multi  placeholder="Select event categories..."
+            <Select placeholder="Select event categories..."
               value={this.state.categoryIds}
               onChange={this.handleSelectChange}
+              multi
               options={[
                 { label: 'Circus', value: 1},
                 { label: 'Sideshow', value: 2}

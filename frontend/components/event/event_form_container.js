@@ -44,7 +44,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     fetchCategories: () => dispatch(fetchCategories()),
     resetErrors: () => dispatch(resetErrors()),
     action: event => dispatch(action(event)),
-    createCategoryMembership0: membership => dispatch(createCategoryMembership(membership)),
+    createCategoryMembership: membership => dispatch(createCategoryMembership(membership)),
   });
 };
 
