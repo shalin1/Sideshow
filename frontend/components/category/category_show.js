@@ -19,7 +19,7 @@ class CategoryShow extends React.Component {
   render() {
     if (this.props.isLoading) {
       return (
-        <li className="loading-container">loading...</li>
+        <li className="loading-container"></li>
       );
     } else {
       categoryEvents = this.props.categories[this.props.match.params.id].events.map( event => (

@@ -22,8 +22,6 @@ class UserDashboard extends React.Component {
     if (this.props.loading) {
       return (
         <div className="loading-container">
-          <span>loading....</span>
-          <i className="fa fa-hourglass fa-spin fa-3x" aria-hidden="true" />);
         </div>
       );
     } else {
