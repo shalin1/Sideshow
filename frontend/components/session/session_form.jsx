@@ -1,6 +1,6 @@
-
-  import React from 'react';
-  import { Link, withRouter } from 'react-router-dom';
+import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { CSSTransitionGroup } from 'react-transition-group'
 
   class SessionForm extends React.Component {
     constructor(props) {
@@ -67,12 +67,14 @@
       if (this.props.formType === 'Login') {
         return (
           <section className="login-modal-CTA">
-            <div className="login-icon-container">
-              <i className="fa fa-user fa-3x login-icon" aria-hidden="true"></i>
+            <div className="login-modal-CTA">
+              <div className="login-icon-container">
+                <i className="fa fa-user fa-3x login-icon" aria-hidden="true"></i>
+              </div>
+              <br/>
+              <h3 className="user-prompt-medium">Welcome back</h3>
+              <h4 className="user-prompt-small">Please enter your password to log in.</h4>
             </div>
-            <br/>
-            <h3 className="user-prompt-medium">Welcome back</h3>
-            <h4 className="user-prompt-small">Please enter your password to log in.</h4>
           </section>
         );
       } else {

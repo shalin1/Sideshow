@@ -29,8 +29,8 @@ class EventShow extends React.Component {
 
 
   componentWillMount() {
-    this.props.fetchEvent(this.props.eventId);
     window.scrollTo(0, 0);
+    this.props.fetchEvent(this.props.eventId);
   }
 
   handleTicketing() {
@@ -94,11 +94,22 @@ class EventShow extends React.Component {
 
         return(
         <div className="event-show-container-marginfix">
-          <div
-            className="event-show-background"
-            style={eventImage}
-          >
-          </div>
+          <CSSTransitionGroup
+            transitionName="event"
+            transitionAppear={true}
+            transitionEnter={true}
+            transitionLeave={true}
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={300}>
+            <div>
+
+              <div
+                className="event-show-background"
+                style={eventImage}
+              >
+              </div>
+            </div>
+          </CSSTransitionGroup>
           <div className="event-show-background-boundary">
           </div>
           <article className="event-show-container">
@@ -167,13 +178,12 @@ class EventShow extends React.Component {
                 </aside>
               </div>
             </section>
-
           </article>
+
           <CSSTransitionGroup
             transitionName="example"
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}>
-
             {ticketModal}
           </CSSTransitionGroup>
 
@@ -181,7 +191,7 @@ class EventShow extends React.Component {
           );
           } else {
             return(
-              <h1>loading....</h1>
+              <h1 className="loading-container"></h1>
             );
           }
           }

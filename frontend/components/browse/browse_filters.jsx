@@ -20,7 +20,7 @@ class BrowseFilters extends React.Component {
   render() {
     let categoryLinks
     if (!this.props.categories) {
-      return(<h1>loading...</h1>)
+      return(<h1 className='loading-container'>loading...</h1>)
     } else {
 
       categoryLinks = this.props.categories.map( category => (

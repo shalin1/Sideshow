@@ -28,7 +28,7 @@ class CategoryIndex extends React.Component {
       )
     } else {
       return(
-        <div className="loading">
+        <div className="loading-container">
           loading...
         </div>
       );

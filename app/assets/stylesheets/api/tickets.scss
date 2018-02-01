@@ -207,11 +207,11 @@
 
 .example-enter.example-enter-active {
   opacity: 1;
-  transition: 500ms ease-in;
+  transition: 200ms ease-in;
 }
 .example-enter.example-enter-active * {
   top: 150px;
-  transition: 500ms ease-in;
+  transition: 1500ms cubic-bezier(.5,.43,0,.99);
 }
 
 

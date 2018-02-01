@@ -11,7 +11,7 @@ class EventIndex extends React.Component {
 
     let event_index_items;
     if (!this.props.events) {
-      event_index_items = <h1>loading....</h1>;
+      event_index_items = <h1 className='loading-container'>loading....</h1>;
     } else {
       event_index_items = this.props.events.map( event => (
         <EventIndexItem
