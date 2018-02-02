@@ -34,7 +34,8 @@ class Event < ApplicationRecord
 
   has_many :bookmarks,
   foreign_key: :event_id,
-  class_name: 'Bookmark'
+  class_name: 'Bookmark',
+  dependent: :destroy
 
   has_many :bookmarking_users,
   through: :bookmarks,
@@ -42,7 +43,8 @@ class Event < ApplicationRecord
 
   has_many :category_memberships,
   foreign_key: :event_id,
-  class_name: 'CategoryMembership'
+  class_name: 'CategoryMembership',
+  dependent: :destroy
 
   has_many :categories,
   through: :category_memberships,

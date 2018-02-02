@@ -95,14 +95,13 @@ class EventShow extends React.Component {
         return(
         <div className="event-show-container-marginfix">
           <CSSTransitionGroup
-            transitionName="event"
+            transitionName="example"
             transitionAppear={true}
             transitionEnter={true}
             transitionLeave={true}
             transitionEnterTimeout={500}
             transitionLeaveTimeout={300}>
             <div>
-
               <div
                 className="event-show-background"
                 style={eventImage}

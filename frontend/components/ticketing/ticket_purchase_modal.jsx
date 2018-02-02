@@ -5,7 +5,8 @@ class TicketPurchaseModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      ticket_quantity: 1
+      ticket_quantity: 1,
+      ticket_purchased: false
     };
     this.handleClose = this.handleClose.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,8 +23,7 @@ class TicketPurchaseModal extends React.Component {
       }
     };
     this.props.createTicket(ticket);
-    this.props.history.push('/my_tickets');
-    this.handleClose();
+    this.setState(ticket_purchased: true);
   }
 
   handleChange(event) {
@@ -37,67 +37,87 @@ class TicketPurchaseModal extends React.Component {
 
 
   render() {
-    return (
-      <div className="tickets-modal-overlay">
-        <div className="tickets-modal-container">
-          <button
-            className="tickets-modal-close"
-            onClick={this.handleClose}
-          >
-            x
-          </button>
-
-          <section className="tickets-modal-header">
-            <div className="tickets-modal-text-formhead">Register</div>
-          </section>
-
-          <section className="tickets-modal-box">
-            <div className="tickets-modal-text-ticket-container">
-              <div className="tickets-modal-text-ticket-type">
-                Advanced Ticket
-              </div>
-
-              <div className="row-container">
-
-                <div className="tickets-modal-text-ticket-price">
-                  ${(this.props.event.ticket_price)}
-                </div>
-
-                <div className="tickets-modal-text-ticket-fee">
-                  + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
-                </div>
-              </div>
-            </div>
-
-            <div className="tickets-modal-form-input-container">
-              <form>
-                <select
-                  className="tickets-modal-form-input-select"
-                  value={this.state.ticket_quantity} onChange={this.handleChange}>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                </select>
-              </form>
-            </div>
-
-          </section>
-
-          <section className="tickets-modal-footer">
-            <div className="tickets-modal-labels">
-              <span>Quantity: {this.state.ticket_quantity}</span>
-              <span>USD: ${(this.props.event.ticket_price * this.state.ticket_quantity * 1.1347).toFixed(2)}</span>
-            </div>
-            <button onClick={this.handleSubmit} className="tickets-modal-form-button">
-              CHECKOUT
+    if (this.state.ticket_purchased) {
+      return (
+        <div className="tickets-modal-overlay">
+          <div className="tickets-modal-container">
+            <button
+              className="tickets-modal-close"
+              onClick={this.handleClose}
+            >
+              x
             </button>
+
+            <section className="tickets-modal-header">
+              <div className="tickets-modal-text-formhead">Awesome!</div>
+            </section>
+          </div>
+          <section className="tickets-modal-footer">
+          </section>
+        </div>
+        )
+      }
+          return (
+          <div className="tickets-modal-overlay">
+            <div className="tickets-modal-container">
+              <button
+                className="tickets-modal-close"
+                onClick={this.handleClose}
+              >
+                x
+              </button>
+
+              <section className="tickets-modal-header">
+                <div className="tickets-modal-text-formhead">Register</div>
+              </section>
+
+              <section className="tickets-modal-box">
+                <div className="tickets-modal-text-ticket-container">
+                  <div className="tickets-modal-text-ticket-type">
+                    Advanced Ticket
+                  </div>
+
+                  <div className="row-container">
+
+                    <div className="tickets-modal-text-ticket-price">
+                      ${(this.props.event.ticket_price)}
+                    </div>
+
+                    <div className="tickets-modal-text-ticket-fee">
+                      + ${(this.props.event.ticket_price * 0.1347).toFixed(2)} FEE
+                    </div>
+                  </div>
+                </div>
+
+                <div className="tickets-modal-form-input-container">
+                  <form>
+                    <select
+                      className="tickets-modal-form-input-select"
+                      value={this.state.ticket_quantity} onChange={this.handleChange}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                    </select>
+                  </form>
+                </div>
+
+              </section>
+
+              <section className="tickets-modal-footer">
+                <div className="tickets-modal-labels">
+                  <span>Quantity: {this.state.ticket_quantity}</span>
+                  <span>USD: ${(this.props.event.ticket_price * this.state.ticket_quantity * 1.1347).toFixed(2)}</span>
+                </div>
+                <button onClick={this.handleSubmit} className="tickets-modal-form-button">
+                  CHECKOUT
+                </button>
 
           </section>
         </div>

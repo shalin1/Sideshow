@@ -13,6 +13,7 @@ import CategoryIndex from './category/category_index_container';
 import UserDashboard from './user/user_dashboard_container';
 import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
+
 const App = () => (
   <div className="meta-container">
     <NavBarContainer />
@@ -20,8 +21,8 @@ const App = () => (
     <Route exact path="/browse" component={BrowseIndex} />
     <Route exact path="/browse/:name" component={BrowseIndex} />
     <Route exact path="/categories" component={CategoryIndex} />
-    
     <AuthRoute exact path="/signin" component={SessionFormContainer} />
+
     <AuthRoute exact path="/signin/signup" component={SessionFormContainer} />
     <AuthRoute exact path="/signin/login" component={SessionFormContainer} />
     <ProtectedRoute exact path="/create" component={EventForm} />

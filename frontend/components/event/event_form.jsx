@@ -264,7 +264,12 @@ class EventForm extends React.Component {
               multi
               options={[
                 { label: 'Circus', value: 1},
-                { label: 'Sideshow', value: 2}
+                { label: 'Speakeasy', value: 2},
+                { label: 'Fire', value: 4},
+                { label: 'Festival', value: 5},
+                { label: 'Family-Friendly', value: 6},
+                { label: 'Food & Drink', value: 7},
+                { label: 'Music', value: 8}
               ]}
             / >
 

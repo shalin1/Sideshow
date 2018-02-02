@@ -17,8 +17,9 @@ class User < ApplicationRecord
 
   has_many :bookmarks,
   foreign_key: :user_id,
-  class_name: 'Bookmark'
-
+  class_name: 'Bookmark',
+  dependent: :destroy
+  
   has_many :bookmarked_events,
   through: :bookmarks,
   source: :event
