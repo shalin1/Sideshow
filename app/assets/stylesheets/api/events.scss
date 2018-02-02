@@ -11,10 +11,6 @@
 
 .home{
   &-container {
-<<<<<<< HEAD
-=======
-    margin:  0;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
     width: 100%;
   }
   &-hero-image {
@@ -27,11 +23,7 @@
     background-repeat: no-repeat;
     background-position: top center;
     z-index: 10;
-<<<<<<< HEAD
     margin-bottom: -60px;
-=======
-    position: relative;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
   }
   &-content {
     width: 100%;
@@ -166,12 +158,8 @@
       &-container {
         background: white;
         width: 100%;
-<<<<<<< HEAD
         height: 300px;
         margin-left: -50px;
-=======
-        height: 250px;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -244,11 +232,7 @@
     }
     &-container {
       transition: all .5s ease-in;
-<<<<<<< HEAD
       margin: 0px 0 auto;
-=======
-      margin: 0px auto;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
       width: 100%;
       max-width: 1080px;
       display: flex;
@@ -263,7 +247,6 @@
     }
     @media only screen and (min-width: 1080px) {
       &-container {
-<<<<<<< HEAD
         margin: 40px auto;
       }
       &-category{
@@ -284,9 +267,6 @@
           color: black;
           display: block
         }
-=======
-        margin: 60px auto;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
       }
     }
     &-hero {
@@ -438,10 +418,6 @@
       width: 96%;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-<<<<<<< HEAD
-=======
-      margin-bottom: 40px;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
     }
     &-intro {
       padding: 20px;
@@ -546,11 +522,7 @@
         padding: 0 0 0 15px;
       }
       &-bookmark {
-<<<<<<< HEAD
         padding: 10px 8px 10px 18px;
-=======
-        padding: 12px 11px 11px 20px;
->>>>>>> 2ae663402ff4fcd6de12c68998a2f3a344187b0f
         transform: scale(.75);
         box-sizing: border-box;
         border-top: 1px solid rgb(239, 242, 245);
