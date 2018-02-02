@@ -32,9 +32,9 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = current_user.events.find(params[:id])
-    if @event.update_attributes(event_params)
-      debugger
+    if @event.update_attributes(event_params.except(:category_memberships))
        @user = current_user
+       @event.category_ids = event_params[:category_memberships].split(',')
        render :show
     else
       render json:  @event.errors.messages, status: 422

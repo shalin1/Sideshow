@@ -38,7 +38,7 @@ class BrowseItem extends React.Component {
     const eventImage = {backgroundImage: 'url(' + event_index_image_url + ')'};
 
     const categories = this.props.event.categories.map( category => (
-          <span>#<CategoryLink
+          <span key={category.id}>#<CategoryLink
             category={category}
             fetchCategory={this.props.fetchCategory}
             history={this.props.history}

@@ -22,7 +22,7 @@ const mapStateToProps = (state, ownProps) => {
       imageFile: null,
       imageUrl: "",
       published: false,
-      categoryIds: [],
+      categories: [],
       event_show_image_url: 'https://s3.amazonaws.com/sideshow-development/Screen+Shot+2018-01-10+at+7.20.36+PM.png'
     };
   } else {

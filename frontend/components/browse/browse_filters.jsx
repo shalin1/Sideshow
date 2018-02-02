@@ -24,15 +24,16 @@ class BrowseFilters extends React.Component {
     } else {
 
       categoryLinks = this.props.categories.map( category => (
-        <li>
+        <li key={category.id}>
           <CategoryLink
             category={category}
             fetchCategory={this.props.fetchCategory}
             history={this.props.history}
+            key={category.id}
           />
         </li>
           ))
-      categoryLinks.unshift(<li><Link to='/browse'>All Categories</Link></li>)
+      categoryLinks.unshift(<li key="first"><Link to='/browse'>All Categories</Link></li>)
 
           }
           {`images/${this.props.image}`}

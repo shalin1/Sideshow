@@ -60,10 +60,11 @@ class EventShow extends React.Component {
       venue_address, event_show_image_url  } = this.props.event;
 
       const categories = this.props.event.categories.map( category =>  (
-        <span>#<CategoryLink
+        <span key={category.id}>#<CategoryLink
           category={category}
           history={this.props.history}
           fetchCategory={this.props.fetchCategory}
+
                /></span>
       ));
 
@@ -94,21 +95,15 @@ class EventShow extends React.Component {
 
         return(
         <div className="event-show-container-marginfix">
-          <CSSTransitionGroup
-            transitionName="example"
-            transitionAppear={true}
-            transitionEnter={true}
-            transitionLeave={true}
-            transitionEnterTimeout={500}
-            transitionLeaveTimeout={300}>
-            <div>
-              <div
-                className="event-show-background"
-                style={eventImage}
-              >
-              </div>
+
+          <div>
+            <div
+              className="event-show-background"
+              style={eventImage}
+            >
             </div>
-          </CSSTransitionGroup>
+          </div>
+
           <div className="event-show-background-boundary">
           </div>
           <article className="event-show-container">

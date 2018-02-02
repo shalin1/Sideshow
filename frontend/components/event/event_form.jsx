@@ -32,7 +32,7 @@ class EventForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let category_ids = [];
-    this.state.categoryIds.forEach( cat => category_ids.push(cat.value) )
+    this.state.categories.forEach( cat => category_ids.push(cat.id) )
     let formData = new FormData();
     formData.append("event[event_start]", this.state.event_start);
     formData.append("event[event_end]", this.state.event_end);
@@ -79,9 +79,8 @@ class EventForm extends React.Component {
   }
 
   handleSelectChange (value) {
-		console.log('You\'ve selected:', value);
 
-		this.setState({['categoryIds']: value  });
+		this.setState({['categories']: value  });
 	}
 
   renderErrors(field) {
@@ -259,17 +258,20 @@ class EventForm extends React.Component {
               Event Category
             </label>
             <Select placeholder="Select event categories..."
-              value={this.state.categoryIds}
+              value={this.state.categories}
+              valueKey={'id'}
+              labelKey={'name'}
               onChange={this.handleSelectChange}
-              multi
+              multi={true}
+              joinvalues={true}
               options={[
-                { label: 'Circus', value: 1},
-                { label: 'Speakeasy', value: 2},
-                { label: 'Fire', value: 4},
-                { label: 'Festival', value: 5},
-                { label: 'Family-Friendly', value: 6},
-                { label: 'Food & Drink', value: 7},
-                { label: 'Music', value: 8}
+                { name: 'Circus', id: 1},
+                { name: 'Speakeasy', id: 2},
+                { name: 'Fire', id: 4},
+                { name: 'Festival', id: 5},
+                { name: 'Family-Friendly', id: 6},
+                { name: 'Food & Drink', id: 7},
+                { name: 'Music', id: 8}
               ]}
             / >
 
