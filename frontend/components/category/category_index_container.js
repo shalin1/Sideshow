@@ -4,16 +4,13 @@ import CategoryIndex from './category_index';
 import { fetchCategories } from '../../actions/category_actions';
 
 const mapStateToProps = state => {
-  return ({
-    categories: Object.values(state.entities.categories)
-  });
+	return {
+		categories: Object.values(state.entities.categories)
+	};
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchCategories: () => dispatch(fetchCategories())
-})
+	fetchCategories: () => dispatch(fetchCategories())
+});
 
-export default connect (
-  mapStateToProps,
-  mapDispatchToProps
-)(CategoryIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(CategoryIndex);

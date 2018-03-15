@@ -5,9 +5,9 @@ import tickets from './tickets_reducer';
 import categories from './categories_reducer';
 
 const entitiesReducer = combineReducers({
-  events,
-  tickets,
-  categories
+	events,
+	tickets,
+	categories
 });
 
 export default entitiesReducer;

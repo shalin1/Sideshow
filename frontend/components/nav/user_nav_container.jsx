@@ -3,14 +3,11 @@ import { logout, toggleModal } from '../../actions/session_actions';
 import UserNav from './user_nav';
 
 const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+	currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-})
+	logout: () => dispatch(logout())
+});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(UserNav);
+export default connect(mapStateToProps, mapDispatchToProps)(UserNav);

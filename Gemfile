@@ -34,6 +34,8 @@ gem 'jquery-rails'
 gem 'paperclip'
 gem 'aws-sdk', '< 3.0'
 gem 'figaro'
+gem 'textbelt'
+
 
 group :development, :test do
   gem 'pry-rails'

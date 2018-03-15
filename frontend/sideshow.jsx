@@ -10,28 +10,27 @@ import { fetchEvents, fetchEvent } from './actions/event_actions';
 import { createTicket } from './actions/ticket_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const root = document.getElementById('root');
-  let store;
-  if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
-    store = configureStore(preloadedState);
-    delete window.currentUser;
-  } else {
-    store = configureStore();
-  }
+	const root = document.getElementById('root');
+	let store;
+	if (window.currentUser) {
+		const preloadedState = { session: { currentUser: window.currentUser } };
+		store = configureStore(preloadedState);
+		delete window.currentUser;
+	} else {
+		store = configureStore();
+	}
 
-// TESTING START
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
-  window.userExists = userExists;
-  window.fetchEvents = fetchEvents;
-  window.fetchEvent = fetchEvent;
-  window.createTicket = createTicket;
-// TESTING END
+	// TESTING START
+	window.getState = store.getState;
+	window.dispatch = store.dispatch;
+	window.signup = signup;
+	window.login = login;
+	window.logout = logout;
+	window.userExists = userExists;
+	window.fetchEvents = fetchEvents;
+	window.fetchEvent = fetchEvent;
+	window.createTicket = createTicket;
+	// TESTING END
 
-  ReactDOM.render(<Root store={ store } />, root);
-
+	ReactDOM.render(<Root store={store} />, root);
 });

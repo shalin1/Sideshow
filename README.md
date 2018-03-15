@@ -1,27 +1,22 @@
 # Sideshow
 ## Event discovery and ticketing
-
 ---
 Sideshow is a single page application clone of Eventbrite, a popular ticketing and discovery website.
 
 The site is live at https://aa-sideshow.herokuapp.com/
 
-
 Sideshow uses Ruby on Rails with a PostgreSQL database on the back end, and React together with Redux on the front end.  Images are hosted on a dedicated AWS bucket, with uploading through the Paperclip gem.
-
 ---
-
 ## Key Features
-
 #### User creation and authentication
-
-Visitors can sign up or log in through a simple, intuitive form that just starts with the user's email, regardless of whether they're new or returning users.  Authentication is hand-rolled with passwords saved and retrieved securely with hashing performed by the BCrypt gem.  Authenticated routes are provided through checking a user's session token and rerouting guest users to login pages when trying to create events or purchase tickets.  
+Visitors can sign up or log in through a simple, intuitive form that just starts with the user's email, regardless of whether they're new or returning users.  
+[insert image of login flow chart]
+Authentication is hand-rolled with passwords saved and retrieved securely with hashing performed by the BCrypt gem.  Authenticated routes are provided through checking a user's session token and rerouting guest users to login pages when trying to create events or purchase tickets.  
 
 #### Event index view
-
 Elements are populated on the home page using a modern CSS grid system populated with Event Show boxes dynamically populated with several higher-order React components.  The page is responsive, with dynamic grid of elements being rendered with fewer columns and large decorative elements removed from display at narrower screen widths.
 
-Dates are parsed dynamically throughout the site the Moment.js package.  
+Dates are parsed dynamically throughout the site with the Moment.js package.  
 
 #### Event show page  
 
